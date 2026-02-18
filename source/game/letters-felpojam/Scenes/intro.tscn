@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://c2v53h5ogyia"]
 
-[ext_resource type="Script" uid="uid://du1lp8fwiqwr5" path="res://scripts/player_name_input.gd" id="1_b226h"]
+[ext_resource type="Script" uid="uid://du1lp8fwiqwr5" path="res://scripts/intro/player_name_input.gd" id="1_b226h"]
+[ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_alxvg"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="2_duh1u"]
+[ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_alxvg"]
+[ext_resource type="Script" uid="uid://b1i0s0f03lelk" path="res://scripts/intro/carta.gd" id="5_3bmuq"]
+[ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="5_rsiac"]
+[ext_resource type="FontFile" uid="uid://y7ygfgkw7v2t" path="res://assets/fonts/yoster-island/yoster.ttf" id="6_3bmuq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_alxvg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
+atlas = ExtResource("3_alxvg")
+region = Rect2(193, 1, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn7w8"]
 atlas = ExtResource("2_duh1u")
-region = Rect2(65.02525, 96.74285, 14.269783, 14.4184265)
+region = Rect2(2, 5, 90, 27)
 
 [node name="Intro" type="Control" unique_id=1185165052]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Panel" parent="." unique_id=215378364]
+modulate = Color(1, 1, 1, 0.8666667)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -43,6 +61,13 @@ offset_right = 187.64526
 offset_bottom = 50.25
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_constants/caret_width = 4
+theme_override_fonts/font = ExtResource("2_alxvg")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Insira seu nome"
+clear_button_enabled = true
+caret_blink = true
 
 [node name="Button" type="Button" parent="PlayerName" unique_id=1035110121]
 layout_mode = 1
@@ -58,8 +83,87 @@ offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
-icon = SubResource("AtlasTexture_alxvg")
+icon = SubResource("AtlasTexture_geirw")
+flat = true
+expand_icon = true
+
+[node name="Carta" type="TextureRect" parent="." unique_id=1053268532]
+visible = false
+modulate = Color(1, 1, 1, 0.93333334)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -224.75
+offset_right = 386.0
+offset_bottom = 224.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_nn7w8")
+script = ExtResource("5_3bmuq")
+
+[node name="Content" type="Label" parent="Carta" unique_id=708168786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046000004
+anchor_top = 0.15200001
+anchor_right = 0.95500004
+anchor_bottom = 0.855
+offset_left = -2.512001
+offset_top = 14.425995
+offset_right = -0.26000977
+offset_bottom = -2.5725098
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
+theme_override_fonts/font = ExtResource("5_rsiac")
+theme_override_font_sizes/font_size = 12
+text = "Lembra quando eu lhe contei que comprei esta loja há 30 anos? Eu pensei muito nesses últimos meses e decidi passar ela a diante, e a melhor escolha sem dúvidas é você. Quando eu abri essa loja as pessoas comentaram que ninguém pediria meus serviços, afinal, quem pagaria a alguém para escrever cartas? Mas meu trabalho ia muito além de escrever, é colocar sentimentos, desejos e claro, carimbos lindos e maravilhosos que enchem os olhos. 
+
+E logo, as pessoas começaram a aparecer, pedindo que eu escrevesse uma carta aos pais, filhos, amores e amigos, pois as pessoas descobriram o quão agradável é transmitir corretamente uma mensagem, de forma amorosa, respeitosa e até com pesar, se a notícia não for boa.
+
+Você vai encontrar tudo que precisa no manual que deixei para você, tudo está organizado e pronto para ser usado. Espero que tenha belos dias, assim como eu tive, vou te mandando cartas ao longo da semana e espero ter respostas em breve. Boa sorte, meu anjo. "
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Carta" unique_id=835628507]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.748
+anchor_top = 0.78900003
+anchor_right = 0.95600003
+anchor_bottom = 0.88100004
+offset_left = -9.455994
+offset_top = -0.9055176
+offset_right = -12.032043
+offset_bottom = -2.2595215
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
+theme_override_fonts/font = ExtResource("6_3bmuq")
+text = "Com amor, tia Ana."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Carta" unique_id=719417249]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -55.75
+offset_right = 29.0
+offset_bottom = 10.25
+grow_horizontal = 0
+grow_vertical = 0
+icon = SubResource("AtlasTexture_geirw")
 flat = true
 expand_icon = true
 
 [connection signal="pressed" from="PlayerName/Button" to="PlayerName" method="_on_button_pressed"]
+[connection signal="pressed" from="Carta/Button2" to="Carta" method="_on_continue_pressed"]
