@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_alxvg"]
 [ext_resource type="Script" uid="uid://b1i0s0f03lelk" path="res://scripts/intro/carta.gd" id="5_3bmuq"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="5_rsiac"]
-[ext_resource type="FontFile" uid="uid://y7ygfgkw7v2t" path="res://assets/fonts/yoster-island/yoster.ttf" id="6_3bmuq"]
+[ext_resource type="FontFile" uid="uid://p2qqeasb8iia" path="res://assets/fonts/dpcomic/dpcomic.ttf" id="7_3bmuq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
 atlas = ExtResource("3_alxvg")
@@ -34,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerName" type="Control" parent="." unique_id=1185100290]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,7 +143,8 @@ offset_bottom = -2.2595215
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
-theme_override_fonts/font = ExtResource("6_3bmuq")
+theme_override_fonts/font = ExtResource("7_3bmuq")
+theme_override_font_sizes/font_size = 22
 text = "Com amor, tia Ana."
 horizontal_alignment = 1
 vertical_alignment = 1
