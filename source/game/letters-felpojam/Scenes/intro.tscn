@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c2v53h5ogyia"]
+
+[ext_resource type="Script" uid="uid://du1lp8fwiqwr5" path="res://scripts/player_name_input.gd" id="1_b226h"]
+[ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="2_duh1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alxvg"]
+atlas = ExtResource("2_duh1u")
+region = Rect2(65.02525, 96.74285, 14.269783, 14.4184265)
+
+[node name="Intro" type="Control" unique_id=1185165052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerName" type="Control" parent="." unique_id=1185100290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b226h")
+
+[node name="LineEdit" type="LineEdit" parent="PlayerName" unique_id=735371697]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.64526
+offset_top = -50.25
+offset_right = 187.64526
+offset_bottom = 50.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="PlayerName" unique_id=1035110121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = 58.0
+offset_right = 190.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+icon = SubResource("AtlasTexture_alxvg")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="PlayerName/Button" to="PlayerName" method="_on_button_pressed"]

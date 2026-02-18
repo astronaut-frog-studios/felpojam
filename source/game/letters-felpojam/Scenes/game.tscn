@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://b51i5su32vn3e"]
 
+[ext_resource type="Script" uid="uid://dte4fu8uea6rt" path="res://scripts/label_show_name_test.gd" id="1_ebmjs"]
+
 [node name="Game" type="Node2D" unique_id=38362517]
+
+[node name="Label" type="Label" parent="." unique_id=1924660465]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_ebmjs")
