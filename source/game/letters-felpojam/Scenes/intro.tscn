@@ -34,7 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerName" type="Control" parent="." unique_id=1185100290]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
