@@ -12,7 +12,7 @@ region = Rect2(241, 114, 14, 13)
 [node name="Game" type="Node2D" unique_id=38362517]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1646431600]
-position = Vector2(125, -68)
+position = Vector2(126, -68)
 
 [node name="Carimbo" parent="." unique_id=911283932 instance=ExtResource("1_qxrlw")]
 self_modulate = Color(1, 1, 1, 1)

@@ -25,6 +25,6 @@ func _drop_data(_position: Vector2, _data: Variant) -> void:
 
 # triggers when fail drop, it returns to its initial position
 func _notification(what:int) -> void:
-	if what == NOTIFICATION_DRAG_END and not is_drag_successful():
+	if what == NOTIFICATION_DRAG_END:
 		self_modulate.a = 1.0
 		get_child(0).visible = true	
