@@ -1,3 +1,36 @@
 [gd_scene format=3 uid="uid://b51i5su32vn3e"]
 
+[ext_resource type="PackedScene" uid="uid://k60py55behho" path="res://nodes/carimbo.tscn" id="1_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://c1x7ukxo1do67" path="res://icon.svg" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://db3gbqwt627gf" path="res://nodes/papel.tscn" id="4_3dryh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wowpa"]
+atlas = ExtResource("2_wrm1d")
+region = Rect2(241, 114, 14, 13)
+
 [node name="Game" type="Node2D" unique_id=38362517]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1646431600]
+
+[node name="Carimbo" parent="." unique_id=911283932 instance=ExtResource("1_qxrlw")]
+self_modulate = Color(1, 1, 1, 1)
+offset_left = -1.1881561
+offset_top = -66.066345
+offset_right = 38.811844
+offset_bottom = -26.066345
+texture = ExtResource("2_3dryh")
+
+[node name="Desenho" parent="Carimbo" index="0" unique_id=1156437737]
+texture = SubResource("AtlasTexture_wowpa")
+
+[node name="Panel" parent="Carimbo" index="1" unique_id=1390316551]
+z_as_relative = false
+
+[node name="Papel" parent="." unique_id=730979259 instance=ExtResource("4_3dryh")]
+offset_left = 185.0
+offset_top = -108.0
+offset_right = 322.0
+offset_bottom = 27.0
+
+[editable path="Carimbo"]

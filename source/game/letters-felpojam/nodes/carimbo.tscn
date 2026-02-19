@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://k60py55behho"]
+
+[ext_resource type="Script" uid="uid://bx1888g04fhfi" path="res://scripts/game/carimbo_drag.gd" id="1_oiu0b"]
+
+[node name="Carimbo" type="TextureRect" unique_id=911283932]
+self_modulate = Color(0.50534403, 0.5053441, 0.50534385, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.25
+offset_top = -61.5
+offset_right = 61.25
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 6
+script = ExtResource("1_oiu0b")
+
+[node name="Desenho" type="TextureRect" parent="." unique_id=1156437737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.07692
+offset_top = -40.0
+offset_right = 43.07692
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1390316551]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -67.5
+offset_right = 67.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
