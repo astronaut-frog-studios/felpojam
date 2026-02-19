@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://vqpvtdghp1dx"]
+
+[ext_resource type="PackedScene" uid="uid://k60py55behho" path="res://nodes/carimbo.tscn" id="1_d7son"]
+[ext_resource type="Script" uid="uid://bag8f2d843hq5" path="res://scripts/game/drop_area.gd" id="1_uty5c"]
+[ext_resource type="Texture2D" uid="uid://c1x7ukxo1do67" path="res://icon.svg" id="2_uty5c"]
+[ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_j8g0a"]
+[ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8g0a"]
+atlas = ExtResource("3_j8g0a")
+region = Rect2(5, 128, 118, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgfeb"]
+atlas = ExtResource("3_rgfeb")
+region = Rect2(1, 4, 91, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex200"]
+atlas = ExtResource("3_j8g0a")
+region = Rect2(241, 114, 14, 13)
+
+[node name="GameCore" type="Control" unique_id=900097777]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [294.0, 846.0]
+metadata/_edit_horizontal_guides_ = [209.0, 464.0]
+metadata/_edit_use_anchors_ = true
+
+[node name="Mesa" type="Control" parent="." unique_id=1247997050]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0040001
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -427.0
+offset_right = 0.39196777
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_uty5c")
+
+[node name="TextureRect" type="TextureRect" parent="Mesa" unique_id=1850948923]
+self_modulate = Color(1, 1, 1, 0.7254902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_j8g0a")
+
+[node name="Carta" type="Control" parent="." unique_id=712507268]
+layout_mode = 1
+anchor_left = 0.503
+anchor_top = 1.0
+anchor_right = 0.503
+anchor_bottom = 1.0
+offset_left = -204.45605
+offset_top = -420.0
+offset_right = 205.54395
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uty5c")
+carimboOffset = Vector2(-50, -100)
+
+[node name="TextureRect" type="TextureRect" parent="Carta" unique_id=1877624554]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -151.0
+offset_right = 272.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_rgfeb")
+
+[node name="Carimbo" parent="." unique_id=911283932 instance=ExtResource("1_d7son")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 275.0
+offset_top = -168.0
+offset_right = 358.0
+offset_bottom = -85.0
+grow_vertical = 0
+texture = ExtResource("2_uty5c")
+
+[node name="Desenho" parent="Carimbo" index="0" unique_id=134822399]
+offset_left = -27.461533
+offset_right = 27.461533
+texture = SubResource("AtlasTexture_ex200")
+
+[editable path="Carimbo"]
