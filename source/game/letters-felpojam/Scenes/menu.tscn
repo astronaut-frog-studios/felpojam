@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://y7ygfgkw7v2t" path="res://assets/fonts/yoster-island/yoster.ttf" id="4_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="6_jsrd8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjb58"]
 
@@ -14,10 +13,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqeox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ytvr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbdvm"]
-atlas = ExtResource("6_jsrd8")
-region = Rect2(241, 114, 14, 13)
 
 [node name="Menu" type="Control" unique_id=1539899677]
 layout_mode = 3
@@ -132,21 +127,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
 text = "AstroFrog"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Desenho" type="TextureRect" parent="." unique_id=357365677]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.07692
-offset_top = -40.0
-offset_right = 43.07692
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_wbdvm")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
