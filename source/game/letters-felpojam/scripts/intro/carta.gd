@@ -8,5 +8,4 @@ func _ready() -> void:
 	button.show()
 
 func _on_continue_pressed() -> void:
-	print("continue...")
 	get_tree().change_scene_to_file("res://Scenes/game_core.tscn")
