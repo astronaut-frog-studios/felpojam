@@ -1,0 +1,22 @@
+extends TextureRect
+
+# triggers when you click and drag
+func _get_drag_data(_position: Vector2) -> Variant:
+	var preview : Control = Control.new()
+	var preview_texture : TextureRect = TextureRect.new()
+	
+	preview_texture.texture = texture
+	preview_texture.expand_mode = 0
+	preview_texture.size = Vector2(40,40)
+	preview_texture.position = Vector2(20, 15) - _position
+	
+	preview.add_child(preview_texture)
+	set_drag_preview(preview)
+	visible = false
+	
+	return texture
+
+# triggers when fail drop, it returns to its initial position
+func _notification(what:int) -> void:
+	if what == NOTIFICATION_DRAG_END: #and not is_drag_successful():
+		visible = true

@@ -15,8 +15,8 @@ func _process(_delta: float) -> void:
 
 
 # triggers when you hover with a dragged item
-func _can_drop_data(_position: Vector2, _data: Variant) -> bool:
-	return true
+func _can_drop_data(_position: Vector2, data: Variant) -> bool:
+	return data is TextureRect
 	
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
