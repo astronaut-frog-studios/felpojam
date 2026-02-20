@@ -9,26 +9,21 @@ const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 @export var min_y : float = 26.0
 @export var max_y : float = 60.0
 
-func _process(_delta: float) -> void:
-	#print(get_global_mouse_position())
-	pass
-
-
 # triggers when you hover with a dragged item
 func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 	return data is TextureRect
 	
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
-	print("DROP:", position)
 	# instanciar o desenho e depois instanciar o carimbo com um offset do desenho
 	if name.to_lower() == "carta":
-		var drawing_bounds_x : bool = get_global_mouse_position().x > global_position.x - min_x and get_global_mouse_position().x < global_position.x + max_x
+		#var drawing_bounds_x : bool = get_global_mouse_position().x > global_position.x - min_x and get_global_mouse_position().x < global_position.x + max_x
 		#var drawing_bounds_y : bool = get_global_mouse_position().y > position.y - min_y and get_global_mouse_position().y < position.y - max_y
-		if drawing_bounds_x:
-			_paint_letter(data)
-		else:
-			_return_carimbo(data, global_position - Vector2(-120, -300))
+		#if drawing_bounds_x:
+			#_paint_letter(data)
+		#else:
+			#_return_carimbo(data, global_position - Vector2(-120, -300))
+		_paint_letter(data)
 	# instanciar só o carimbo novamente
 	elif name.to_lower().contains("mesa"):
 		_return_carimbo(data, Vector2.ZERO)

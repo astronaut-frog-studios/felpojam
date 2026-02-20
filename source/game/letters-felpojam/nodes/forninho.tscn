@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://b3v6xcdhhgpob"]
+
+[ext_resource type="Texture2D" uid="uid://bg4t5nveqbyys" path="res://assets/sprites/sproutLands/campfire.png" id="1_b662s"]
+[ext_resource type="Script" uid="uid://dcvklupdct3d8" path="res://scripts/game/forno_drop_area.gd" id="2_2yv27"]
+[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="2_ccuav"]
+[ext_resource type="Texture2D" uid="uid://dgl3huw7f8mxn" path="res://assets/sprites/sproutLands/fire animation.png" id="3_2yv27"]
+[ext_resource type="Texture2D" uid="uid://gd312gi6yhoj" path="res://assets/sprites/sproutLands/Basic_Plants.png" id="4_55vk1"]
+[ext_resource type="Script" uid="uid://dodw7or48rygf" path="res://scripts/game/spoon_drag.gd" id="6_ccuav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1mtq"]
+atlas = ExtResource("1_b662s")
+region = Rect2(18, 35, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sup0n"]
+atlas = ExtResource("2_ccuav")
+region = Rect2(343, 6, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_048qn"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oln2x"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wb4p"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(32, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8jj3"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(48, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(64, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qes35"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(80, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0nmg"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(96, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(112, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u16o4"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(128, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts78b"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(144, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qjtw"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(160, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbm1n"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(176, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrnjn"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(192, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgocy"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(208, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_321jw"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(224, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt4me"]
+atlas = ExtResource("3_2yv27")
+region = Rect2(240, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfj7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_048qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oln2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wb4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8jj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qes35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0nmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0amvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u16o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts78b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qjtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrnjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgocy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_321jw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt4me")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfj7o"]
+atlas = ExtResource("4_55vk1")
+region = Rect2(81, 0, 14, 15)
+
+[node name="Control" type="Control" unique_id=1324390624]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 105.0
+offset_bottom = 118.0
+script = ExtResource("2_2yv27")
+
+[node name="Forninho" type="TextureRect" parent="." unique_id=645116839]
+self_modulate = Color(0.8217887, 0.82178867, 0.82178867, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.200012
+offset_top = -38.0
+offset_right = 43.200012
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_i1mtq")
+stretch_mode = 4
+
+[node name="base" type="Sprite2D" parent="Forninho" unique_id=214761257]
+self_modulate = Color(0.737193, 0.7371929, 0.7371929, 1)
+show_behind_parent = true
+position = Vector2(41.500004, 38.870674)
+scale = Vector2(5.7222233, 5.7864056)
+texture = SubResource("AtlasTexture_sup0n")
+flip_v = true
+
+[node name="fire" type="AnimatedSprite2D" parent="Forninho" unique_id=769056761]
+visible = false
+position = Vector2(42.000008, 59.000008)
+scale = Vector2(4.2500014, 4.2500014)
+sprite_frames = SubResource("SpriteFrames_xfj7o")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7272757
+
+[node name="colher" type="TextureRect" parent="." unique_id=464992017]
+self_modulate = Color(0.75608736, 0.7560873, 0.7560873, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -40.0
+offset_right = 57.488525
+offset_bottom = 83.772766
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7784169
+texture = SubResource("AtlasTexture_xfj7o")
+stretch_mode = 4
+flip_h = true
+script = ExtResource("6_ccuav")
+preview_offset = Vector2(20, 5)
+
+[node name="colherDrop" type="TextureRect" parent="colher" unique_id=1180489591]
+layout_mode = 1
+offset_left = 8.417229
+offset_top = 16.198887
+offset_right = 49.133156
+offset_bottom = 57.710392
+
+[node name="Panel" type="Panel" parent="colher" unique_id=1413685852]
+layout_mode = 0
+offset_left = 7.9013968
+offset_top = 15.709608
+offset_right = 49.120544
+offset_bottom = 57.62294
+mouse_filter = 2

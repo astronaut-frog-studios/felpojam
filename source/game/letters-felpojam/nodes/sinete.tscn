@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bl6eofd6npvok"]
+
+[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="1_pxgra"]
+[ext_resource type="Script" uid="uid://dmrfix547ce36" path="res://scripts/game/sinete_drag.gd" id="2_vqns6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a56x0"]
+atlas = ExtResource("1_pxgra")
+region = Rect2(434, 71, 28, 18)
+
+[node name="Sinete" type="TextureRect" unique_id=1802318788 groups=["sinete"]]
+offset_right = 57.0
+offset_bottom = 35.0
+texture = SubResource("AtlasTexture_a56x0")
+flip_h = true
+script = ExtResource("2_vqns6")

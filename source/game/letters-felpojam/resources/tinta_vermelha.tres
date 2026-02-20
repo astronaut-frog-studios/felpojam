@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Tinta" format=3 uid="uid://d3smy8fmlbe82"]
+
+[ext_resource type="Texture2D" uid="uid://duv3n0tv13vi1" path="res://assets/sprites/tintas/red.png" id="1_2wvkl"]
+[ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tinta_resource.gd" id="1_cfdyb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klx7n"]
+load_path = "res://.godot/imported/red.png-ba41cd88fc61fbec0ef5bb39308885ab.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm7b2"]
+atlas = SubResource("CompressedTexture2D_klx7n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8yw"]
+atlas = ExtResource("1_2wvkl")
+region = Rect2(44, 0, 41, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eud5c"]
+atlas = ExtResource("1_2wvkl")
+region = Rect2(91, 1, 33, 30)
+
+[resource]
+script = ExtResource("1_cfdyb")
+default_texture = SubResource("AtlasTexture_bm7b2")
+melted_texture = SubResource("AtlasTexture_0y8yw")
+selo_texture = SubResource("AtlasTexture_eud5c")
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
