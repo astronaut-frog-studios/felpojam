@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ddoxspi7kfb2c" path="res://scripts/game/tinta_drag.gd" id="1_7btg6"]
 
 [node name="Tinta" type="TextureRect" unique_id=1655781924]
+z_index = 5
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

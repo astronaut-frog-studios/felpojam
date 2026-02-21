@@ -10,9 +10,30 @@
 [ext_resource type="PackedScene" uid="uid://bl6eofd6npvok" path="res://nodes/sinete.tscn" id="7_oln2x"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="Texture2D" uid="uid://bcp480u1pix7i" path="res://assets/sprites/sproutLands/speech_bubble_grey.png" id="11_oln2x"]
-[ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://tinta.tscn" id="12_5wb4p"]
+[ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tinta_vermelha.tres" id="13_s8jj3"]
+[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="13_xi4rr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
+atlas = ExtResource("13_xi4rr")
+region = Rect2(259, 180, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
+atlas = ExtResource("13_5wb4p")
+region = Rect2(832, 412, 128, 228)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qes35"]
+atlas = ExtResource("13_5wb4p")
+region = Rect2(1148, 500, 124, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0nmg"]
+atlas = ExtResource("13_5wb4p")
+region = Rect2(1360, 536, 204, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8jj3"]
+atlas = ExtResource("13_5wb4p")
+region = Rect2(1736, 432, 228, 208)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8g0a"]
 atlas = ExtResource("3_j8g0a")
@@ -30,10 +51,6 @@ region = Rect2(241, 114, 14, 13)
 atlas = ExtResource("11_oln2x")
 region = Rect2(10, 11, 44, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8jj3"]
-atlas = ExtResource("13_5wb4p")
-region = Rect2(1736, 432, 228, 208)
-
 [node name="GameCore" type="Control" unique_id=900097777]
 layout_mode = 3
 anchor_left = 0.00086805556
@@ -49,6 +66,100 @@ metadata/_edit_use_anchors_ = true
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
 script = ExtResource("1_oln2x")
 current_game_step = 3
+
+[node name="Mimos" type="Control" parent="." unique_id=1559606305]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -306.0
+offset_top = 36.0
+offset_right = -14.0
+offset_bottom = 127.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Mimos" unique_id=1663892490]
+modulate = Color(0.68307734, 0.6830774, 0.68307734, 1)
+position = Vector2(146.5, 73)
+scale = Vector2(3.1222222, 1)
+texture = SubResource("AtlasTexture_0amvw")
+
+[node name="Mimo1" type="TextureRect" parent="Mimos" unique_id=1860050874]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -27.5
+offset_right = -95.0
+offset_bottom = 12.029419
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_xi4rr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Mimo2" type="TextureRect" parent="Mimos" unique_id=1247415900]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -37.5
+offset_right = -34.0
+offset_bottom = 33.51819
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_qes35")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Mimo3" type="TextureRect" parent="Mimos" unique_id=1447528357]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -1.5
+offset_right = 36.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_t0nmg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Mimo4" type="TextureRect" parent="Mimos" unique_id=1527391876]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -43.5
+offset_right = 126.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_s8jj3")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Mesa" type="Control" parent="." unique_id=1247997050]
 layout_mode = 1
@@ -81,10 +192,10 @@ anchor_left = 0.503
 anchor_top = 1.0
 anchor_right = 0.503
 anchor_bottom = 1.0
-offset_left = -217.953
+offset_left = -226.953
 offset_top = -358.0
-offset_right = 183.55005
-offset_bottom = -173.0
+offset_right = 198.047
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uty5c")
@@ -114,16 +225,16 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 275.0
 offset_top = -168.0
-offset_right = 343.5
-offset_bottom = -99.5
+offset_right = 334.5
+offset_bottom = -108.5
 grow_vertical = 0
 texture = ExtResource("2_uty5c")
 
 [node name="Desenho" parent="Carimbo" index="0" unique_id=134822399]
-offset_left = -22.749985
-offset_top = -19.25
-offset_right = 21.67308
-offset_bottom = 22.0
+offset_left = -19.653841
+offset_top = -18.25
+offset_right = 19.653841
+offset_bottom = 18.25
 texture = SubResource("AtlasTexture_ex200")
 
 [node name="Sinete" parent="." unique_id=1802318788 instance=ExtResource("7_oln2x")]
@@ -140,19 +251,6 @@ offset_bottom = -215.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Forninho" parent="." unique_id=645116839 instance=ExtResource("9_048qn")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019000001
-anchor_top = 0.966
-anchor_right = 0.019000001
-anchor_bottom = 0.966
-offset_left = 75.131
-offset_top = -131.77802
-offset_right = 161.53102
-offset_bottom = -55.778076
-scale = Vector2(0.797015, 0.757015)
-
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
 layout_mode = 1
 anchors_preset = -1
@@ -168,6 +266,25 @@ grow_vertical = 0
 tinta = ExtResource("13_s8jj3")
 preview_size = Vector2(62, 62)
 
+[node name="Forninho" parent="." unique_id=645116839 instance=ExtResource("9_048qn")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019000001
+anchor_top = 0.966
+anchor_right = 0.019000001
+anchor_bottom = 0.966
+offset_left = 75.131
+offset_top = -135.77802
+offset_right = 161.53102
+offset_bottom = -18.827759
+scale = Vector2(0.797015, 0.757015)
+
+[node name="colher" parent="Forninho" index="1" unique_id=464992017]
+offset_left = -60.765553
+offset_top = -39.981453
+offset_right = 55.222977
+offset_bottom = 83.791306
+
 [node name="Envelope(carta)" type="TextureRect" parent="." unique_id=1969456191]
 self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
 layout_mode = 1
@@ -182,7 +299,9 @@ offset_right = 301.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 0
 texture = SubResource("AtlasTexture_5wb4p")
+script = ExtResource("1_uty5c")
 
 [node name="SeloArea" type="TextureRect" parent="Envelope(carta)" unique_id=1879112048]
 layout_mode = 1
@@ -191,10 +310,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.5
-offset_top = -35.5
-offset_right = 15.5
-offset_bottom = 4.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_rgfeb")
@@ -214,20 +333,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1527391876]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -276.0
-offset_top = 33.0
-offset_right = -172.96149
-offset_bottom = 127.0
-grow_horizontal = 0
-mouse_filter = 2
-texture = SubResource("AtlasTexture_s8jj3")
-expand_mode = 1
 
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
 [connection signal="change_to_ended_step" from="Envelope(carta)/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]

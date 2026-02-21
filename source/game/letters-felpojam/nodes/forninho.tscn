@@ -196,6 +196,7 @@ offset_bottom = 83.772766
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.7784169
+mouse_filter = 2
 texture = SubResource("AtlasTexture_xfj7o")
 stretch_mode = 4
 flip_h = true
@@ -203,11 +204,14 @@ script = ExtResource("6_ccuav")
 preview_offset = Vector2(20, 5)
 
 [node name="colherDrop" type="TextureRect" parent="colher" unique_id=1180489591]
+z_index = 1
 layout_mode = 1
 offset_left = 8.417229
 offset_top = 16.198887
 offset_right = 49.133156
 offset_bottom = 57.710392
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Panel" type="Panel" parent="colher" unique_id=1413685852]
 layout_mode = 0

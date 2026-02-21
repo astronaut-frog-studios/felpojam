@@ -23,3 +23,9 @@ func _notification(what:int) -> void:
 		visible = true if !visible else visible
 	if what == NOTIFICATION_DRAG_END and is_drag_successful():
 		visible = true
+		
+func disable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+func enable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS

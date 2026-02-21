@@ -16,7 +16,7 @@ func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
 	# instanciar o desenho e depois instanciar o carimbo com um offset do desenho
-	if name.to_lower() == "carta":
+	if name.to_lower().contains("carta"):
 		#var drawing_bounds_x : bool = get_global_mouse_position().x > global_position.x - min_x and get_global_mouse_position().x < global_position.x + max_x
 		#var drawing_bounds_y : bool = get_global_mouse_position().y > position.y - min_y and get_global_mouse_position().y < position.y - max_y
 		#if drawing_bounds_x:

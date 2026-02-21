@@ -11,8 +11,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -41.5
 offset_top = -41.5
-offset_right = 41.5
-offset_bottom = 41.5
+offset_right = 13.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 6
@@ -21,7 +21,7 @@ script = ExtResource("1_oiu0b")
 
 [node name="Desenho" parent="." unique_id=134822399 instance=ExtResource("2_66cii")]
 layout_mode = 1
-offset_left = -27.0
-offset_top = -25.5
-offset_right = 27.0
-offset_bottom = 25.5
+offset_left = -17.536762
+offset_top = -16.5625
+offset_right = 17.536762
+offset_bottom = 16.5625

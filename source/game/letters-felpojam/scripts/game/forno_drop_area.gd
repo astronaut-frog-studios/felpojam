@@ -7,9 +7,6 @@ extends Control
 
 signal change_to_drop_step
 
-func _ready() -> void:
-	spoon_drag.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
 # triggers when you hover with a dragged item
 func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 	return data is TintaTransferData
@@ -24,6 +21,6 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 
 		await get_tree().create_timer(5.0).timeout
 
-		change_to_drop_step.emit()
 		spoon_drop.texture = data.melted_texture
 		fire.visible = false
+		change_to_drop_step.emit()
