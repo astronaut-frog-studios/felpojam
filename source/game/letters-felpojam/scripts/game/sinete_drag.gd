@@ -4,9 +4,6 @@ class_name SineteDrag extends TextureRect
 @export var preview_offset: Vector2 = Vector2(20, 15)
 @export var preview_mode: ExpandMode = TextureRect.EXPAND_KEEP_SIZE
 
-func _ready() -> void:
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
-
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:
 	var preview : Control = Control.new()

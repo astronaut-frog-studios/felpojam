@@ -5,6 +5,8 @@ extends Control
 @onready var spoon_drop: TextureRect = $colher/colherDrop
 @onready var spoon_drag: SpoonDrag = $colher
 
+signal change_to_drop_step
+
 func _ready() -> void:
 	spoon_drag.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -19,8 +21,9 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		spoon_drop.texture = data.default_texture
 		panel.visible = false
 		fire.visible = true
+
 		await get_tree().create_timer(5.0).timeout
-		
-		spoon_drag.mouse_filter = Control.MOUSE_FILTER_PASS
+
+		change_to_drop_step.emit()
 		spoon_drop.texture = data.melted_texture
 		fire.visible = false

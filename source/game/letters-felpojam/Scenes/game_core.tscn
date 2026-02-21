@@ -75,6 +75,7 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_j8g0a")
 
 [node name="Carta" type="Control" parent="." unique_id=712507268]
+visible = false
 layout_mode = 1
 anchor_left = 0.503
 anchor_top = 1.0
@@ -167,8 +168,7 @@ grow_vertical = 0
 tinta = ExtResource("13_s8jj3")
 preview_size = Vector2(62, 62)
 
-[node name="Envelope" type="TextureRect" parent="." unique_id=1969456191]
-visible = false
+[node name="Envelope(carta)" type="TextureRect" parent="." unique_id=1969456191]
 self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
 layout_mode = 1
 anchors_preset = 7
@@ -184,7 +184,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_5wb4p")
 
-[node name="SeloArea" type="TextureRect" parent="Envelope" unique_id=1879112048]
+[node name="SeloArea" type="TextureRect" parent="Envelope(carta)" unique_id=1879112048]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,7 +199,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_rgfeb")
 
-[node name="Panel" type="Panel" parent="Envelope/SeloArea" unique_id=2106306376]
+[node name="Panel" type="Panel" parent="Envelope(carta)/SeloArea" unique_id=2106306376]
 modulate = Color(1, 0.13674557, 0.26036727, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -229,4 +229,9 @@ mouse_filter = 2
 texture = SubResource("AtlasTexture_s8jj3")
 expand_mode = 1
 
+[connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
+[connection signal="change_to_ended_step" from="Envelope(carta)/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
+[connection signal="change_to_postmark_step" from="Envelope(carta)/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
+
 [editable path="Carimbo"]
+[editable path="Forninho"]

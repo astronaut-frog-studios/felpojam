@@ -21,3 +21,5 @@ func _get_drag_data(_position: Vector2) -> Variant:
 func _notification(what:int) -> void:
 	if what == NOTIFICATION_DRAG_END and not is_drag_successful():
 		visible = true if !visible else visible
+	if what == NOTIFICATION_DRAG_END and is_drag_successful():
+		visible = true

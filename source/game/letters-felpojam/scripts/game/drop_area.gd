@@ -11,7 +11,7 @@ const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 
 # triggers when you hover with a dragged item
 func _can_drop_data(_position: Vector2, data: Variant) -> bool:
-	return data is TextureRect
+	return data is TextureRect and data is not SpoonDrag and data is not SineteDrag
 	
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
