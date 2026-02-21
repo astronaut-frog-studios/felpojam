@@ -9,9 +9,10 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	var c : Control = Control.new()
 	var preview : Node = duplicate()
 	
-	c.position = preview_offset - _position
-	#preview.size = preview_size
 	c.add_child(preview)
+	#preview.position = preview_offset - _position
+	preview.size = preview_size
+	preview.get_child(0).size = preview_size / 4
 	set_drag_preview(c)
 	
 	visible = false

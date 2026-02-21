@@ -250,6 +250,8 @@ offset_right = -71.0
 offset_bottom = -215.0
 grow_horizontal = 0
 grow_vertical = 0
+preview_size = Vector2(42, 42)
+preview_offset = Vector2(20, -5)
 
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
 layout_mode = 1
@@ -284,6 +286,8 @@ offset_left = -60.765553
 offset_top = -39.981453
 offset_right = 55.222977
 offset_bottom = 83.791306
+preview_size = Vector2(102.989, 115.773)
+preview_offset = Vector2(20, -15)
 
 [node name="Envelope(carta)" type="TextureRect" parent="." unique_id=1969456191]
 self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
@@ -302,6 +306,7 @@ grow_vertical = 0
 mouse_filter = 0
 texture = SubResource("AtlasTexture_5wb4p")
 script = ExtResource("1_uty5c")
+carimboOffset = Vector2(-50, -80)
 
 [node name="SeloArea" type="TextureRect" parent="Envelope(carta)" unique_id=1879112048]
 layout_mode = 1

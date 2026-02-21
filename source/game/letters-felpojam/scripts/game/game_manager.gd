@@ -24,11 +24,10 @@ func _process(_delta: float) -> void:
 func _postmark_step() -> void:
 	var sinete: SineteDrag = get_tree().get_first_node_in_group("sinete") as SineteDrag
 	var spoon: SpoonDrag =  get_tree().get_first_node_in_group("spoon") as SpoonDrag
-	current_selo_step = SeloStep.MELTING_PAINT
 
 	match current_selo_step:
 		SeloStep.ENDED:
-			return
+			current_selo_step = SeloStep.MELTING_PAINT
 		SeloStep.MELTING_PAINT:
 			spoon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			spoon.disable_interaction()
