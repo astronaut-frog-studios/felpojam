@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="Texture2D" uid="uid://bcp480u1pix7i" path="res://assets/sprites/sproutLands/speech_bubble_grey.png" id="11_oln2x"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://tinta.tscn" id="12_5wb4p"]
+[ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tinta_vermelha.tres" id="13_s8jj3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8g0a"]
@@ -29,19 +30,25 @@ region = Rect2(241, 114, 14, 13)
 atlas = ExtResource("11_oln2x")
 region = Rect2(10, 11, 44, 41)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8jj3"]
+atlas = ExtResource("13_5wb4p")
+region = Rect2(1736, 432, 228, 208)
+
 [node name="GameCore" type="Control" unique_id=900097777]
 layout_mode = 3
-anchors_preset = 15
+anchor_left = 0.00086805556
+anchor_top = -0.054012347
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_vertical_guides_ = [294.0, 846.0]
+metadata/_edit_vertical_guides_ = [294.0, 846.0, -101.0]
 metadata/_edit_horizontal_guides_ = [209.0, 464.0]
 metadata/_edit_use_anchors_ = true
 
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
 script = ExtResource("1_oln2x")
+current_game_step = 3
 
 [node name="Mesa" type="Control" parent="." unique_id=1247997050]
 layout_mode = 1
@@ -49,8 +56,8 @@ anchor_top = 1.0
 anchor_right = 1.0040001
 anchor_bottom = 1.0
 offset_left = -5.0
-offset_top = -427.0
-offset_right = 0.39196777
+offset_top = -372.0
+offset_right = -3.604126
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_uty5c")
@@ -61,6 +68,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_j8g0a")
@@ -71,14 +80,14 @@ anchor_left = 0.503
 anchor_top = 1.0
 anchor_right = 0.503
 anchor_bottom = 1.0
-offset_left = -204.45605
-offset_top = -420.0
-offset_right = 205.54395
-offset_bottom = -196.0
+offset_left = -217.953
+offset_top = -358.0
+offset_right = 183.55005
+offset_bottom = -173.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uty5c")
-carimboOffset = Vector2(-50, -100)
+carimboOffset = Vector2(-50, -80)
 
 [node name="TextureRect" type="TextureRect" parent="Carta" unique_id=1877624554]
 show_behind_parent = true
@@ -88,10 +97,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -302.0
+offset_left = -244.75153
 offset_top = -151.0
-offset_right = 272.0
-offset_bottom = 140.0
+offset_right = 248.24847
+offset_bottom = 153.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -104,14 +113,16 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 275.0
 offset_top = -168.0
-offset_right = 358.0
-offset_bottom = -85.0
+offset_right = 343.5
+offset_bottom = -99.5
 grow_vertical = 0
 texture = ExtResource("2_uty5c")
 
 [node name="Desenho" parent="Carimbo" index="0" unique_id=134822399]
-offset_left = -27.461533
-offset_right = 27.461533
+offset_left = -22.749985
+offset_top = -19.25
+offset_right = 21.67308
+offset_bottom = 22.0
 texture = SubResource("AtlasTexture_ex200")
 
 [node name="Sinete" parent="." unique_id=1802318788 instance=ExtResource("7_oln2x")]
@@ -135,11 +146,11 @@ anchor_left = 0.019000001
 anchor_top = 0.966
 anchor_right = 0.019000001
 anchor_bottom = 0.966
-offset_left = 95.112
-offset_top = -137.96799
-offset_right = 181.51202
-offset_bottom = -61.968018
-scale = Vector2(1.3850162, 1.3850162)
+offset_left = 75.131
+offset_top = -131.77802
+offset_right = 161.53102
+offset_bottom = -55.778076
+scale = Vector2(0.797015, 0.757015)
 
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
 layout_mode = 1
@@ -148,15 +159,16 @@ anchor_left = 0.379
 anchor_top = 1.0
 anchor_right = 0.379
 anchor_bottom = 1.0
-offset_left = -123.608
-offset_top = -122.0
-offset_right = -44.608
-offset_bottom = -43.0
+offset_left = -120.229004
+offset_top = -107.0
+offset_right = -63.850006
+offset_bottom = -50.62097
 grow_vertical = 0
 tinta = ExtResource("13_s8jj3")
 preview_size = Vector2(62, 62)
 
 [node name="Envelope" type="TextureRect" parent="." unique_id=1969456191]
+visible = false
 self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
 layout_mode = 1
 anchors_preset = 7
@@ -202,5 +214,19 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1527391876]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 33.0
+offset_right = -172.96149
+offset_bottom = 127.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_s8jj3")
+expand_mode = 1
 
 [editable path="Carimbo"]

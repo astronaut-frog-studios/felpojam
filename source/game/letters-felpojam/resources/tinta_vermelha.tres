@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Tinta" format=3 uid="uid://d3smy8fmlbe82"]
+[gd_resource type="Resource" script_class="TintaResource" format=3 uid="uid://d3smy8fmlbe82"]
 
 [ext_resource type="Texture2D" uid="uid://duv3n0tv13vi1" path="res://assets/sprites/tintas/red.png" id="1_2wvkl"]
 [ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tinta_resource.gd" id="1_cfdyb"]
