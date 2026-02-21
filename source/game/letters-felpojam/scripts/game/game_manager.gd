@@ -27,7 +27,7 @@ func _postmark_step() -> void:
 
 	match current_selo_step:
 		SeloStep.ENDED:
-			current_selo_step = SeloStep.MELTING_PAINT
+			return
 		SeloStep.MELTING_PAINT:
 			spoon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			spoon.disable_interaction()
