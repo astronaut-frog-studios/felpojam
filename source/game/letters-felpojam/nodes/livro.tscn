@@ -745,6 +745,7 @@ scale = Vector2(0.39710167, 0.5334269)
 texture_normal = ExtResource("5_gdes3")
 stretch_mode = 0
 
+[connection signal="visibility_changed" from="book" to="book/AnimatedTextureRect" method="_on_book_visibility_changed"]
 [connection signal="animation_changed" from="book/AnimatedTextureRect" to="book/AnimatedTextureRect" method="_on_animation_changed"]
 [connection signal="animation_finished" from="book/AnimatedTextureRect" to="book/AnimatedTextureRect" method="_on_animation_finished"]
 [connection signal="button_down" from="book/NextPageButton" to="BookAnimated" method="_on_next_page_button_button_down"]
