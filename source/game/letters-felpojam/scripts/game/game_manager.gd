@@ -20,9 +20,19 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	match current_game_step:
 		GameStep.BEGIN:
+			# etapa do inbox
+			pass
+		GameStep.LETTER:
+			pass
+		GameStep.FREE_STAMP:
 			pass
 		GameStep.POSTMARK:
 			_postmark_step()
+		GameStep.ENDED:
+			# aparece o bottao de Entregar carta
+			# ao clicar escurece e carrega a próxima cena que estiver nele
+			# recebe o nome da cena como parametro
+			pass
 
 func _free_stamp_step() -> void:
 	# desabilitar interacao com a caixa de sinetes Control.MOUSE_FILTER_IGNORE
@@ -36,6 +46,7 @@ func _postmark_step() -> void:
 
 	match current_selo_step:
 		SeloStep.ENDED:
+			current_game_step = GameStep.ENDED
 			return
 		SeloStep.MELTING_PAINT:
 			spoon.mouse_filter = Control.MOUSE_FILTER_IGNORE
