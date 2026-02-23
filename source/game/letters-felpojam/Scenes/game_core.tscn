@@ -10,10 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="Texture2D" uid="uid://bcp480u1pix7i" path="res://assets/sprites/sproutLands/speech_bubble_grey.png" id="11_oln2x"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
+[ext_resource type="PackedScene" uid="uid://bsurfhovo4wbh" path="res://nodes/sinetes/sinete_manteiga_voadora.tscn" id="12_s8jj3"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
-[ext_resource type="PackedScene" uid="uid://csye35sqhw27a" path="res://nodes/sinetes/sinete_flower.tscn" id="13_qes35"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tintas/tinta_vermelha.tres" id="13_s8jj3"]
-[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="13_t0nmg"]
 [ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="13_xi4rr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
@@ -51,10 +50,6 @@ region = Rect2(10, 11, 44, 41)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex200"]
 atlas = ExtResource("3_j8g0a")
 region = Rect2(241, 114, 14, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8sqy"]
-atlas = ExtResource("13_t0nmg")
-region = Rect2(324, 0, 162, 163)
 
 [node name="GameCore" type="Control" unique_id=900097777]
 clip_contents = true
@@ -350,20 +345,19 @@ offset_right = 17.73529
 offset_bottom = 16.75
 texture = SubResource("AtlasTexture_ex200")
 
-[node name="SineteFlower" parent="." unique_id=569377507 instance=ExtResource("13_qes35")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 93.5
-offset_bottom = 94.0
+[node name="SineteButterfly" parent="." unique_id=1802318788 instance=ExtResource("12_s8jj3")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86200005
+anchor_top = 0.786
+anchor_right = 0.86200005
+anchor_bottom = 0.786
+offset_left = -93.36011
+offset_top = -93.91998
+offset_right = 0.13989258
+offset_bottom = 0.08001709
 grow_horizontal = 1
 grow_vertical = 1
-texture = SubResource("AtlasTexture_b8sqy")
 
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
 layout_mode = 1

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="7_bu1yb"]
 [ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="9_t1qkj"]
 [ext_resource type="Script" uid="uid://dfoataxpqifxu" path="res://scripts/intro/livro.gd" id="10_272cy"]
+[ext_resource type="Texture2D" uid="uid://dq1m8d07a03g4" path="res://assets/sprites/Livro.png" id="11_a7jvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
 atlas = ExtResource("3_alxvg")
@@ -18,6 +19,10 @@ region = Rect2(193, 1, 14, 14)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn7w8"]
 atlas = ExtResource("2_duh1u")
 region = Rect2(2, 5, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r07dh"]
+atlas = ExtResource("11_a7jvs")
+region = Rect2(0, 0, 512, 512)
 
 [node name="Intro" type="Control" unique_id=1185165052]
 layout_mode = 3
@@ -117,13 +122,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 theme_override_fonts/font = ExtResource("5_rsiac")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Lembra quando eu lhe contei que comprei esta loja há 30 anos? Eu pensei muito nesses últimos meses e decidi passar ela a diante, e a melhor escolha sem dúvidas é você. Quando eu abri essa loja as pessoas comentaram que ninguém pediria meus serviços, afinal, quem pagaria a alguém para escrever cartas? Mas meu trabalho ia muito além de escrever, é colocar sentimentos, desejos e claro, carimbos lindos e maravilhosos que enchem os olhos. 
 
 E logo, as pessoas começaram a aparecer, pedindo que eu escrevesse uma carta aos pais, filhos, amores e amigos, pois as pessoas descobriram o quão agradável é transmitir corretamente uma mensagem, de forma amorosa, respeitosa e até com pesar, se a notícia não for boa.
 
 Você vai encontrar tudo que precisa no manual que deixei para você, tudo está organizado e pronto para ser usado. Espero que tenha belos dias, assim como eu tive, vou te mandando cartas ao longo da semana e espero ter respostas em breve. Boa sorte, meu anjo. "
 autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
 script = ExtResource("7_bu1yb")
 
 [node name="Label" type="Label" parent="Carta" unique_id=835628507]
@@ -141,10 +148,13 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 theme_override_fonts/font = ExtResource("7_3bmuq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 36
 text = "Com amor, tia Ana."
 horizontal_alignment = 1
 vertical_alignment = 2
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
 script = ExtResource("7_bu1yb")
 min_font_size = 24
 max_font_size = 36
@@ -172,6 +182,51 @@ visible = false
 layout_mode = 1
 script = ExtResource("10_272cy")
 
+[node name="AnimatedTextureRect" parent="LivroTeste/book" parent_id_path=PackedInt32Array(861035652, 1447565315) index="0" unique_id=737126702]
+texture = SubResource("AtlasTexture_r07dh")
+
+[node name="Label" parent="LivroTeste/book/Page1/Container2" parent_id_path=PackedInt32Array(861035652, 699437771) index="0" unique_id=325698618]
+theme_override_font_sizes/font_size = 17
+
+[node name="Label3" parent="LivroTeste/book/Page1/Container" parent_id_path=PackedInt32Array(861035652, 1550404961) index="0" unique_id=915813171]
+theme_override_font_sizes/font_size = 20
+
+[node name="Label3" parent="LivroTeste/book/Page1/Container3" parent_id_path=PackedInt32Array(861035652, 469865491) index="0" unique_id=157443774]
+theme_override_font_sizes/font_size = 23
+
+[node name="Label2" parent="LivroTeste/book/Page1" parent_id_path=PackedInt32Array(861035652, 802240877) index="3" unique_id=1134453874]
+theme_override_font_sizes/font_size = 17
+
+[node name="Label" parent="LivroTeste/book/Page2/Container2" parent_id_path=PackedInt32Array(861035652, 458578672) index="0" unique_id=87511126]
+theme_override_font_sizes/font_size = 16
+
+[node name="Label3" parent="LivroTeste/book/Page2" parent_id_path=PackedInt32Array(861035652, 2048991446) index="1" unique_id=14417565]
+theme_override_font_sizes/font_size = 14
+
+[node name="Label3" parent="LivroTeste/book/Page2/Container3" parent_id_path=PackedInt32Array(861035652, 883889318) index="0" unique_id=326567234]
+theme_override_font_sizes/font_size = 18
+
+[node name="Label3" parent="LivroTeste/book/Page2/Container4" parent_id_path=PackedInt32Array(861035652, 79406362) index="0" unique_id=228870468]
+theme_override_font_sizes/font_size = 14
+
+[node name="Label2" parent="LivroTeste/book/Page2" parent_id_path=PackedInt32Array(861035652, 2048991446) index="4" unique_id=151876437]
+theme_override_font_sizes/font_size = 14
+
+[node name="Label" parent="LivroTeste/book/Page3/Container2" parent_id_path=PackedInt32Array(861035652, 1126719759) index="0" unique_id=1721355307]
+theme_override_font_sizes/font_size = 17
+
+[node name="Label" parent="LivroTeste/book/Page3/Container3" parent_id_path=PackedInt32Array(861035652, 1773659571) index="0" unique_id=2036828362]
+theme_override_font_sizes/font_size = 16
+
+[node name="Label3" parent="LivroTeste/book/Page3/Container4" parent_id_path=PackedInt32Array(861035652, 1900375313) index="0" unique_id=249880593]
+theme_override_font_sizes/font_size = 16
+
+[node name="Label2" parent="LivroTeste/book/Page3" parent_id_path=PackedInt32Array(861035652, 2135046908) index="3" unique_id=1624328315]
+theme_override_font_sizes/font_size = 14
+
+[node name="Label2" parent="LivroTeste/book/Page4" parent_id_path=PackedInt32Array(861035652, 339231374) index="0" unique_id=1226096138]
+theme_override_font_sizes/font_size = 22
+
 [node name="Button2" type="Button" parent="LivroTeste" unique_id=112505593]
 visible = false
 layout_mode = 1
@@ -190,26 +245,9 @@ icon = SubResource("AtlasTexture_geirw")
 flat = true
 expand_icon = true
 
-[node name="Label" parent="LivroTeste/book/Page1/Container2" parent_id_path=PackedInt32Array(861035652, 699437771) index="0" unique_id=325698618]
-theme_override_font_sizes/font_size = 16
-clip_text = true
-text_overrun_behavior = 3
-
-[node name="Label3" parent="LivroTeste/book/Page1/Container" parent_id_path=PackedInt32Array(861035652, 1550404961) index="0" unique_id=915813171]
-theme_override_font_sizes/font_size = 17
-clip_text = true
-text_overrun_behavior = 3
-
-[node name="Label3" parent="LivroTeste/book/Page1/Container3" parent_id_path=PackedInt32Array(861035652, 469865491) index="0" unique_id=157443774]
-theme_override_font_sizes/font_size = 21
-
-[node name="Label2" parent="LivroTeste/book/Page1" parent_id_path=PackedInt32Array(861035652, 802240877) index="3" unique_id=1134453874]
-clip_text = true
-text_overrun_behavior = 3
-
 [connection signal="pressed" from="PlayerName/Button" to="PlayerName" method="_on_button_pressed"]
 [connection signal="pressed" from="Carta/Button2" to="Carta" method="_on_continue_pressed"]
-[connection signal="pressed" from="LivroTeste/Button2" to="LivroTeste" method="_on_button_pressed"]
 [connection signal="enable_continue" from="LivroTeste/book/AnimatedTextureRect" to="LivroTeste" method="_on_animated_texture_rect_enable_continue"]
+[connection signal="pressed" from="LivroTeste/Button2" to="LivroTeste" method="_on_button_pressed"]
 
 [editable path="LivroTeste"]
