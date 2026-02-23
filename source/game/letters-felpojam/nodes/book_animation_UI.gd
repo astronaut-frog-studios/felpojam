@@ -4,6 +4,9 @@ class_name AnimatedBookUI
 
 signal enable_continue()
 
+@onready var next_button = $"../NextPageButton"
+@onready var previous_button = $"../PreviousPageButton"
+
 @export var pages: Array[Control]
 @export var page_count : int = 5
 @export var current_page : int = 0 # tracks the current page the book is displaying
@@ -33,6 +36,9 @@ func clamp_current_page(new_page : int) -> int:
 # - If no unqiue animation is needed, it plays a standard next or previous page animation
 # - Which one it chooses is based on if the given number is higher or lower than the current page 
 func go_to_page(page : int) -> void:
+	next_button.hide()
+	previous_button.hide()
+	
 	if page == page_count:
 		enable_continue.emit()
 
@@ -83,6 +89,8 @@ func _on_close_button_button_down() -> void:
 	go_to_page(clamp_current_page(0))
 
 func _on_animation_finished() -> void:
+	next_button.show()
+	previous_button.show()
 	match current_page:
 		1:
 			show_page(1)
