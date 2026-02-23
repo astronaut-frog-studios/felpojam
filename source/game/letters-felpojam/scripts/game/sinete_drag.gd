@@ -1,10 +1,16 @@
-class_name SineteDrag extends TextureRect
+@tool
+extends AnimatedTextureRect
+class_name SineteDrag
 
 @export var preview_size: Vector2 = Vector2(40,40)
 @export var preview_offset: Vector2 = Vector2(20, 15)
 @export var preview_mode: ExpandMode = TextureRect.EXPAND_KEEP_SIZE
 
+@export var desenho: Texture2D
+@export var sinete_texture: Texture2D
+
 func _ready() -> void:
+	#texture = sinete_texture
 	disable_interaction()
 
 # triggers when you click and drag
@@ -19,7 +25,7 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	
 	preview.add_child(preview_texture)
 	set_drag_preview(preview)
-	visible = false
+	hide()
 	
 	return self
 
@@ -35,3 +41,11 @@ func disable_interaction() -> void:
 func enable_interaction() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	self_modulate = Color.WHITE
+
+func play_animation() -> void:
+	show()
+	play("stamping")
+
+func _on_animation_finished() -> void:
+	if animation == "stamping":
+		queue_free()

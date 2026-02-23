@@ -1,4 +1,4 @@
-extends TextureRect
+class_name Stamp_Drag extends TextureRect
 
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:

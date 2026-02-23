@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bqode772yp1ve"]
+
+[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="1_64ygu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ygu"]
+atlas = ExtResource("1_64ygu")
+region = Rect2(162, 0, 162, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m6vh"]
+atlas = ExtResource("1_64ygu")
+region = Rect2(162, 0, 162, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x68l"]
+atlas = ExtResource("1_64ygu")
+region = Rect2(162, 163, 162, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3omb"]
+atlas = ExtResource("1_64ygu")
+region = Rect2(162, 326, 162, 163)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ygu")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m6vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x68l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3omb")
+}],
+"loop": false,
+"name": &"stamping",
+"speed": 4.0
+}]

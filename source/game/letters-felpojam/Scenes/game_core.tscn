@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_j8g0a"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
 [ext_resource type="Script" uid="uid://dfgor2ntbul2f" path="res://scripts/game/selo_drop_area.gd" id="6_rgfeb"]
-[ext_resource type="PackedScene" uid="uid://bl6eofd6npvok" path="res://nodes/sinete.tscn" id="7_oln2x"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="Texture2D" uid="uid://bcp480u1pix7i" path="res://assets/sprites/sproutLands/speech_bubble_grey.png" id="11_oln2x"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
-[ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tinta_vermelha.tres" id="13_s8jj3"]
+[ext_resource type="PackedScene" uid="uid://csye35sqhw27a" path="res://nodes/sinetes/sinete_flower.tscn" id="13_qes35"]
+[ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tintas/tinta_vermelha.tres" id="13_s8jj3"]
+[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="13_t0nmg"]
 [ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="13_xi4rr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
@@ -51,10 +52,14 @@ region = Rect2(10, 11, 44, 41)
 atlas = ExtResource("3_j8g0a")
 region = Rect2(241, 114, 14, 13)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8sqy"]
+atlas = ExtResource("13_t0nmg")
+region = Rect2(324, 0, 162, 163)
+
 [node name="GameCore" type="Control" unique_id=900097777]
+clip_contents = true
 layout_mode = 3
-anchor_left = 0.00086805556
-anchor_top = -0.054012347
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -71,34 +76,34 @@ current_game_step = 3
 
 [node name="Mimos" type="Control" parent="." unique_id=1559606305]
 layout_mode = 1
-anchors_preset = 1
 anchor_left = 1.0
+anchor_top = 0.119
 anchor_right = 1.0
-offset_left = -306.0
-offset_top = 36.0
-offset_right = -14.0
-offset_bottom = 127.0
+anchor_bottom = 0.119
+offset_left = -355.0
+offset_top = -62.68
+offset_right = -6.0
+offset_bottom = 103.917
 grow_horizontal = 0
 mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Mimos" unique_id=1663892490]
 modulate = Color(0.68307734, 0.6830774, 0.68307734, 1)
-position = Vector2(146.5, 73)
-scale = Vector2(3.1222222, 1)
+position = Vector2(129.99992, 114.347)
+scale = Vector2(3.9111104, 1.5)
 texture = SubResource("AtlasTexture_0amvw")
 
 [node name="Mimo1" type="TextureRect" parent="Mimos" unique_id=1860050874]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -27.5
-offset_right = -95.0
-offset_bottom = 12.029419
+offset_left = -198.5
+offset_top = -41.7015
+offset_right = -151.5
+offset_bottom = 27.2985
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -107,17 +112,16 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Mimo2" type="TextureRect" parent="Mimos" unique_id=1247415900]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -37.5
-offset_right = -34.0
-offset_bottom = 33.51819
+offset_left = -148.5
+offset_top = -47.7015
+offset_right = -76.5
+offset_bottom = 34.51819
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -126,16 +130,15 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Mimo3" type="TextureRect" parent="Mimos" unique_id=1447528357]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -1.5
-offset_right = 36.0
+offset_left = -64.5
+offset_top = -19.7015
+offset_right = 34.0
 offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -145,7 +148,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Mimo4" type="TextureRect" parent="Mimos" unique_id=1527391876]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,14 +167,15 @@ stretch_mode = 4
 
 [node name="Mesa" type="Control" parent="." unique_id=1247997050]
 layout_mode = 1
-anchor_top = 1.0
-anchor_right = 1.0040001
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -372.0
-offset_right = -3.604126
+anchor_top = 0.63900006
+anchor_right = 1.0070001
+anchor_bottom = 1.2210001
+offset_left = 1.0
+offset_top = -35.080048
+offset_right = 1.039917
+offset_bottom = 71.879944
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 script = ExtResource("1_uty5c")
 
 [node name="TextureRect" type="TextureRect" parent="Mesa" unique_id=1850948923]
@@ -181,25 +184,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = -3.0
+offset_left = -13.0
+offset_top = -31.0
+offset_right = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_j8g0a")
+stretch_mode = 4
 
 [node name="Carta" type="Control" parent="." unique_id=712507268]
 visible = false
 layout_mode = 1
-anchor_left = 0.503
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.503
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -226.953
-offset_top = -358.0
-offset_right = 198.047
-offset_bottom = -180.0
+offset_left = -160.0
+offset_top = -369.0
+offset_right = 159.0
+offset_bottom = -189.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("1_uty5c")
 carimboOffset = Vector2(-50, -80)
 
@@ -211,50 +217,82 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -244.75153
-offset_top = -151.0
-offset_right = 248.24847
-offset_bottom = 153.5
+offset_left = -184.0
+offset_top = -126.0
+offset_right = 184.0
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("AtlasTexture_rgfeb")
 
-[node name="Envelope(carta)" type="TextureRect" parent="." unique_id=1969456191]
-self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
+[node name="CartaEnvelopada" type="Control" parent="." unique_id=535269832]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -445.0
-offset_right = 301.0
-offset_bottom = -160.0
+offset_left = -187.0
+offset_top = -386.0
+offset_right = 175.0
+offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 0
-texture = SubResource("AtlasTexture_5wb4p")
 script = ExtResource("1_uty5c")
 carimboOffset = Vector2(-50, -80)
 
-[node name="SeloArea" type="TextureRect" parent="Envelope(carta)" unique_id=1879112048]
+[node name="envelope" type="TextureRect" parent="CartaEnvelopada" unique_id=1969456191]
+self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -202.5
+offset_top = -123.5
+offset_right = 202.5
+offset_bottom = 123.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5wb4p")
+
+[node name="SeloArea" type="TextureRect" parent="CartaEnvelopada/envelope" unique_id=1879112048]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5625
+offset_top = -25.5
+offset_right = 25.5625
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
 script = ExtResource("6_rgfeb")
 
-[node name="Panel" type="Panel" parent="Envelope(carta)/SeloArea" unique_id=2106306376]
+[node name="Desenho" type="TextureRect" parent="CartaEnvelopada/envelope/SeloArea" unique_id=306746821]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="CartaEnvelopada/envelope/SeloArea" unique_id=2106306376]
 modulate = Color(1, 0.13674557, 0.26036727, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -262,10 +300,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -25.5
+offset_top = -26.0
+offset_right = 25.5
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -277,10 +315,10 @@ anchor_left = 0.019000001
 anchor_top = 0.966
 anchor_right = 0.019000001
 anchor_bottom = 0.966
-offset_left = 75.131
-offset_top = -135.77802
-offset_right = 161.53102
-offset_bottom = -18.827759
+offset_left = 124.68
+offset_top = -129.52002
+offset_right = 211.08002
+offset_bottom = -12.569763
 scale = Vector2(0.797015, 0.757015)
 
 [node name="colher" parent="Forninho" index="1" unique_id=464992017]
@@ -298,35 +336,34 @@ layout_mode = 1
 anchors_preset = 7
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 275.0
-offset_top = -168.0
-offset_right = 334.5
-offset_bottom = -108.5
+offset_left = 208.0
+offset_top = -119.0
+offset_right = 262.5
+offset_bottom = -64.5
 grow_vertical = 0
 texture = ExtResource("2_uty5c")
 
 [node name="Desenho" parent="Carimbo" index="0" unique_id=134822399]
-offset_left = -19.653841
-offset_top = -18.25
-offset_right = 19.653841
-offset_bottom = 18.25
+offset_left = -17.73529
+offset_top = -16.75
+offset_right = 17.73529
+offset_bottom = 16.75
 texture = SubResource("AtlasTexture_ex200")
 
-[node name="Sinete" parent="." unique_id=1802318788 instance=ExtResource("7_oln2x")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -250.0
-offset_right = -71.0
-offset_bottom = -215.0
-grow_horizontal = 0
-grow_vertical = 0
-preview_size = Vector2(42, 42)
-preview_offset = Vector2(20, -5)
+[node name="SineteFlower" parent="." unique_id=569377507 instance=ExtResource("13_qes35")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 93.5
+offset_bottom = 94.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = SubResource("AtlasTexture_b8sqy")
 
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
 layout_mode = 1
@@ -343,8 +380,8 @@ grow_vertical = 0
 tinta = ExtResource("13_s8jj3")
 preview_size = Vector2(62, 62)
 
-[connection signal="change_to_ended_step" from="Envelope(carta)/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
-[connection signal="change_to_postmark_step" from="Envelope(carta)/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
+[connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
+[connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
 
 [editable path="Forninho"]

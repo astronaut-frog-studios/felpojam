@@ -142,8 +142,8 @@ region = Rect2(81, 0, 14, 15)
 [node name="Control" type="Control" unique_id=1324390624]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 105.0
-offset_bottom = 118.0
+offset_right = 168.0
+offset_bottom = 159.0
 script = ExtResource("2_2yv27")
 
 [node name="Forninho" type="TextureRect" parent="." unique_id=645116839]

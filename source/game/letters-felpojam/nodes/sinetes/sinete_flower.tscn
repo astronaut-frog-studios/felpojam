@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://csye35sqhw27a"]
+
+[ext_resource type="Script" uid="uid://dmrfix547ce36" path="res://scripts/game/sinete_drag.gd" id="2_cocwq"]
+[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="2_pq4m3"]
+[ext_resource type="Texture2D" uid="uid://yv18ah86iwkl" path="res://assets/sprites/sinetes.png" id="3_u8bcp"]
+[ext_resource type="SpriteFrames" uid="uid://c88v2w4qvmk1j" path="res://animations/sinetes/sinete_flower.tres" id="4_pq4m3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ygu"]
+atlas = ExtResource("2_pq4m3")
+region = Rect2(162, 0, 162, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t25c"]
+atlas = ExtResource("3_u8bcp")
+region = Rect2(763, 46, 105, 108)
+
+[node name="SineteFlower" type="TextureRect" unique_id=1802318788 groups=["sinete"]]
+self_modulate = Color(0.348, 0.348, 0.348, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.75
+offset_top = -47.0
+offset_right = 46.75
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_64ygu")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_cocwq")
+desenho = SubResource("AtlasTexture_2t25c")
+sprite_frames = ExtResource("4_pq4m3")
+animation = "idle"
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
