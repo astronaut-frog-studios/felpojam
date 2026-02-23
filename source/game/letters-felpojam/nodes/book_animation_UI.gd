@@ -2,7 +2,7 @@
 extends AnimatedTextureRect
 class_name AnimatedBookUI
 
-
+signal enable_continue()
 
 @export var pages: Array[Control]
 @export var page_count : int = 5
@@ -33,6 +33,9 @@ func clamp_current_page(new_page : int) -> int:
 # - If no unqiue animation is needed, it plays a standard next or previous page animation
 # - Which one it chooses is based on if the given number is higher or lower than the current page 
 func go_to_page(page : int) -> void:
+	if page == page_count:
+		enable_continue.emit()
+
 	# do nothing if already at the given page
 	if current_page == page:
 		return

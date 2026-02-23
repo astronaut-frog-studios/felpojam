@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://b1i0s0f03lelk" path="res://scripts/intro/carta.gd" id="5_3bmuq"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="5_rsiac"]
 [ext_resource type="FontFile" uid="uid://p2qqeasb8iia" path="res://assets/fonts/dpcomic/dpcomic.ttf" id="7_3bmuq"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="7_bu1yb"]
+[ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="9_t1qkj"]
+[ext_resource type="Script" uid="uid://dfoataxpqifxu" path="res://scripts/intro/livro.gd" id="10_272cy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
 atlas = ExtResource("3_alxvg")
@@ -35,15 +38,9 @@ grow_vertical = 2
 
 [node name="PlayerName" type="Control" parent="." unique_id=1185100290]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b226h")
@@ -55,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.64526
-offset_top = -50.25
-offset_right = 187.64526
-offset_bottom = 50.25
+offset_left = -258.12894
+offset_top = -69.125
+offset_right = 258.12894
+offset_bottom = 69.125
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 8
@@ -76,10 +73,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 126.0
-offset_top = 58.0
-offset_right = 190.0
-offset_bottom = 122.0
+offset_left = 157.0
+offset_top = 77.0
+offset_right = 256.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
@@ -91,15 +88,15 @@ expand_icon = true
 visible = false
 modulate = Color(1, 1, 1, 0.93333334)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -386.0
-offset_top = -224.75
-offset_right = 386.0
-offset_bottom = 224.75
+anchors_preset = -1
+anchor_left = 0.13800001
+anchor_top = 0.101
+anchor_right = 0.87900007
+anchor_bottom = 0.855
+offset_left = 0.023986816
+offset_top = 8.551994
+offset_right = -0.27478027
+offset_bottom = -0.040039063
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_nn7w8")
@@ -110,12 +107,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.046000004
 anchor_top = 0.15200001
-anchor_right = 0.95500004
-anchor_bottom = 0.855
-offset_left = -2.512001
-offset_top = 14.425995
-offset_right = -0.26000977
-offset_bottom = -2.5725098
+anchor_right = 0.96000004
+anchor_bottom = 0.674
+offset_left = 17.746666
+offset_top = -6.9600067
+offset_right = -0.2000122
+offset_bottom = 9.47998
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
@@ -127,44 +124,92 @@ E logo, as pessoas começaram a aparecer, pedindo que eu escrevesse uma carta ao
 
 Você vai encontrar tudo que precisa no manual que deixei para você, tudo está organizado e pronto para ser usado. Espero que tenha belos dias, assim como eu tive, vou te mandando cartas ao longo da semana e espero ter respostas em breve. Boa sorte, meu anjo. "
 autowrap_mode = 2
+script = ExtResource("7_bu1yb")
 
 [node name="Label" type="Label" parent="Carta" unique_id=835628507]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.748
-anchor_top = 0.78900003
-anchor_right = 0.95600003
-anchor_bottom = 0.88100004
-offset_left = -9.455994
-offset_top = -0.9055176
-offset_right = -12.032043
-offset_bottom = -2.2595215
+anchor_left = 0.674
+anchor_top = 0.74600005
+anchor_right = 0.952
+anchor_bottom = 0.86200005
+offset_left = -18.146667
+offset_top = -22.080017
+offset_right = -0.37335205
+offset_bottom = 0.23999023
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 theme_override_fonts/font = ExtResource("7_3bmuq")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 32
 text = "Com amor, tia Ana."
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+script = ExtResource("7_bu1yb")
+min_font_size = 24
+max_font_size = 36
 
 [node name="Button2" type="Button" parent="Carta" unique_id=719417249]
 visible = false
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -39.0
-offset_top = -55.75
-offset_right = 29.0
-offset_bottom = 10.25
+anchors_preset = -1
+anchor_left = 0.93900007
+anchor_top = 0.87200004
+anchor_right = 1.034
+anchor_bottom = 1.021
+offset_left = 13.053284
+offset_top = 5.689972
+offset_right = -0.013366699
+offset_bottom = 0.16998291
 grow_horizontal = 0
 grow_vertical = 0
 icon = SubResource("AtlasTexture_geirw")
 flat = true
 expand_icon = true
 
+[node name="LivroTeste" parent="." unique_id=861035652 instance=ExtResource("9_t1qkj")]
+visible = false
+layout_mode = 1
+script = ExtResource("10_272cy")
+
+[node name="Button2" type="Button" parent="LivroTeste" unique_id=112505593]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.901
+anchor_top = 0.83900005
+anchor_right = 0.9760001
+anchor_bottom = 0.95800006
+offset_left = 18.047974
+offset_top = 11.327942
+offset_right = -0.35205078
+offset_bottom = 0.21594238
+grow_horizontal = 0
+grow_vertical = 0
+icon = SubResource("AtlasTexture_geirw")
+flat = true
+expand_icon = true
+
+[node name="Label" parent="LivroTeste/book/Page1/Container2" parent_id_path=PackedInt32Array(861035652, 699437771) index="0" unique_id=325698618]
+theme_override_font_sizes/font_size = 16
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Label3" parent="LivroTeste/book/Page1/Container" parent_id_path=PackedInt32Array(861035652, 1550404961) index="0" unique_id=915813171]
+theme_override_font_sizes/font_size = 17
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Label3" parent="LivroTeste/book/Page1/Container3" parent_id_path=PackedInt32Array(861035652, 469865491) index="0" unique_id=157443774]
+theme_override_font_sizes/font_size = 21
+
+[node name="Label2" parent="LivroTeste/book/Page1" parent_id_path=PackedInt32Array(861035652, 802240877) index="3" unique_id=1134453874]
+clip_text = true
+text_overrun_behavior = 3
+
 [connection signal="pressed" from="PlayerName/Button" to="PlayerName" method="_on_button_pressed"]
 [connection signal="pressed" from="Carta/Button2" to="Carta" method="_on_continue_pressed"]
+[connection signal="pressed" from="LivroTeste/Button2" to="LivroTeste" method="_on_button_pressed"]
+[connection signal="enable_continue" from="LivroTeste/book/AnimatedTextureRect" to="LivroTeste" method="_on_animated_texture_rect_enable_continue"]
+
+[editable path="LivroTeste"]
