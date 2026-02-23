@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://om0qa1vc3w3p"]
 
-[ext_resource type="Texture2D" uid="uid://dmfc00vwhw08s" path="res://book/Pixel Book Animation/Book_Open.png" id="1_17o4n"]
+[ext_resource type="Texture2D" uid="uid://dq1m8d07a03g4" path="res://assets/sprites/Livro.png" id="1_j4c84"]
+[ext_resource type="SpriteFrames" uid="uid://tynal8qr6c1r" path="res://animations/book_animated.tres" id="1_vf2et"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8jr26"]
+[ext_resource type="Script" uid="uid://cqpqkdagmsxkw" path="res://animations/book_animated.gd" id="2_r07dh"]
 [ext_resource type="Texture2D" uid="uid://c1x7ukxo1do67" path="res://icon.svg" id="3_j4c84"]
+[ext_resource type="Script" uid="uid://13utp4c7h776" path="res://nodes/book_animation_UI.gd" id="4_vf2et"]
+[ext_resource type="Texture2D" uid="uid://dkkofqagbyx6r" path="res://book/Back_Button.png" id="5_gdes3"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="7_0oniu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r07dh"]
+atlas = ExtResource("1_j4c84")
+region = Rect2(0, 0, 512, 512)
 
 [node name="LivroTeste" type="Control" unique_id=861035652]
 layout_mode = 3
@@ -13,561 +22,734 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_vertical_guides_ = [-295.0]
 
+[node name="BookAnimated" type="AnimatedSprite2D" parent="." unique_id=641143596]
+visible = false
+position = Vector2(571.50006, 295.4102)
+scale = Vector2(2.2988281, 1.7034758)
+sprite_frames = ExtResource("1_vf2et")
+animation = &"opened"
+autoplay = "closed_front"
+script = ExtResource("2_r07dh")
+
 [node name="book" type="TextureRect" parent="." unique_id=1447565315]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -202.0
-offset_right = 55.0
-offset_bottom = 82.0
+offset_left = 41.0
+offset_right = 41.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_17o4n")
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="book" unique_id=737126702 node_paths=PackedStringArray("pages")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.03640408
+anchor_top = -0.2191358
+anchor_right = 1.0217557
+anchor_bottom = 1.1280864
+offset_left = -38.0625
+offset_right = -38.0625
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_r07dh")
+script = ExtResource("4_vf2et")
+pages = [NodePath("../Page1"), NodePath("../Page2"), NodePath("../Page3"), NodePath("../Page4")]
+sprite_frames = ExtResource("1_vf2et")
+animation = "closed_front"
+metadata/_custom_type_script = "uid://dqbs4kgqgjiv5"
 
 [node name="Page1" type="Control" parent="book" unique_id=802240877]
+visible = false
 layout_mode = 1
-anchor_left = 0.081
-anchor_top = 0.314
-anchor_right = 0.91300005
-anchor_bottom = 0.85200006
-offset_left = -0.06300354
-offset_top = 0.35198975
-offset_right = 17.401001
-offset_bottom = -0.06402588
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="book/Page1" unique_id=325698618]
+[node name="Container2" type="Control" parent="book/Page1" unique_id=699437771]
 layout_mode = 1
-anchors_preset = 4
+anchor_left = 0.09
+anchor_top = 0.083000004
+anchor_right = 0.45600003
+anchor_bottom = 0.535
+offset_left = -28.680008
+offset_top = 0.21599579
+offset_right = -0.31201172
+offset_bottom = 0.3199768
+
+[node name="Label" type="Label" parent="book/Page1/Container2" unique_id=325698618]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.027
+anchor_right = 0.96400005
+anchor_bottom = 0.611
+offset_left = 0.09999943
+offset_top = 0.14299965
+offset_right = 0.19998169
+offset_bottom = -0.022994995
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+text = "Neste manual você vai aprender tudo que precisa saber para tocar a loja, basta seguir o passo-a-passo!
+No lado superior esquerdo da tela tem alguns ícones:
+o menu (ícone menu) para sair ou pausar o jogo"
+autowrap_mode = 2
+script = ExtResource("7_0oniu")
+min_font_size = 12
+
+[node name="TextureRect" type="TextureRect" parent="book/Page1/Container2" unique_id=1943381566]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.591
 anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 11.0
-offset_top = -245.5
-offset_right = 494.0
-offset_bottom = 242.5
+anchor_right = 0.95100003
+anchor_bottom = 0.90400004
+offset_left = 49.049988
+offset_top = 29.5
+offset_right = 0.049987793
+offset_bottom = 0.12799072
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Container" type="Control" parent="book/Page1" unique_id=1550404961]
+layout_mode = 1
+anchor_left = 0.095000006
+anchor_top = 0.53900003
+anchor_right = 0.41500002
+anchor_bottom = 0.87500006
+offset_left = -19.44001
+offset_top = 15.727966
+offset_right = -0.08001709
+offset_bottom = 15.999939
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="book/Page1/Container" unique_id=915813171]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.41700003
+offset_right = 9.0
+offset_bottom = 0.09399414
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 16
-text = "Neste manual você vai aprender tudo que precisa saber para tocar a loja, basta seguir o passo-a-passo!
-No lado superior esquerdo da tela tem alguns ícones:
-o menu (ícone menu) para sair ou pausar o jogo
-
-
-
-
-
-
-este manual (ícone manual) caso queira verificar novamente algum passo"
+text = "este manual (ícone manual) caso queira verificar novamente algum passo"
 autowrap_mode = 2
+script = ExtResource("7_0oniu")
+
+[node name="TextureRect" type="TextureRect" parent="book/Page1/Container" unique_id=141293493]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.17500001
+anchor_right = 0.943
+anchor_bottom = 0.9760001
+offset_left = 100.152
+offset_top = 60.85
+offset_right = 5.649994
+offset_bottom = 0.031982422
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Container3" type="Control" parent="book/Page1" unique_id=469865491]
+layout_mode = 1
+anchor_left = 0.518
+anchor_top = 0.071
+anchor_right = 0.8880001
+anchor_bottom = 0.36100003
+offset_left = -22.736023
+offset_top = 14.991997
+offset_right = 0.023925781
+offset_bottom = 15.071976
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="book/Page1/Container3" unique_id=157443774]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.41700003
+offset_right = 9.0
+offset_bottom = 0.09399414
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 18
+text = "e por último sua caixa de correio (ícone caixa)
+"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+
+[node name="TextureRect" type="TextureRect" parent="book/Page1/Container3" unique_id=604432403]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_top = 0.3
+anchor_right = 0.869
+anchor_bottom = 0.82400006
+offset_left = 24.44516
+offset_top = 24.599998
+offset_right = -32.23706
+offset_bottom = 0.08798218
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
 
 [node name="Label2" type="Label" parent="book/Page1" unique_id=1134453874]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -483.0
-offset_top = -242.5
-offset_right = -6.0
-offset_bottom = 244.0
-grow_horizontal = 0
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 0.33600003
+anchor_right = 0.89000005
+anchor_bottom = 0.565
+offset_left = -28.343994
+offset_top = 15.271988
+offset_right = -0.2800293
+offset_bottom = 14.880005
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 16
-text = "e por último sua caixa de correio (ícone caixa)
-
-
-
-
-
-Todo início de dia terá algumas cartas na caixa de correio, esperando para serem lidas, basta apertar no ícone e a carta poderá ser lida, ela ficará no meio da mesa. 
+text = "Todo início de dia terá algumas cartas na caixa de correio, esperando para serem lidas, basta apertar no ícone e a carta poderá ser lida, ela ficará no meio da mesa. 
 "
 autowrap_mode = 2
+script = ExtResource("7_0oniu")
+max_font_size = 28
 
-[node name="TextureRect" type="TextureRect" parent="book/Page1" unique_id=1943381566]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -503.5
-offset_top = -64.5
-offset_right = -393.5
-offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="book/Page1" unique_id=1204686989]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 32.5
-offset_top = -187.5
-offset_right = 118.5
-offset_bottom = -109.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="book/Page1" unique_id=777402471]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -365.5
-offset_top = 113.5
-offset_right = -213.5
-offset_bottom = 223.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="Page2" type="Control" parent="book" unique_id=1051157589]
+[node name="Page2" type="Control" parent="book" unique_id=2048991446]
 visible = false
 layout_mode = 1
-anchor_left = 0.081
-anchor_top = 0.314
-anchor_right = 0.91300005
-anchor_bottom = 0.85200006
-offset_left = -0.06300354
-offset_top = 0.35198975
-offset_right = 17.401001
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container2" type="Control" parent="book/Page2" unique_id=458578672]
+layout_mode = 1
+anchor_left = 0.09
+anchor_top = 0.083000004
+anchor_right = 0.45600003
+anchor_bottom = 0.535
+offset_left = -28.680008
+offset_top = 0.21599579
+offset_right = -0.31201172
+offset_bottom = 121.31998
+
+[node name="Label" type="Label" parent="book/Page2/Container2" unique_id=87511126]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.027
+anchor_right = 0.96400005
+anchor_bottom = 0.611
+offset_left = 0.09999943
+offset_top = 0.14299965
+offset_right = 14.199982
+offset_bottom = -33.953995
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 15
+text = "Ao ler o pedido do cliente, você vai escrever uma carta de acordo com os sentimentos que foram pedidos. Não se preocupe, basta clicar nos conjuntos de frases para escolher a que melhor se encaixa no contexto e aos poucos construir uma carta incrível para o destinatário. "
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+min_font_size = 12
+
+[node name="TextureRect" type="TextureRect" parent="book/Page2/Container2" unique_id=716452311]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.21700001
+anchor_right = 0.762
+anchor_bottom = 0.9760001
+offset_left = 26.599998
+offset_top = 131.16199
+offset_right = -33.900024
 offset_bottom = -0.06402588
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="book/Page2" unique_id=705488368]
+[node name="Label3" type="Label" parent="book/Page2" unique_id=14417565]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 11.0
-offset_top = -245.5
-offset_right = 494.0
-offset_bottom = 242.5
+anchors_preset = -1
+anchor_left = 0.091000006
+anchor_top = 0.74500006
+anchor_right = 0.45900002
+anchor_bottom = 0.88400006
+offset_left = -22.832008
+offset_top = 0.23995972
+offset_right = 0.23199463
+offset_bottom = 0.16796875
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
-theme_override_constants/line_spacing = 8
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 13
+text = "É possível apagar o que escreveu se achar que as frases não se completam. E quando tudo estiver de seu agrado confirme clicando em “ok”. "
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+
+[node name="Container3" type="Control" parent="book/Page2" unique_id=883889318]
+layout_mode = 1
+anchor_left = 0.518
+anchor_top = 0.071
+anchor_right = 0.8880001
+anchor_bottom = 0.36100003
+offset_left = -22.736023
+offset_top = 14.991997
+offset_right = 0.023925781
+offset_bottom = 15.071976
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="book/Page2/Container3" unique_id=326567234]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.086
+anchor_right = 1.0
+anchor_bottom = 0.19100001
+offset_left = -38.614002
+offset_right = -3.0
+offset_bottom = 0.091999054
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 16
-text = "Ao ler o pedido do cliente, você vai escrever uma carta de acordo com os sentimentos que foram pedidos. Não se preocupe, basta clicar nos conjuntos de frases para escolher a que melhor se encaixa no contexto e aos poucos construir uma carta incrível para o destinatário. 
+text = "Exemplo de apagar e confirmar"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+
+[node name="TextureRect" type="TextureRect" parent="book/Page2/Container3" unique_id=1504824088]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45200002
+anchor_top = 0.113000005
+anchor_right = 0.94500005
+anchor_bottom = 0.837
+offset_left = 30.051956
+offset_top = 38.755997
+offset_right = -66.361084
+offset_bottom = -2.3560028
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="book/Page2/Container3" unique_id=801642133]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_top = 0.09900001
+anchor_right = 0.45600003
+anchor_bottom = 0.837
+offset_left = -0.16403198
+offset_top = 41.388
+offset_right = -63.80008
+offset_bottom = -2.3560028
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Container4" type="Control" parent="book/Page2" unique_id=79406362]
+layout_mode = 1
+anchor_left = 0.49500003
+anchor_top = 0.37300003
+anchor_right = 0.88500005
+anchor_bottom = 0.648
+offset_left = -0.24005127
+offset_top = -9.70401
+offset_right = -0.52008057
+offset_bottom = 154.09601
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="book/Page2/Container4" unique_id=228870468]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054
+anchor_right = 1.0
+anchor_bottom = 0.532
+offset_left = -23.246
+offset_top = 6.0
+offset_right = -2.0
+offset_bottom = 14.056
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 12
+text = "Assim que finalizar a escrita, poderá escolher qual dos carimbos comuns utilizar para personalizar a carta, ele pode ser escolhido novamente quando envelopar a carta para carimbar o envelope. Carimbe com qualquer figura ou letra que você achar que combine e quantas vezes quiser!
 "
 autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
 
-[node name="Label2" type="Label" parent="book/Page2" unique_id=1403845477]
+[node name="TextureRect" type="TextureRect" parent="book/Page2/Container4" unique_id=639272684]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -469.0
-offset_top = -244.0
-offset_bottom = 244.0
-grow_horizontal = 0
+anchors_preset = -1
+anchor_left = 0.453
+anchor_top = 0.223
+anchor_right = 0.94500005
+anchor_bottom = 0.924
+offset_left = 17.602966
+offset_top = 119.734
+offset_right = -66.361084
+offset_bottom = -0.10998535
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="book/Page2/Container4" unique_id=348575184]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.289
+anchor_right = 0.47200003
+anchor_bottom = 0.91800004
+offset_left = 13.9999695
+offset_top = 95.161995
+offset_right = -60.98407
+offset_bottom = -0.058013916
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="book/Page2" unique_id=151876437]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 0.33600003
+anchor_right = 0.89000005
+anchor_bottom = 0.591
+offset_left = -28.343994
+offset_top = 15.271988
+offset_right = -0.2800293
+offset_bottom = 0.031982422
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
-theme_override_constants/line_spacing = 8
+theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
-text = "É possível apagar o que escreveu se achar que as frases não se completam. E quando tudo estiver de seu agrado confirme clicando em “ok”. 
+theme_override_font_sizes/font_size = 12
+text = "Assim que finalizar a escrita, poderá escolher qual dos carimbos comuns utilizar, ele pode ser escolhido novamente quando envelopar a carta para carimbar o envelope. Carimbe com qualquer figura ou letra que você achar que combine e quantas vezes quiser!
 "
 autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+max_font_size = 28
 
-[node name="TextureRect" type="TextureRect" parent="book/Page2" unique_id=1116342776]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -442.5
-offset_top = 5.5
-offset_right = -160.5
-offset_bottom = 196.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="book/Page2" unique_id=638477149]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 85.5
-offset_top = -71.5
-offset_right = 263.5
-offset_bottom = 137.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="book/Page2" unique_id=195470178]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 280.5
-offset_top = -73.5
-offset_right = 458.5
-offset_bottom = 135.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="Page3" type="Control" parent="book" unique_id=1638807812]
+[node name="Page3" type="Control" parent="book" unique_id=2135046908]
 visible = false
 layout_mode = 1
-anchor_left = 0.081
-anchor_top = 0.314
-anchor_right = 0.91300005
-anchor_bottom = 0.85200006
-offset_left = -0.06300354
-offset_top = 0.35198975
-offset_right = 17.401001
-offset_bottom = -0.06402588
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="book/Page3" unique_id=23038018]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -236.5
-offset_right = 463.0
-offset_bottom = 251.5
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
-theme_override_constants/line_spacing = 6
-theme_override_constants/paragraph_spacing = 6
-theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
-text = "Após isso você vai utilizar dois tipos de carimbos, o carimbo comum, que é  utilizado com tinta e o carimbo de sinete que é utilizado com cera. 
-Assim que finalizar a escrita, poderá escolher qual dos carimbos comuns utilizar, ele pode ser escolhido novamente quando envelopar a carta. Carimbe com qualquer figura ou letra que achar que combine e quantas vezes quiser!"
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="book/Page3" unique_id=1643999409]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -454.0
-offset_top = -244.0
-offset_bottom = 244.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container2" type="Control" parent="book/Page3" unique_id=1126719759]
+layout_mode = 1
+anchor_left = 0.09
+anchor_top = 0.083000004
+anchor_right = 0.45600003
+anchor_bottom = 0.535
+offset_left = -28.680008
+offset_top = 0.21599579
+offset_right = -0.31201172
+offset_bottom = -7.680023
+
+[node name="Label" type="Label" parent="book/Page3/Container2" unique_id=1721355307]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.027
+anchor_right = 0.95600003
+anchor_bottom = 0.4
+offset_left = 0.09999943
+offset_top = 3.625999
+offset_right = 17.80008
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 16
+text = "Após carimbar a carta, é preciso clicar no envelope na esquerda da mesa e a carta vai ser envelopada (envelope)"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+min_font_size = 12
+
+[node name="TextureRect" type="TextureRect" parent="book/Page3/Container2" unique_id=18829769]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.36200002
+anchor_right = 0.689
+anchor_bottom = 0.91200006
+offset_left = 68.6
+offset_top = 3.8299942
+offset_right = -37.420105
+offset_bottom = -43.920013
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Container3" type="Control" parent="book/Page3" unique_id=1773659571]
+layout_mode = 1
+anchor_left = 0.087000005
+anchor_top = 0.5
+anchor_right = 0.45600003
+anchor_bottom = 0.93500006
+offset_left = -25.224007
+offset_top = -3.0
+offset_right = -0.31201172
+offset_bottom = 0.11993408
+
+[node name="Label" type="Label" parent="book/Page3/Container3" unique_id=2036828362]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.027
+anchor_right = 1.0090001
+anchor_bottom = 0.45600003
+offset_left = 0.09999943
+offset_top = 3.625999
+offset_right = -0.05001831
+offset_bottom = 0.040008545
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 13
+text = "Em seguida, você irá utilizar o carimbo de sinete para selar e nesta etapa você também pode escolher outros carimbos comuns para enfeitar o envelope. 
+"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+min_font_size = 12
+
+[node name="TextureRect" type="TextureRect" parent="book/Page3/Container3" unique_id=212065502]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19000001
+anchor_top = 0.24424565
+anchor_right = 0.71431154
+anchor_bottom = 0.8561404
+offset_left = 33.499992
+offset_top = 54.38999
+offset_right = -43.44017
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Container4" type="Control" parent="book/Page3" unique_id=1900375313]
+layout_mode = 1
+anchor_left = 0.49
+anchor_top = 0.062000003
+anchor_right = 0.88500005
+anchor_bottom = 0.88600004
+offset_left = 5.5200195
+offset_top = -0.1760025
+offset_right = -0.52008057
+offset_bottom = -0.12805176
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="book/Page3/Container4" unique_id=249880593]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.039
+anchor_right = 0.98700005
+anchor_bottom = 0.58400005
+offset_left = -27.022015
+offset_top = 0.17399979
+offset_right = -0.1630249
+offset_bottom = 0.14398193
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_8jr26")
+theme_override_font_sizes/font_size = 14
+text = "Quando clicar na caixa dos carimbos de sinete, você também precisará escolher uma cor de cera (foto mostrando as cores) e para conseguir selar você vai precisar arrastar a cera para o canto inferior esquerdo da tela onde está o forninho e a colher de fusão, vai ligar ele e após estar esquentado vai levar a colher para o envelope e soltar nele, após isso você escolhe o carimbo de sinete e solta em cima da cera formando o selo."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+
+[node name="TextureRect" type="TextureRect" parent="book/Page3/Container4" unique_id=612147348]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46300003
+anchor_top = 0.54614604
+anchor_right = 1.0000001
+anchor_bottom = 0.9649926
+offset_left = 40.113007
+offset_top = 47.358032
+offset_right = -32.00003
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="book/Page3/Container4" unique_id=1350581894]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02672599
+anchor_top = 0.6385768
+anchor_right = 0.40757227
+anchor_bottom = 0.97032595
+offset_top = -7.0
+offset_right = 6.0000153
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j4c84")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="book/Page3" unique_id=1624328315]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 0.33600003
+anchor_right = 0.89000005
+anchor_bottom = 0.591
+offset_left = -28.343994
+offset_top = 15.271988
+offset_right = -0.2800293
+offset_bottom = 0.031982422
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
-theme_override_constants/paragraph_spacing = 4
 theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
-text = "Após carimbar a carta, é preciso clicar no envelope na esquerda da mesa e a carta vai ser envelopada (envelope)
-
-
-
-
-Em seguida, utilize o carimbo de sinete para selar a carta e nesta etapa também pode escolher outros carimbos comuns para enfeitar o envelope. "
+theme_override_font_sizes/font_size = 12
+text = "Assim que finalizar a escrita, poderá escolher qual dos carimbos comuns utilizar, ele pode ser escolhido novamente quando envelopar a carta para carimbar o envelope. Carimbe com qualquer figura ou letra que você achar que combine e quantas vezes quiser!
+"
 autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+max_font_size = 28
 
-[node name="TextureRect2" type="TextureRect" parent="book/Page3" unique_id=1421448699]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -390.5
-offset_top = 71.5
-offset_right = -224.5
-offset_bottom = 203.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="book/Page3" unique_id=231404083]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 97.5
-offset_top = 92.5
-offset_right = 238.5
-offset_bottom = 220.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="book/Page3" unique_id=1846928965]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 288.5
-offset_top = 93.5
-offset_right = 431.5
-offset_bottom = 218.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="book/Page3" unique_id=1001773459]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 73.5
-offset_top = -159.5
-offset_right = 186.5
-offset_bottom = -59.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="Page4" type="Control" parent="book" unique_id=1643702472]
+[node name="Page4" type="Control" parent="book" unique_id=339231374]
 visible = false
 layout_mode = 1
-anchor_left = 0.081
-anchor_top = 0.314
-anchor_right = 0.91300005
-anchor_bottom = 0.85200006
-offset_left = -0.06300354
-offset_top = 0.35198975
-offset_right = 17.401001
-offset_bottom = -0.06402588
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="book/Page4" unique_id=1011710376]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -240.5
-offset_right = 467.0
-offset_bottom = 247.5
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
-theme_override_constants/line_spacing = 6
-theme_override_constants/paragraph_spacing = 6
-theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
-text = "Quando clicar na caixa dos carimbos de sinete, você também precisará escolher uma cor de cera (foto mostrando as cores) 
-
-
-
-e para conseguir selar você vai precisar arrastar a cera para o canto inferior esquerdo da tela onde está o forninho e a colher de fusão, vai ligar ele e após estar esquentado vai levar a colher para o envelope e soltar nela, após isso escolha o carimbo de sinete e solta em cima da cera formando o selo. "
-autowrap_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="book/Page4" unique_id=2022504390]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 105.5
-offset_top = -204.5
-offset_right = 263.5
-offset_bottom = -75.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="book/Page4" unique_id=1445228448]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 285.5
-offset_top = -213.5
-offset_right = 443.5
-offset_bottom = -84.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="book/Page4" unique_id=721976045]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 94.5
-offset_top = -54.5
-offset_right = 252.5
-offset_bottom = 74.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="book/Page4" unique_id=1033324377]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 288.5
-offset_top = -55.5
-offset_right = 446.5
-offset_bottom = 73.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="book/Page4" unique_id=378231024]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -385.5
-offset_top = -145.5
-offset_right = -261.5
-offset_bottom = -51.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
-
-[node name="Page5" type="Control" parent="book" unique_id=472756587]
-visible = false
-layout_mode = 1
-anchor_left = 0.081
-anchor_top = 0.314
-anchor_right = 0.91300005
-anchor_bottom = 0.85200006
-offset_left = -0.06300354
-offset_top = 0.35198975
-offset_right = 17.401001
-offset_bottom = -0.06402588
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="book/Page5" unique_id=1486796501]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 11.0
-offset_top = -232.5
-offset_right = 471.0
-offset_bottom = 255.5
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
-theme_override_constants/line_spacing = 8
-theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
-text = "Para escolher quais carimbos utilizar basta clicar nas caixinhas no campo inferior direito, elas possuem uma categoria, a de cima é o carimbo de sinete, e a caixa de baixo é dos demais carimbos. "
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="book/Page5" unique_id=963596170]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -467.0
-offset_top = -237.5
-offset_right = 2.0
-offset_bottom = 250.5
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label2" type="Label" parent="book/Page4" unique_id=1226096138]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09900001
+anchor_top = 0.082
+anchor_right = 0.453
+anchor_bottom = 0.72200006
+offset_left = -21.048004
+offset_top = -0.13600159
+offset_right = 0.14398193
+offset_bottom = 5.1439514
 theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 19
 text = "Ao finalizar tudo, você aperta em “finalizar carta” e ela é automaticamente enviada! 
-
-
-
-
-
-
-
 
 Agora é só apertar novamente no ícone da caixa de correio até que não tenha mais nenhuma aguardando, quando acabar o dia vai ser finalizado.
 
+
 Boa sorte!"
 autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_0oniu")
+max_font_size = 28
 
-[node name="TextureRect" type="TextureRect" parent="book/Page5" unique_id=298228426]
+[node name="NextPageButton" type="TextureButton" parent="book" unique_id=2099955244]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 167.5
-offset_top = -156.5
-offset_right = 331.5
-offset_bottom = -7.5
-grow_horizontal = 2
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -609.0
+offset_top = 2.0
+offset_right = -68.0
+offset_bottom = 2.0
+grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="book/Page5" unique_id=1107728582]
+[node name="PreviousPageButton" type="TextureButton" parent="book" unique_id=505435045]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -408.5
-offset_top = -31.5
-offset_right = -244.5
-offset_bottom = 117.5
-grow_horizontal = 2
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 535.0
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
-expand_mode = 1
+
+[node name="CloseButton" type="TextureButton" parent="book" unique_id=1706887273]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.999996
+offset_top = 5.0
+offset_right = 153.69818
+offset_bottom = 108.55847
+scale = Vector2(0.39710167, 0.5334269)
+texture_normal = ExtResource("5_gdes3")
+stretch_mode = 0
+
+[connection signal="animation_changed" from="book/AnimatedTextureRect" to="book/AnimatedTextureRect" method="_on_animation_changed"]
+[connection signal="animation_finished" from="book/AnimatedTextureRect" to="book/AnimatedTextureRect" method="_on_animation_finished"]
+[connection signal="button_down" from="book/NextPageButton" to="BookAnimated" method="_on_next_page_button_button_down"]
+[connection signal="button_down" from="book/NextPageButton" to="book/AnimatedTextureRect" method="_on_next_page_button_button_down"]
+[connection signal="button_down" from="book/PreviousPageButton" to="BookAnimated" method="_on_previous_page_button_button_down"]
+[connection signal="button_down" from="book/PreviousPageButton" to="book/AnimatedTextureRect" method="_on_previous_page_button_button_down"]
+[connection signal="button_down" from="book/CloseButton" to="BookAnimated" method="_on_close_button_button_down"]
+[connection signal="button_down" from="book/CloseButton" to="book/AnimatedTextureRect" method="_on_close_button_button_down"]
