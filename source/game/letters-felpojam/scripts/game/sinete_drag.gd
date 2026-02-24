@@ -19,8 +19,9 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	var preview_texture : TextureRect = TextureRect.new()
 	
 	preview_texture.texture = texture
-	preview_texture.expand_mode = preview_mode # 0
-	preview_texture.size = preview_size
+	preview_texture.expand_mode = preview_mode # 0]
+	preview_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+	preview.size = preview_size
 	preview_texture.position = preview_offset - _position
 	
 	preview.add_child(preview_texture)

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="PackedScene" uid="uid://bsurfhovo4wbh" path="res://nodes/sinetes/sinete_manteiga_voadora.tscn" id="12_s8jj3"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
+[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="13_qes35"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tintas/tinta_vermelha.tres" id="13_s8jj3"]
 [ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="13_xi4rr"]
 
@@ -50,6 +51,10 @@ region = Rect2(10, 11, 44, 41)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex200"]
 atlas = ExtResource("3_j8g0a")
 region = Rect2(241, 114, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ygu"]
+atlas = ExtResource("13_qes35")
+region = Rect2(162, 0, 162, 163)
 
 [node name="GameCore" type="Control" unique_id=900097777]
 clip_contents = true
@@ -222,7 +227,6 @@ mouse_filter = 2
 texture = SubResource("AtlasTexture_rgfeb")
 
 [node name="CartaEnvelopada" type="Control" parent="." unique_id=535269832]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -359,8 +363,12 @@ offset_right = 0.13989258
 offset_bottom = 0.08001709
 grow_horizontal = 1
 grow_vertical = 1
+texture = SubResource("AtlasTexture_64ygu")
+preview_size = Vector2(20, 20)
 
 [node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
+modulate = Color(0.88235295, 0.003921569, 0, 1)
+self_modulate = Color(0.88235295, 0.003921569, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.379

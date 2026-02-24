@@ -14,8 +14,9 @@ func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
 	if data is TintaTransferData:
-		spoon_drag.tinta = TintaResource.new(data.default_texture, data.melted_texture, data.selo_texture)
+		spoon_drag.tinta = TintaResource.new(data.default_texture, data.melted_texture, data.selo_texture, data.color)
 		spoon_drop.texture = data.default_texture
+		spoon_drop.modulate = data.color
 		panel.visible = false
 		fire.visible = true
 

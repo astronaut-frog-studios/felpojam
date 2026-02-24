@@ -10,10 +10,12 @@ func _ready() -> void:
 
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:
+	
 	var preview : Control = Control.new()
 	var preview_texture : TextureRect = TextureRect.new()
 	
 	preview_texture.texture = texture
+	preview_texture.modulate = tinta.color
 	preview_texture.expand_mode = preview_mode # 0
 	preview_texture.size = preview_size
 	preview_texture.position = preview_offset - _position
@@ -21,7 +23,7 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	set_drag_preview(preview)
 	
 	visible = false
-	var tinta_data: TintaTransferData = TintaTransferData.new(tinta.default_texture, tinta.melted_texture, tinta.selo_texture)
+	var tinta_data: TintaTransferData = TintaTransferData.new(tinta.default_texture, tinta.melted_texture, tinta.selo_texture, tinta.color)
 	
 	return tinta_data
 
