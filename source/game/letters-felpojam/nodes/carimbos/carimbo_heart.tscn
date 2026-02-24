@@ -5,11 +5,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mkwg"]
 atlas = ExtResource("2_gimjk")
-region = Rect2(258, 20, 26, 22)
+region = Rect2(263, 29, 26, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7cje"]
 atlas = ExtResource("2_gimjk")
-region = Rect2(178, 190, 38, 16)
+region = Rect2(183, 199, 38, 16)
 
 [node name="CarimboHeart" unique_id=2021683367 instance=ExtResource("1_1mkwg")]
 

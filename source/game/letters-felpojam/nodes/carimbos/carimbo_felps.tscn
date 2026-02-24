@@ -5,11 +5,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5vgc"]
 atlas = ExtResource("2_ksmir")
-region = Rect2(96, 32, 8, 6)
+region = Rect2(101, 41, 8, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuaup"]
 atlas = ExtResource("2_ksmir")
-region = Rect2(36, 188, 38, 16)
+region = Rect2(41, 197, 38, 16)
 
 [node name="CarimboFelps" unique_id=2021683367 instance=ExtResource("1_t5vgc")]
 

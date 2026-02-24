@@ -14,8 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://d2uiguvjxv3ct" path="res://assets/sprites/cenario/Sprite_-_Pilha_de_envelopes.png" id="13_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tintas/tinta_vermelha.tres" id="13_s8jj3"]
+[ext_resource type="PackedScene" uid="uid://gesrab6l5tt5" path="res://nodes/carimbos/carimbo_heart.tscn" id="16_ts78b"]
 [ext_resource type="PackedScene" uid="uid://cguypgt7oisfa" path="res://nodes/carimbos/carimbo_felps.tscn" id="17_1qjtw"]
+[ext_resource type="PackedScene" uid="uid://bb2xr4wk5ugyq" path="res://nodes/carimbos/carimbo_joia.tscn" id="17_hbm1n"]
 [ext_resource type="PackedScene" uid="uid://dxk26milwnlfr" path="res://nodes/sinetes/sinete_godot.tscn" id="20_hbm1n"]
+[ext_resource type="PackedScene" uid="uid://bwem4d53wh3ou" path="res://nodes/carimbos/carimbo_star.tscn" id="20_rrnjn"]
 [ext_resource type="Texture2D" uid="uid://cg0nym0ah82x7" path="res://assets/sprites/interativos/sinete/sinete_animation_100.png" id="21_rrnjn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
@@ -305,9 +308,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -16.75
-offset_top = -17.25
-offset_right = 20.5
-offset_bottom = 20.75
+offset_top = -16.25
+offset_right = 18.25
+offset_bottom = 18.75
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -388,6 +391,27 @@ offset_left = 272.0
 offset_top = -81.120056
 offset_right = 332.0
 offset_bottom = -33.120056
+
+[node name="CarimboHeart" parent="." unique_id=2021683367 instance=ExtResource("16_ts78b")]
+layout_mode = 1
+offset_left = -263.0
+offset_top = 139.0
+offset_right = -203.0
+offset_bottom = 187.0
+
+[node name="CarimboJoia" parent="." unique_id=151141217 instance=ExtResource("17_hbm1n")]
+layout_mode = 1
+offset_left = 99.0
+offset_top = 231.0
+offset_right = 159.0
+offset_bottom = 279.0
+
+[node name="CarimboStar" parent="." unique_id=973636452 instance=ExtResource("20_rrnjn")]
+layout_mode = 1
+offset_left = -79.0
+offset_top = 227.0
+offset_right = -19.0
+offset_bottom = 275.0
 
 [node name="SineteGodot" parent="." unique_id=28793850 instance=ExtResource("20_hbm1n")]
 layout_mode = 1

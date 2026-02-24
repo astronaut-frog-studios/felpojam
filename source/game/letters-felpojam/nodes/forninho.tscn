@@ -162,6 +162,7 @@ scale = Vector2(1.2655385, 1.1800245)
 texture = ExtResource("2_ccuav")
 
 [node name="fire" type="AnimatedSprite2D" parent="Forninho" unique_id=769056761]
+visible = false
 position = Vector2(29.200012, 76.49999)
 scale = Vector2(3.482143, 3.482143)
 sprite_frames = SubResource("SpriteFrames_xfj7o")
