@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_j8g0a"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
 [ext_resource type="Script" uid="uid://dfgor2ntbul2f" path="res://scripts/game/selo_drop_area.gd" id="6_rgfeb"]
+[ext_resource type="Texture2D" uid="uid://pe06ee1hg42t" path="res://assets/sprites/cenario/Sprite_-_Envelope.png" id="7_xi4rr"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
-[ext_resource type="Texture2D" uid="uid://bcp480u1pix7i" path="res://assets/sprites/sproutLands/speech_bubble_grey.png" id="11_oln2x"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="PackedScene" uid="uid://bsurfhovo4wbh" path="res://nodes/sinetes/sinete_manteiga_voadora.tscn" id="12_s8jj3"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
@@ -43,10 +43,6 @@ region = Rect2(5, 128, 118, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgfeb"]
 atlas = ExtResource("3_rgfeb")
 region = Rect2(1, 4, 91, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5wb4p"]
-atlas = ExtResource("11_oln2x")
-region = Rect2(10, 11, 44, 41)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex200"]
 atlas = ExtResource("3_j8g0a")
@@ -171,11 +167,11 @@ anchor_top = 0.63900006
 anchor_right = 1.0070001
 anchor_bottom = 1.2210001
 offset_left = 1.0
-offset_top = -35.080048
+offset_top = -35.08008
 offset_right = 1.039917
-offset_bottom = 71.879944
+offset_bottom = 71.87988
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("1_uty5c")
 
 [node name="TextureRect" type="TextureRect" parent="Mesa" unique_id=1850948923]
@@ -250,14 +246,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -202.5
-offset_top = -123.5
-offset_right = 202.5
-offset_bottom = 123.5
+offset_left = -302.0
+offset_top = -286.0
+offset_right = 302.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("AtlasTexture_5wb4p")
+texture = ExtResource("7_xi4rr")
+expand_mode = 1
 
 [node name="SeloArea" type="TextureRect" parent="CartaEnvelopada/envelope" unique_id=1879112048]
 layout_mode = 1
@@ -266,10 +263,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.5625
-offset_top = -25.5
-offset_right = 25.5625
-offset_bottom = 25.5
+offset_left = -26.0
+offset_top = -76.0
+offset_right = 25.125
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_behavior_recursive = 2
@@ -282,10 +279,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -21.0
-offset_right = 22.0
-offset_bottom = 22.0
+offset_left = -21.5
+offset_top = -21.5
+offset_right = 22.4375
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -308,26 +305,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Forninho" parent="." unique_id=645116839 instance=ExtResource("9_048qn")]
+[node name="Forninho" parent="." unique_id=1324390624 instance=ExtResource("9_048qn")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.019000001
-anchor_top = 0.966
-anchor_right = 0.019000001
-anchor_bottom = 0.966
-offset_left = 124.68
-offset_top = -129.52002
-offset_right = 211.08002
-offset_bottom = -12.569763
-scale = Vector2(0.797015, 0.757015)
-
-[node name="colher" parent="Forninho" index="1" unique_id=464992017]
-offset_left = -60.765553
-offset_top = -39.981453
-offset_right = 55.222977
-offset_bottom = 83.791306
-preview_size = Vector2(102.989, 115.773)
-preview_offset = Vector2(20, -15)
+anchor_left = 0.012
+anchor_top = 0.96800005
+anchor_right = 0.012
+anchor_bottom = 0.96800005
+offset_left = 107.64
+offset_top = -159.96002
+offset_right = 232.64
+offset_bottom = -32.960022
+grow_vertical = 0
 
 [node name="---------------------" type="Node" parent="." unique_id=1146592228]
 
@@ -387,5 +376,4 @@ preview_size = Vector2(62, 62)
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
 
-[editable path="Forninho"]
 [editable path="Carimbo"]

@@ -1,6 +1,5 @@
 extends Control
 
-@onready var panel: Panel = $colher/Panel
 @onready var fire: AnimatedSprite2D = $Forninho/fire
 @onready var spoon_drop: TextureRect = $colher/colherDrop
 @onready var spoon_drag: SpoonDrag = $colher
@@ -17,7 +16,6 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		spoon_drag.tinta = TintaResource.new(data.default_texture, data.melted_texture, data.selo_texture, data.color)
 		spoon_drop.texture = data.default_texture
 		spoon_drop.modulate = data.color
-		panel.visible = false
 		fire.visible = true
 
 		await get_tree().create_timer(5.0).timeout
