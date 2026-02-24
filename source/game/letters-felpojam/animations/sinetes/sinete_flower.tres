@@ -1,28 +1,28 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://c88v2w4qvmk1j"]
 
-[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="1_b8sqy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8sqy"]
-atlas = ExtResource("1_b8sqy")
-region = Rect2(324, 0, 162, 163)
+[ext_resource type="Texture2D" uid="uid://cg0nym0ah82x7" path="res://assets/sprites/interativos/sinete/sinete_animation_100.png" id="1_b8sqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdy5h"]
 atlas = ExtResource("1_b8sqy")
-region = Rect2(324, 0, 162, 163)
+region = Rect2(162, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg5m4"]
 atlas = ExtResource("1_b8sqy")
-region = Rect2(324, 163, 162, 163)
+region = Rect2(162, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8lu6"]
 atlas = ExtResource("1_b8sqy")
-region = Rect2(162, 326, 162, 163)
+region = Rect2(162, 82, 81, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rxpp"]
+atlas = ExtResource("1_b8sqy")
+region = Rect2(81, 164, 81, 82)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b8sqy")
+"texture": SubResource("AtlasTexture_mdy5h")
 }],
 "loop": false,
 "name": &"idle",
@@ -30,13 +30,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mdy5h")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_rg5m4")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t8lu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rxpp")
 }],
 "loop": false,
 "name": &"stamping",

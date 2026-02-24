@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2g3utylkukr7"
-path="res://.godot/imported/Sprite_-_Ambiente.png-b034bac4ccf9a47a5fb0b3bbcd1dc27e.ctex"
+uid="uid://clpj33bw8n6k2"
+path="res://.godot/imported/selo.png-3079b61876a02a1ef56c50fd4c672251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenario/Sprite_-_Ambiente.png"
-dest_files=["res://.godot/imported/Sprite_-_Ambiente.png-b034bac4ccf9a47a5fb0b3bbcd1dc27e.ctex"]
+source_file="res://assets/sprites/interativos/selo.png"
+dest_files=["res://.godot/imported/selo.png-3079b61876a02a1ef56c50fd4c672251.ctex"]
 
 [params]
 

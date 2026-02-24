@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h7mmoi2j6y4s"
-path="res://.godot/imported/cores.png-74cdab8036e94b8682ccd0732d325139.ctex"
+uid="uid://dd4tmlyatjlbc"
+path="res://.godot/imported/sinete_animation.png-ba5219a7addb70871b00cc1b7b907d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cores.png"
-dest_files=["res://.godot/imported/cores.png-74cdab8036e94b8682ccd0732d325139.ctex"]
+source_file="res://assets/sprites/interativos/sinete/sinete_animation.png"
+dest_files=["res://.godot/imported/sinete_animation.png-ba5219a7addb70871b00cc1b7b907d01.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1

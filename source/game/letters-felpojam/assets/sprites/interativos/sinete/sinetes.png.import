@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ilxgtq4kunmp"
-path="res://.godot/imported/Animacao_Sinete.png-6f5b59f15293f0b7dbaf6abe4af20349.ctex"
+uid="uid://yv18ah86iwkl"
+path="res://.godot/imported/sinetes.png-d6505d8568af7ebf15ef9368f02cd488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Animacao_Sinete.png"
-dest_files=["res://.godot/imported/Animacao_Sinete.png-6f5b59f15293f0b7dbaf6abe4af20349.ctex"]
+source_file="res://assets/sprites/interativos/sinete/sinetes.png"
+dest_files=["res://.godot/imported/sinetes.png-d6505d8568af7ebf15ef9368f02cd488.ctex"]
 
 [params]
 

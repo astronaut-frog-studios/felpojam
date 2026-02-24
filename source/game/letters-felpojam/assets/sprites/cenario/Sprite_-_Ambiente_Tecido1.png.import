@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duv3n0tv13vi1"
-path="res://.godot/imported/red.png-ba41cd88fc61fbec0ef5bb39308885ab.ctex"
+uid="uid://det7jci58frkl"
+path="res://.godot/imported/Sprite_-_Ambiente_Tecido1.png-02782ca902d05133fcd4c1f37b65daf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tintas/red.png"
-dest_files=["res://.godot/imported/red.png-ba41cd88fc61fbec0ef5bb39308885ab.ctex"]
+source_file="res://assets/sprites/cenario/Sprite_-_Ambiente_Tecido1.png"
+dest_files=["res://.godot/imported/Sprite_-_Ambiente_Tecido1.png-02782ca902d05133fcd4c1f37b65daf2.ctex"]
 
 [params]
 

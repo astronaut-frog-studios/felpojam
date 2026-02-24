@@ -11,10 +11,10 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	
 	c.add_child(preview)
 	#preview.position = preview_offset - _position
-	preview.size = preview_size
+	#preview.size = preview_size
 	set_drag_preview(c)
 	
-	visible = false
+	hide()
 	return self
 
 # triggers when fail drop, it returns to its initial position
@@ -22,7 +22,7 @@ func _notification(what:int) -> void:
 	if what == NOTIFICATION_DRAG_END and not is_drag_successful():
 		visible = true if !visible else visible
 	if what == NOTIFICATION_DRAG_END and is_drag_successful():
-		visible = true
+		show()
 		
 func disable_interaction() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE

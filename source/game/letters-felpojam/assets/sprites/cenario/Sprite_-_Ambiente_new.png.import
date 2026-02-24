@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4seuswrh3tvw"
-path="res://.godot/imported/Sprite-_Colher_sinete.png-8469cbfc4ca365ac98c11df7d3015b98.ctex"
+uid="uid://b8w4u0g7g070v"
+path="res://.godot/imported/Sprite_-_Ambiente_new.png-0fa7674c897a0ad23e226282e3cc8f2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenario/Sprite-_Colher_sinete.png"
-dest_files=["res://.godot/imported/Sprite-_Colher_sinete.png-8469cbfc4ca365ac98c11df7d3015b98.ctex"]
+source_file="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png"
+dest_files=["res://.godot/imported/Sprite_-_Ambiente_new.png-0fa7674c897a0ad23e226282e3cc8f2b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20kejrue4lrq"
-path="res://.godot/imported/Sprite_-_Caixa_carimbo.png-65499644d37fb1e12140b8e618cba507.ctex"
+uid="uid://pe06ee1hg42t"
+path="res://.godot/imported/Sprite_-_Envelope.png-95a784c7873494794d73fd2217266a00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenario/Sprite_-_Caixa_carimbo.png"
-dest_files=["res://.godot/imported/Sprite_-_Caixa_carimbo.png-65499644d37fb1e12140b8e618cba507.ctex"]
+source_file="res://assets/sprites/interativos/Sprite_-_Envelope.png"
+dest_files=["res://.godot/imported/Sprite_-_Envelope.png-95a784c7873494794d73fd2217266a00.ctex"]
 
 [params]
 

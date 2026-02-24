@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bb2xr4wk5ugyq"]
+
+[ext_resource type="PackedScene" uid="uid://b0egur1qbly71" path="res://nodes/carimbos/carimbo_v2.tscn" id="1_riqn1"]
+[ext_resource type="Texture2D" uid="uid://vwqhysgnfhca" path="res://assets/sprites/interativos/Carimbo.png" id="2_jmy7f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqb1t"]
+atlas = ExtResource("2_jmy7f")
+region = Rect2(468.31982, 22, 23.680176, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kikvf"]
+atlas = ExtResource("2_jmy7f")
+region = Rect2(390, 190, 38, 16)
+
+[node name="CarimboJoia" unique_id=2021683367 instance=ExtResource("1_riqn1")]
+
+[node name="Desenho" parent="." index="0" unique_id=134822399]
+texture = SubResource("AtlasTexture_yqb1t")
+
+[node name="Etiqueta" parent="." index="1" unique_id=1601386021]
+texture = SubResource("AtlasTexture_kikvf")

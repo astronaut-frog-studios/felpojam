@@ -22,10 +22,11 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		change_to_postmark_step.emit()
 		data.get_child(0).texture = null
 	elif data is SineteDrag:
-		texture = tinta_selo.selo_texture
 		desenho.texture = data.desenho
 		desenho.modulate = tinta_selo.color.darkened(0.2)#Color.hex(0x353434FF)
-		data.global_position = panel.global_position - Vector2(15, 10)
+		data.global_position = panel.global_position - Vector2(15, 16)
 		data.play_animation()
 		change_to_ended_step.emit()
+		await get_tree().create_timer(0.75).timeout
+		texture = tinta_selo.selo_texture
 	panel.visible = false

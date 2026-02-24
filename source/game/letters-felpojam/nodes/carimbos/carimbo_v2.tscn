@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b0egur1qbly71"]
+
+[ext_resource type="Texture2D" uid="uid://npqar3jvhjmw" path="res://assets/sprites/interativos/carimbo-default.png" id="1_hc2qg"]
+[ext_resource type="Script" uid="uid://bx1888g04fhfi" path="res://scripts/game/carimbo_drag.gd" id="2_hc2qg"]
+[ext_resource type="PackedScene" uid="uid://cjl8pcoh4e2m7" path="res://nodes/desenho_do_carimbo.tscn" id="3_sjgf3"]
+[ext_resource type="Texture2D" uid="uid://vwqhysgnfhca" path="res://assets/sprites/interativos/Carimbo.png" id="4_7014q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_321jw"]
+atlas = ExtResource("1_hc2qg")
+region = Rect2(25, 32, 48, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc2qg"]
+atlas = ExtResource("4_7014q")
+region = Rect2(490.17572, 41, 23.82428, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7014q"]
+
+[node name="CarimboV2" type="TextureRect" unique_id=2021683367]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -24.0
+offset_right = 23.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 6
+texture = SubResource("AtlasTexture_321jw")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_hc2qg")
+
+[node name="Desenho" parent="." unique_id=134822399 instance=ExtResource("3_sjgf3")]
+visible = false
+layout_mode = 1
+offset_left = -11.5
+offset_top = -9.0
+offset_right = 11.5
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_hc2qg")
+
+[node name="Etiqueta" type="TextureRect" parent="." unique_id=1601386021]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.80600005
+anchor_top = 0.58000004
+anchor_right = 0.80600005
+anchor_bottom = 0.58000004
+offset_left = -20.359974
+offset_top = -8.84001
+offset_right = 25.640026
+offset_bottom = 8.15999
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_7014q")
+expand_mode = 1
+stretch_mode = 4

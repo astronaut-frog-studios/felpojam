@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="TintaResource" format=3 uid="uid://d3smy8fmlbe82"]
 
 [ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tintas/tinta_resource.gd" id="1_cfdyb"]
-[ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/cores.png" id="1_dd5f8"]
+[ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/interativos/cores.png" id="1_dd5f8"]
+[ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="3_qt0jq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd5f8"]
 atlas = ExtResource("1_dd5f8")
@@ -11,14 +12,10 @@ region = Rect2(228, 115, 36, 20)
 atlas = ExtResource("1_dd5f8")
 region = Rect2(136, 119, 42, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdg5l"]
-atlas = ExtResource("1_dd5f8")
-region = Rect2(26, 115, 36, 34)
-
 [resource]
 script = ExtResource("1_cfdyb")
 default_texture = SubResource("AtlasTexture_dd5f8")
 melted_texture = SubResource("AtlasTexture_qt0jq")
-selo_texture = SubResource("AtlasTexture_mdg5l")
+selo_texture = ExtResource("3_qt0jq")
 color = Color(0.88235295, 0.003921569, 0, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"

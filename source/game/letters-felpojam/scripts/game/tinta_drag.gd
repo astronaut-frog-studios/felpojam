@@ -1,7 +1,7 @@
 class_name TintaDrag extends TextureRect
 
 @export var tinta : TintaResource = TintaResource.new()
-@export var preview_size: Vector2 = Vector2(40,40)
+@export var preview_size: Vector2 = Vector2(48,30)
 @export var preview_offset: Vector2 = Vector2(20, 15)
 @export var preview_mode: ExpandMode = TextureRect.EXPAND_KEEP_SIZE
 
@@ -17,6 +17,7 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	preview_texture.texture = texture
 	preview_texture.modulate = tinta.color
 	preview_texture.expand_mode = preview_mode # 0
+	preview_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
 	preview_texture.size = preview_size
 	preview_texture.position = preview_offset - _position
 	preview.add_child(preview_texture)

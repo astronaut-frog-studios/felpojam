@@ -1,6 +1,6 @@
 extends Control
 
-const CARIMBO = preload("res://nodes/carimbo.tscn")
+const CARIMBO = preload("res://nodes/carimbos/carimbo_v2.tscn")
 const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 
 @export var carimboOffset : Vector2
@@ -27,33 +27,28 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 	# instanciar só o carimbo novamente
 	elif name.to_lower().contains("mesa"):
 		_return_carimbo(data, Vector2.ZERO)
-	data.queue_free()
+	#data.queue_free()
 
 func _paint_letter(data: Variant) -> void:
-		var carimbo : TextureRect = _set_carimbo(data)
 		var desenho : TextureRect = _set_drawing(data)
 		
-		get_parent().add_child(carimbo)
 		add_child(desenho)
 		
-		carimbo.position = get_global_mouse_position() - carimboOffset
+		data.global_position = get_global_mouse_position() - carimboOffset
+		#data.show()
 		desenho.position = get_local_mouse_position()
 		desenho.self_modulate.a = 0.8
 
 func _return_carimbo(data: Variant, new_position: Vector2) -> void:
-	var carimbo : TextureRect = _set_carimbo(data)
-	get_parent().add_child(carimbo)
-	carimbo.position = get_global_mouse_position() if new_position == Vector2.ZERO else new_position
+	data.global_position = get_global_mouse_position() if new_position == Vector2.ZERO else new_position
 
 func _set_carimbo(data: Variant) -> TextureRect:
 	var node : TextureRect = CARIMBO.instantiate()
-	node.set_meta("data", data)
 	node.texture = data.texture
 	node.get_child(0).texture = data.get_child(0).texture
 	return node
 	
 func _set_drawing(data: Variant) -> TextureRect:
 	var node : TextureRect = DRAWING.instantiate()
-	node.set_meta("data", data)
 	node.texture = data.get_child(0).texture
 	return node

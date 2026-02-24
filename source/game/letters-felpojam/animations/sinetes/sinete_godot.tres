@@ -1,28 +1,28 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://eltgarnb1bkw"]
 
-[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/sinete_animation.png" id="1_7qmuh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbigq"]
-atlas = ExtResource("1_7qmuh")
-region = Rect2(0, 0, 162, 163)
+[ext_resource type="Texture2D" uid="uid://cg0nym0ah82x7" path="res://assets/sprites/interativos/sinete/sinete_animation_100.png" id="1_7qmuh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsjld"]
 atlas = ExtResource("1_7qmuh")
-region = Rect2(0, 0, 162, 163)
+region = Rect2(0, 0, 81, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gr0gy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyni8"]
 atlas = ExtResource("1_7qmuh")
-region = Rect2(0, 163, 162, 163)
+region = Rect2(0, 0, 81, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wlqwy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5obd"]
 atlas = ExtResource("1_7qmuh")
-region = Rect2(162, 326, 162, 163)
+region = Rect2(0, 82, 81, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48p0p"]
+atlas = ExtResource("1_7qmuh")
+region = Rect2(81, 164, 81, 82)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hbigq")
+"texture": SubResource("AtlasTexture_nsjld")
 }],
 "loop": false,
 "name": &"idle",
@@ -30,13 +30,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nsjld")
+"texture": SubResource("AtlasTexture_eyni8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gr0gy")
+"texture": SubResource("AtlasTexture_s5obd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wlqwy")
+"texture": SubResource("AtlasTexture_48p0p")
 }],
 "loop": false,
 "name": &"stamping",

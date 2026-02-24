@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dcvklupdct3d8" path="res://scripts/game/forno_drop_area.gd" id="2_2yv27"]
 [ext_resource type="Texture2D" uid="uid://qb83mh47ww8h" path="res://assets/sprites/cenario/Aquecedor_sinete.png" id="2_ccuav"]
 [ext_resource type="Texture2D" uid="uid://dgl3huw7f8mxn" path="res://assets/sprites/sproutLands/fire animation.png" id="3_2yv27"]
-[ext_resource type="Texture2D" uid="uid://b4seuswrh3tvw" path="res://assets/sprites/cenario/Sprite-_Colher_sinete.png" id="4_2yv27"]
-[ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/cores.png" id="6_55vk1"]
+[ext_resource type="Texture2D" uid="uid://b4seuswrh3tvw" path="res://assets/sprites/interativos/sinete/Sprite-_Colher_sinete.png" id="4_2yv27"]
+[ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/interativos/cores.png" id="6_55vk1"]
 [ext_resource type="Script" uid="uid://dodw7or48rygf" path="res://scripts/game/spoon_drag.gd" id="6_ccuav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_048qn"]
@@ -157,14 +157,13 @@ mouse_filter = 2
 [node name="base" type="Sprite2D" parent="Forninho" unique_id=214761257]
 self_modulate = Color(0.8560673, 0.8560673, 0.856067, 1)
 show_behind_parent = true
-position = Vector2(41.200012, 79.49999)
-scale = Vector2(1.468577, 1.4850489)
+position = Vector2(28.200012, 80.49999)
+scale = Vector2(1.2655385, 1.1800245)
 texture = ExtResource("2_ccuav")
 
 [node name="fire" type="AnimatedSprite2D" parent="Forninho" unique_id=769056761]
-visible = false
-position = Vector2(42.20002, 73.5)
-scale = Vector2(4.2500014, 4.2500014)
+position = Vector2(29.200012, 76.49999)
+scale = Vector2(3.482143, 3.482143)
 sprite_frames = SubResource("SpriteFrames_xfj7o")
 animation = &"idle"
 autoplay = "idle"
@@ -178,15 +177,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.999996
-offset_top = -35.5
-offset_right = 88.0
-offset_bottom = 92.5
+offset_left = -46.0
+offset_top = -22.5
+offset_right = 65.37523
+offset_bottom = 80.2742
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.3228859
 mouse_filter = 2
 texture = ExtResource("4_2yv27")
+expand_mode = 1
 stretch_mode = 4
 script = ExtResource("6_ccuav")
 preview_offset = Vector2(20, 5)
@@ -199,12 +199,13 @@ anchor_left = 0.22500001
 anchor_top = 0.266
 anchor_right = 0.22500001
 anchor_bottom = 0.266
-offset_left = -20.382772
-offset_top = -22.882545
-offset_right = 20.333155
-offset_bottom = 22.877037
+offset_left = -17.173485
+offset_top = -9.936447
+offset_right = 15.607397
+offset_bottom = 12.499342
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="colher" unique_id=1392261444]
 modulate = Color(0.41460055, 0.31411213, 0.14752543, 1)
@@ -214,10 +215,10 @@ anchor_left = 0.252
 anchor_top = 0.25100002
 anchor_right = 0.252
 anchor_bottom = 0.25100002
-offset_left = -1.5756283
-offset_top = -32.47408
-offset_right = 46.70773
-offset_bottom = 17.597244
+offset_left = -2.6802387
+offset_top = -29.81856
+offset_right = 40.160187
+offset_bottom = 13.852882
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.8063421

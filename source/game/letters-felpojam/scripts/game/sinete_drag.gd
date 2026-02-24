@@ -12,6 +12,7 @@ class_name SineteDrag
 func _ready() -> void:
 	#texture = sinete_texture
 	disable_interaction()
+	pass
 
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:
