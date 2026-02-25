@@ -39,8 +39,8 @@ func _paint_letter(data: Variant) -> void:
 		desenho.position = get_local_mouse_position()
 		desenho.self_modulate.a = 0.8
 
-func _return_carimbo(data: Variant, new_position: Vector2) -> void:
-	data.global_position = get_global_mouse_position() if new_position == Vector2.ZERO else new_position
+func _return_carimbo(data: Variant, _new_position: Vector2) -> void:
+	data.global_position = get_global_mouse_position()# if new_position == Vector2.ZERO else new_position
 
 func _set_carimbo(data: Variant) -> TextureRect:
 	var node : TextureRect = CARIMBO.instantiate()

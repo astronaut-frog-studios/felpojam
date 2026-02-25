@@ -18,8 +18,8 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		spoon_drop.modulate = data.color
 		fire.visible = true
 
+		change_to_drop_step.emit()
 		await get_tree().create_timer(5.0).timeout
 
 		spoon_drop.texture = data.melted_texture
 		fire.visible = false
-		change_to_drop_step.emit()

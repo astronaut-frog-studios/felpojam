@@ -1,12 +1,13 @@
 class_name TintaDrag extends TextureRect
 
 @export var tinta : TintaResource = TintaResource.new()
-@export var preview_size: Vector2 = Vector2(48,30)
+@export var preview_size: Vector2 = Vector2(40,30)
 @export var preview_offset: Vector2 = Vector2(20, 15)
 @export var preview_mode: ExpandMode = TextureRect.EXPAND_KEEP_SIZE
 
 func _ready() -> void:
 	texture = tinta.default_texture
+	disable_interaction()
 
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:
@@ -21,9 +22,11 @@ func _get_drag_data(_position: Vector2) -> Variant:
 	preview_texture.size = preview_size
 	preview_texture.position = preview_offset - _position
 	preview.add_child(preview_texture)
+	preview_texture.z_index = 2
+	preview.z_index = 2
 	set_drag_preview(preview)
 	
-	visible = false
+	hide()
 	var tinta_data: TintaTransferData = TintaTransferData.new(tinta.default_texture, tinta.melted_texture, tinta.selo_texture, tinta.color)
 	
 	return tinta_data
@@ -33,4 +36,12 @@ func _notification(what:int) -> void:
 	if what == NOTIFICATION_DRAG_END and not is_drag_successful():
 		visible = true if !visible else visible
 	if what == NOTIFICATION_DRAG_END and !visible:
-		queue_free()
+		show()
+
+func disable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	self_modulate = Color(0.348, 0.348, 0.348, 1.0)
+	
+func enable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	self_modulate = Color.WHITE

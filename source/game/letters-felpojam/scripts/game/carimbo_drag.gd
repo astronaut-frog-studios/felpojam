@@ -14,3 +14,11 @@ func _get_drag_data(_position: Vector2) -> Variant:
 func _notification(what:int) -> void:
 	if what == NOTIFICATION_DRAG_END and is_drag_successful():
 		show()
+
+func disable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	modulate = Color(0.348, 0.348, 0.348, 1.0)
+	
+func enable_interaction() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	modulate = Color.WHITE

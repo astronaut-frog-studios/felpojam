@@ -9,8 +9,10 @@ class_name SineteDrag
 @export var desenho: Texture2D
 @export var sinete_texture: Texture2D
 
+var initial_pos: Vector2
+
 func _ready() -> void:
-	#texture = sinete_texture
+	initial_pos = position
 	disable_interaction()
 	pass
 
@@ -50,4 +52,5 @@ func play_animation() -> void:
 
 func _on_animation_finished() -> void:
 	if animation == "stamping":
-		queue_free()
+		play("idle")
+		position = initial_pos

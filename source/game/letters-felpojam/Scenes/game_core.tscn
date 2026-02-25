@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://boiaot2ilw7bj" path="res://assets/sprites/cenario/Sprite_-_Tecido_v2.png" id="5_1qjtw"]
 [ext_resource type="Script" uid="uid://dfgor2ntbul2f" path="res://scripts/game/selo_drop_area.gd" id="6_rgfeb"]
 [ext_resource type="Texture2D" uid="uid://pe06ee1hg42t" path="res://assets/sprites/interativos/Sprite_-_Envelope.png" id="7_xi4rr"]
+[ext_resource type="Texture2D" uid="uid://d20kejrue4lrq" path="res://assets/sprites/interativos/Sprite_-_Caixa_carimbo.png" id="8_rrnjn"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="Texture2D" uid="uid://d2uiguvjxv3ct" path="res://assets/sprites/cenario/Sprite_-_Pilha_de_envelopes.png" id="13_1qjtw"]
@@ -19,7 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://bb2xr4wk5ugyq" path="res://nodes/carimbos/carimbo_joia.tscn" id="17_hbm1n"]
 [ext_resource type="PackedScene" uid="uid://dxk26milwnlfr" path="res://nodes/sinetes/sinete_godot.tscn" id="20_hbm1n"]
 [ext_resource type="PackedScene" uid="uid://bwem4d53wh3ou" path="res://nodes/carimbos/carimbo_star.tscn" id="20_rrnjn"]
+[ext_resource type="Script" uid="uid://bn24t0abxc4c1" path="res://scripts/game/sinete_storage.gd" id="20_tgocy"]
 [ext_resource type="Texture2D" uid="uid://cg0nym0ah82x7" path="res://assets/sprites/interativos/sinete/sinete_animation_100.png" id="21_rrnjn"]
+[ext_resource type="PackedScene" uid="uid://csye35sqhw27a" path="res://nodes/sinetes/sinete_flower.tscn" id="22_tgocy"]
+[ext_resource type="PackedScene" uid="uid://bsurfhovo4wbh" path="res://nodes/sinetes/sinete_manteiga_voadora.tscn" id="23_321jw"]
+[ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/interativos/cores.png" id="24_dry2i"]
+[ext_resource type="Script" uid="uid://ddoxspi7kfb2c" path="res://scripts/game/tinta_drag.gd" id="26_7tlso"]
+[ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tintas/tinta_resource.gd" id="27_qj43v"]
+[ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="28_ho3qs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
 atlas = ExtResource("13_5wb4p")
@@ -43,9 +51,93 @@ region = Rect2(1, 4, 91, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nsjld"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdy5h"]
 atlas = ExtResource("21_rrnjn")
-region = Rect2(0, 0, 81, 82)
+region = Rect2(162, 0, 81, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8qdq"]
+atlas = ExtResource("21_rrnjn")
+region = Rect2(81, 0, 81, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd5f8"]
+atlas = ExtResource("24_dry2i")
+region = Rect2(228, 115, 36, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt0jq"]
+atlas = ExtResource("24_dry2i")
+region = Rect2(136, 119, 42, 18)
+
+[sub_resource type="Resource" id="Resource_1s16p"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0, 0.54921156, 0.45429748, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_dry2i"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.88235295, 0.003921569, 0, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_7tlso"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.9098039, 0.2784314, 0, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_ho3qs"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.27450982, 0.40392157, 1, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_qj43v"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.92156863, 0.5882353, 0, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_7822h"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.34509805, 0.5686275, 0.20392157, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_2ng4d"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.92941177, 0.09803922, 0.5882353, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_06724"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.88235295, 0.003921569, 0, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="Resource" id="Resource_q5rh8"]
+script = ExtResource("27_qj43v")
+default_texture = SubResource("AtlasTexture_dd5f8")
+melted_texture = SubResource("AtlasTexture_qt0jq")
+selo_texture = ExtResource("28_ho3qs")
+color = Color(0.5058824, 0.4627451, 0.40392157, 1)
+metadata/_custom_type_script = "uid://cglmdv0j17dwt"
 
 [node name="GameCore" type="Control" unique_id=900097777]
 clip_contents = true
@@ -61,7 +153,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
 script = ExtResource("1_oln2x")
-current_game_step = 3
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -216,6 +307,51 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_uty5c")
 
+[node name="CaixaCarimbo" type="TextureRect" parent="MesaDrop" unique_id=1130774905]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -207.0
+offset_top = -128.0
+offset_right = 65.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("8_rrnjn")
+stretch_mode = 4
+
+[node name="CarimboFelps" parent="MesaDrop" unique_id=1945848213 groups=["stamp"] instance=ExtResource("17_1qjtw")]
+layout_mode = 1
+offset_left = 478.5
+offset_top = 37.5
+offset_right = 538.5
+offset_bottom = 85.5
+
+[node name="CarimboHeart" parent="MesaDrop" unique_id=2021683367 groups=["stamp"] instance=ExtResource("16_ts78b")]
+layout_mode = 1
+offset_left = 563.5
+offset_top = 36.5
+offset_right = 623.5
+offset_bottom = 84.5
+
+[node name="CarimboJoia" parent="MesaDrop" unique_id=151141217 groups=["stamp"] instance=ExtResource("17_hbm1n")]
+layout_mode = 1
+offset_left = 476.5
+offset_top = 88.5
+offset_right = 536.5
+offset_bottom = 136.5
+
+[node name="CarimboStar" parent="MesaDrop" unique_id=973636452 groups=["stamp"] instance=ExtResource("20_rrnjn")]
+layout_mode = 1
+offset_left = 563.5
+offset_top = 88.5
+offset_right = 623.5
+offset_bottom = 136.5
+
 [node name="Carta" type="Control" parent="." unique_id=712507268]
 visible = false
 layout_mode = 1
@@ -291,13 +427,14 @@ anchor_left = 0.49600002
 anchor_top = 0.41700003
 anchor_right = 0.49600002
 anchor_bottom = 0.41700003
-offset_left = -21.672012
-offset_top = -22.393005
-offset_right = 21.827988
+offset_left = -20.672012
+offset_top = -17.893005
+offset_right = 17.327988
 offset_bottom = 19.106995
 grow_horizontal = 2
 grow_vertical = 2
 mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 7
 script = ExtResource("6_rgfeb")
 
 [node name="Desenho" type="TextureRect" parent="CartaEnvelopada/envelope/SeloArea" unique_id=306746821]
@@ -326,9 +463,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -17.0
 offset_top = -20.5
-offset_right = 20.0
+offset_right = 23.0
 offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -365,67 +502,255 @@ grow_vertical = 0
 
 [node name="---------------------" type="Node" parent="." unique_id=1146592228]
 
-[node name="TintaVermelha" parent="." unique_id=1655781924 instance=ExtResource("12_5wb4p")]
+[node name="CaixaSinete" type="TextureRect" parent="." unique_id=1717848655]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -278.0
+offset_top = -369.0
+offset_right = 68.0
+offset_bottom = -175.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_rrnjn")
+stretch_mode = 4
+script = ExtResource("20_tgocy")
+
+[node name="SineteGodot" parent="CaixaSinete" unique_id=28793850 instance=ExtResource("20_hbm1n")]
+layout_mode = 1
+offset_left = -37.0
+offset_top = -68.0
+offset_right = 29.0
+offset_bottom = -1.0
+
+[node name="SineteFlower" parent="CaixaSinete" unique_id=1802318788 instance=ExtResource("22_tgocy")]
+layout_mode = 1
+offset_left = 35.0
+offset_top = -67.0
+offset_right = 101.0
+offset_bottom = 0.0
+texture = SubResource("AtlasTexture_mdy5h")
+
+[node name="SineteButterfly" parent="CaixaSinete" unique_id=671176749 instance=ExtResource("23_321jw")]
+layout_mode = 1
+offset_left = -113.0
+offset_top = -68.0
+offset_right = -47.0
+offset_bottom = -1.0
+texture = SubResource("AtlasTexture_f8qdq")
+
+[node name="Tintas" type="Control" parent="CaixaSinete" unique_id=1456353640]
+anchors_preset = 0
+anchor_left = 0.17052023
+anchor_top = 0.53608245
+anchor_right = 0.80057806
+anchor_bottom = 0.78350514
+metadata/_edit_use_anchors_ = true
+
+[node name="TintaVermelha" parent="CaixaSinete/Tintas" unique_id=1655781924 groups=["paint"] instance=ExtResource("12_5wb4p")]
 modulate = Color(0.88235295, 0.003921569, 0, 1)
-self_modulate = Color(0.88235295, 0.003921569, 0, 1)
+z_index = 0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.379
 anchor_top = 1.0
 anchor_right = 0.379
 anchor_bottom = 1.0
-offset_left = -120.229004
-offset_top = -107.0
-offset_right = -72.229004
-offset_bottom = -77.0
+offset_left = -77.622
+offset_top = -23.0
+offset_right = -41.622
+offset_bottom = -3.0
 grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
 tinta = ExtResource("13_s8jj3")
 preview_size = Vector2(62, 62)
 
-[node name="CarimboFelps" parent="." unique_id=1945848213 instance=ExtResource("17_1qjtw")]
+[node name="TintaVermelha2" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=185607566 groups=["paint"]]
+modulate = Color(0, 0.54901963, 0.45490196, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.92100006
-anchor_bottom = 0.92100006
-offset_left = 272.0
-offset_top = -81.120056
-offset_right = 332.0
-offset_bottom = -33.120056
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = -77.622
+offset_top = -46.0
+offset_right = -41.622
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_1s16p")
+preview_size = Vector2(62, 62)
 
-[node name="CarimboHeart" parent="." unique_id=2021683367 instance=ExtResource("16_ts78b")]
-layout_mode = 1
-offset_left = -263.0
-offset_top = 139.0
-offset_right = -203.0
-offset_bottom = 187.0
-
-[node name="CarimboJoia" parent="." unique_id=151141217 instance=ExtResource("17_hbm1n")]
-layout_mode = 1
-offset_left = 99.0
-offset_top = 231.0
-offset_right = 159.0
-offset_bottom = 279.0
-
-[node name="CarimboStar" parent="." unique_id=973636452 instance=ExtResource("20_rrnjn")]
-layout_mode = 1
-offset_left = -79.0
-offset_top = 227.0
-offset_right = -19.0
-offset_bottom = 275.0
-
-[node name="SineteGodot" parent="." unique_id=28793850 instance=ExtResource("20_hbm1n")]
+[node name="TintaVermelha3" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=1939613828 groups=["paint"]]
+modulate = Color(0.5406692, 0.0034118926, 0.8991151, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.809
-anchor_top = 0.731
-anchor_right = 0.809
-anchor_bottom = 0.731
-offset_left = -36.52002
-offset_top = -36.320007
-offset_right = 36.47998
-offset_bottom = 36.679993
-texture = SubResource("AtlasTexture_nsjld")
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = -34.622
+offset_top = -46.0
+offset_right = 1.3779984
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_dry2i")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha10" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=1702199520 groups=["paint"]]
+modulate = Color(0.9098039, 0.2784314, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = -34.622
+offset_top = -22.0
+offset_right = 1.3779984
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_7tlso")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha4" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=1804337439 groups=["paint"]]
+modulate = Color(0.27450982, 0.40392157, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 8.377998
+offset_top = -22.0
+offset_right = 44.378
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_ho3qs")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha5" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=1401728567 groups=["paint"]]
+modulate = Color(0.9206415, 0.58698285, 1.1551381e-06, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 8.377998
+offset_top = -46.0
+offset_right = 44.378
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_qj43v")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha6" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=786398777 groups=["paint"]]
+modulate = Color(0.34320673, 0.56781954, 0.20290205, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 51.378
+offset_top = -46.0
+offset_right = 87.378
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_7822h")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha11" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=337818039 groups=["paint"]]
+modulate = Color(0.92941177, 0.09803922, 0.5882353, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 51.378
+offset_top = -22.0
+offset_right = 87.378
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_2ng4d")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha7" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=1054250838 groups=["paint"]]
+modulate = Color(0.36769387, 0.16332778, 0.0647824, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 94.378
+offset_top = -46.0
+offset_right = 130.37799
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_06724")
+preview_size = Vector2(62, 62)
+
+[node name="TintaVermelha12" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=654643967 groups=["paint"]]
+modulate = Color(0.5058824, 0.4627451, 0.40392157, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 1.0
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = 94.378
+offset_top = -22.0
+offset_right = 130.37799
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_dd5f8")
+stretch_mode = 4
+script = ExtResource("26_7tlso")
+tinta = SubResource("Resource_q5rh8")
+preview_size = Vector2(62, 62)
 
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
+
+[editable path="Forninho"]

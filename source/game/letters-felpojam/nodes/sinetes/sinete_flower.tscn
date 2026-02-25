@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://csye35sqhw27a"]
 
+[ext_resource type="Texture2D" uid="uid://cg0nym0ah82x7" path="res://assets/sprites/interativos/sinete/sinete_animation_100.png" id="1_pq4m3"]
 [ext_resource type="Script" uid="uid://dmrfix547ce36" path="res://scripts/game/sinete_drag.gd" id="2_cocwq"]
-[ext_resource type="Texture2D" uid="uid://dd4tmlyatjlbc" path="res://assets/sprites/interativos/sinete/sinete_animation.png" id="2_pq4m3"]
 [ext_resource type="Texture2D" uid="uid://yv18ah86iwkl" path="res://assets/sprites/interativos/sinete/sinetes.png" id="3_u8bcp"]
 [ext_resource type="SpriteFrames" uid="uid://c88v2w4qvmk1j" path="res://animations/sinetes/sinete_flower.tres" id="4_pq4m3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8sqy"]
-atlas = ExtResource("2_pq4m3")
-region = Rect2(324, 0, 162, 163)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdy5h"]
+atlas = ExtResource("1_pq4m3")
+region = Rect2(162, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t25c"]
 atlas = ExtResource("3_u8bcp")
@@ -27,7 +27,7 @@ offset_bottom = 36.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("AtlasTexture_b8sqy")
+texture = SubResource("AtlasTexture_mdy5h")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("2_cocwq")
