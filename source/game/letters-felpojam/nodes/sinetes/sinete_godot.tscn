@@ -11,7 +11,7 @@ region = Rect2(0, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t25c"]
 atlas = ExtResource("3_nsjld")
-region = Rect2(88, 52, 108, 96)
+region = Rect2(6, 11, 53, 47)
 
 [node name="SineteGodot" type="TextureRect" unique_id=1802318788 groups=["sinete"]]
 self_modulate = Color(0.348, 0.348, 0.348, 1)

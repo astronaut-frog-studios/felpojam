@@ -11,7 +11,7 @@ region = Rect2(81, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t25c"]
 atlas = ExtResource("3_xqkir")
-region = Rect2(428, 48, 121, 115)
+region = Rect2(123, 16, 40, 43)
 
 [node name="SineteButterfly" type="TextureRect" unique_id=1802318788 groups=["sinete"]]
 self_modulate = Color(0.348, 0.348, 0.348, 1)
