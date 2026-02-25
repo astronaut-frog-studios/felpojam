@@ -2,12 +2,6 @@ extends Control
 
 const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 
-@export var carimboOffset : Vector2
-@export var min_x : float = 80.0
-@export var max_x : float = 460.0
-@export var min_y : float = 26.0
-@export var max_y : float = 60.0
-
 # triggers when you hover with a dragged item
 func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 	return data is Stamp_Drag and data is not SpoonDrag and data is not SineteDrag
@@ -16,7 +10,7 @@ func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 func _drop_data(_position: Vector2, data: Variant) -> void:
 	if name.to_lower().contains("carta"):
 		_paint_letter(data)
-	elif name.to_lower().contains("mesa"):
+	elif name.to_lower().contains("mesa"): 
 		_return_carimbo(data)
 
 func _paint_letter(data: Stamp_Drag) -> void:

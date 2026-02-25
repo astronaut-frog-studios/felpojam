@@ -372,7 +372,6 @@ offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_uty5c")
-carimboOffset = Vector2(-50, -80)
 
 [node name="TextureRect" type="TextureRect" parent="Carta" unique_id=1877624554]
 show_behind_parent = true
@@ -405,7 +404,6 @@ offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_uty5c")
-carimboOffset = Vector2(-50, -80)
 
 [node name="envelope" type="TextureRect" parent="CartaEnvelopada" unique_id=1969456191]
 self_modulate = Color(0.94146866, 0.9000385, 0.76186484, 1)
