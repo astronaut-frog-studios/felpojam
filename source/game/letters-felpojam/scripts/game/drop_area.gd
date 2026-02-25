@@ -1,6 +1,5 @@
 extends Control
 
-const CARIMBO = preload("res://nodes/carimbos/carimbo_v2.tscn")
 const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 
 @export var carimboOffset : Vector2
