@@ -26,7 +26,7 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		desenho.modulate = tinta_selo.color.darkened(0.2)#Color.hex(0x353434FF)
 		data.global_position = panel.global_position - Vector2(14, 16)
 		data.play_animation()
-		change_to_ended_step.emit() #arrumar
 		await get_tree().create_timer(0.78).timeout
+		change_to_ended_step.emit() #arrumar
 		texture = tinta_selo.selo_texture
 	panel.visible = false

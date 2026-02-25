@@ -51,6 +51,10 @@ region = Rect2(1, 4, 91, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsjld"]
+atlas = ExtResource("21_rrnjn")
+region = Rect2(0, 0, 81, 82)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdy5h"]
 atlas = ExtResource("21_rrnjn")
 region = Rect2(162, 0, 81, 82)
@@ -153,6 +157,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
 script = ExtResource("1_oln2x")
+current_game_step = 3
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -526,6 +531,7 @@ offset_left = -37.0
 offset_top = -68.0
 offset_right = 29.0
 offset_bottom = -1.0
+texture = SubResource("AtlasTexture_nsjld")
 
 [node name="SineteFlower" parent="CaixaSinete" unique_id=1802318788 instance=ExtResource("22_tgocy")]
 layout_mode = 1

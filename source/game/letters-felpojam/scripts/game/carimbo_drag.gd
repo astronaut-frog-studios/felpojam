@@ -1,5 +1,10 @@
 class_name Stamp_Drag extends TextureRect
 
+var initial_pos: Vector2
+
+func _ready() -> void:
+	initial_pos = position
+
 # triggers when you click and drag
 func _get_drag_data(_position: Vector2) -> Variant:
 	var c : Control = Control.new()

@@ -11,42 +11,26 @@ const DRAWING = preload("res://nodes/desenho_do_carimbo.tscn")
 
 # triggers when you hover with a dragged item
 func _can_drop_data(_position: Vector2, data: Variant) -> bool:
-	return data is TextureRect and data is not SpoonDrag and data is not SineteDrag
+	return data is Stamp_Drag and data is not SpoonDrag and data is not SineteDrag
 	
 # triggers when you drop a dragged item
 func _drop_data(_position: Vector2, data: Variant) -> void:
-	# instanciar o desenho e depois instanciar o carimbo com um offset do desenho
 	if name.to_lower().contains("carta"):
-		#var drawing_bounds_x : bool = get_global_mouse_position().x > global_position.x - min_x and get_global_mouse_position().x < global_position.x + max_x
-		#var drawing_bounds_y : bool = get_global_mouse_position().y > position.y - min_y and get_global_mouse_position().y < position.y - max_y
-		#if drawing_bounds_x:
-			#_paint_letter(data)
-		#else:
-			#_return_carimbo(data, global_position - Vector2(-120, -300))
 		_paint_letter(data)
-	# instanciar só o carimbo novamente
 	elif name.to_lower().contains("mesa"):
-		_return_carimbo(data, Vector2.ZERO)
-	#data.queue_free()
+		_return_carimbo(data)
 
-func _paint_letter(data: Variant) -> void:
+func _paint_letter(data: Stamp_Drag) -> void:
 		var desenho : TextureRect = _set_drawing(data)
 		
 		add_child(desenho)
 		
-		data.global_position = get_global_mouse_position() - carimboOffset
-		#data.show()
+		_return_carimbo(data)
 		desenho.position = get_local_mouse_position()
 		desenho.self_modulate.a = 0.8
 
-func _return_carimbo(data: Variant, _new_position: Vector2) -> void:
-	data.global_position = get_global_mouse_position()# if new_position == Vector2.ZERO else new_position
-
-func _set_carimbo(data: Variant) -> TextureRect:
-	var node : TextureRect = CARIMBO.instantiate()
-	node.texture = data.texture
-	node.get_child(0).texture = data.get_child(0).texture
-	return node
+func _return_carimbo(data: Stamp_Drag) -> void:
+	data.position = data.initial_pos
 	
 func _set_drawing(data: Variant) -> TextureRect:
 	var node : TextureRect = DRAWING.instantiate()
