@@ -65,8 +65,6 @@ func _next_step() -> void:
 func choose_option(option_text: String) -> void:
 	if is_typing:
 		return
-		#is_typing = false
-		#text_label.text = current_text
 	
 	var old_text := text_label.text
 	current_text = _replace_with_choice(current_text, current_step.placeholder, option_text)
@@ -77,8 +75,6 @@ func choose_option(option_text: String) -> void:
 	_next_step()
 
 func type_text(old_text: String, text: String)-> void:
-	#typing_id += 1
-	#var my_id := typing_id
 	is_typing = true
 
 	# 1) achar o primeiro índice diferente
@@ -93,23 +89,10 @@ func type_text(old_text: String, text: String)-> void:
 	# 3) digita o resto do NEW
 	var rest := text.substr(diff)
 	for ch in rest:
-		#if my_id != typing_id:
-			#return
 		text_label.text += ch
 		await get_tree().create_timer(typing_speed).timeout
 
-	#if my_id == typing_id:
 	is_typing = false
-	#is_typing = true
-	#text_label.text = old_text
-	#
-	#var appended_part := text.substr(old_text.length())
-#
-	#for character in appended_part:
-		#text_label.text += character
-		#await get_tree().create_timer(typing_speed).timeout
-#
-	#is_typing = false
 
 func _replace_with_choice(text: String, placeholder: String, to_insert: String) -> String:
 	var index := text.find(placeholder)
