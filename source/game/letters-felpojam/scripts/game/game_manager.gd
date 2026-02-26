@@ -9,7 +9,7 @@ enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 @onready var caixa_sinetes: SineteStorage = %CaixaSinete
 @onready var envelopes: TextureButton = $"../Envelopes"
 @onready var carta: Control = $"../Carta"
-@onready var carta_content: Label = $"../Carta/CartaSprite/Label"
+@onready var carta_content: Label = $"../Carta/CartaTable/Label"
 @onready var carta_envelopada: Control = $"../CartaEnvelopada"
 
 var spoon: SpoonDrag
