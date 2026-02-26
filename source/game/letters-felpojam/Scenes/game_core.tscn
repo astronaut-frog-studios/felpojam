@@ -881,6 +881,8 @@ stretch_mode = 4
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+mouse_filter = 2
+mouse_behavior_recursive = 1
 table_letter = NodePath("../Carta/CartaTable/CartaTableLabel")
 
 [node name="Books" type="Panel" parent="." unique_id=1195369962]
