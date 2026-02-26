@@ -7,6 +7,10 @@ enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 @export var current_selo_step: SeloStep = SeloStep.MELTING_PAINT
 
 @onready var caixa_sinetes: SineteStorage = %CaixaSinete
+@onready var envelopes: TextureButton = $"../Envelopes"
+@onready var carta: Control = $"../Carta"
+@onready var carta_content: Label = $"../Carta/CartaSprite/Label"
+@onready var carta_envelopada: Control = $"../CartaEnvelopada"
 
 var spoon: SpoonDrag
 var stamps: Array
@@ -22,6 +26,9 @@ func _ready() -> void:
 			print("postmark")
 
 func _process(_delta: float) -> void:
+	if get_tree().paused:
+		_enable_all_stamps()
+	
 	match current_game_step:
 		not GameStep.POSTMARK:
 			spoon.disable_interaction()
@@ -33,13 +40,14 @@ func _process(_delta: float) -> void:
 		GameStep.LETTER:
 			pass
 		GameStep.FREE_STAMP:
-			# show all letter
-			# enable click on envelope -> pop-up?
-			_enable_all_stamps()
+			_free_stamp_step()
 		GameStep.POSTMARK:
-			# disable click on envelope
-			_postmark_step() # :check
+			_postmark_step()
 		GameStep.ENDED:
+			carta.show()
+			carta_content.text = ""
+			carta_envelopada.hide()
+			# seloArea.texture = null
 			# aparece o bottao de Entregar carta
 			# ao clicar escurece e carrega a próxima cena que estiver nele
 			# recebe o nome da cena como parametro
@@ -47,13 +55,12 @@ func _process(_delta: float) -> void:
 			pass
 
 func _free_stamp_step() -> void:
-	# desabilitar interacao com a caixa de sinetes Control.MOUSE_FILTER_IGNORE
-	# signal from envelope_button_confirm, play carta anim sendo envelopada
+	envelopes.mouse_filter = Control.MOUSE_FILTER_PASS
+	_enable_all_stamps()
 	# new feature: salvar carta?
-	# carta some e aparece o envelope
-	pass
 
 func _postmark_step() -> void:
+	envelopes.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	match current_selo_step:
 		SeloStep.ENDED:
 			current_game_step = GameStep.ENDED
@@ -88,8 +95,8 @@ func _enable_all_stamps() -> void:
 			break
 		for stamp: Stamp_Drag in stamps:
 			stamp.enable_interaction()
+			stamp.show()
 		x+=1
-
 
 func _on_forninho_change_to_drop_step() -> void:
 	current_selo_step = SeloStep.DROP_PAINT
@@ -99,3 +106,8 @@ func _on_selo_area_change_to_postmark_step() -> void:
 
 func _on_selo_area_change_to_ended_step() -> void:
 	current_selo_step = SeloStep.ENDED
+
+func _on_envelopes_button_down() -> void:
+	carta.hide()
+	carta_envelopada.show()
+	current_game_step = GameStep.POSTMARK

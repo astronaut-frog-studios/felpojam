@@ -2,18 +2,23 @@
 
 [ext_resource type="Script" uid="uid://uwhhvm5ghhav" path="res://scripts/game/game_manager.gd" id="1_oln2x"]
 [ext_resource type="Script" uid="uid://bag8f2d843hq5" path="res://scripts/game/drop_area.gd" id="1_uty5c"]
+[ext_resource type="PackedScene" uid="uid://b34eclyq5x4u7" path="res://nodes/pause_menu.tscn" id="2_0a7kk"]
 [ext_resource type="Texture2D" uid="uid://u83eau0ceifx" path="res://assets/sprites/cenario/parede.png" id="3_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
 [ext_resource type="Texture2D" uid="uid://b8w4u0g7g070v" path="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png" id="4_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://boiaot2ilw7bj" path="res://assets/sprites/cenario/Sprite_-_Tecido_v2.png" id="5_1qjtw"]
+[ext_resource type="Texture2D" uid="uid://c10a1ynqfpmqt" path="res://assets/sprites/menus/menus.png" id="6_e6dgn"]
 [ext_resource type="Script" uid="uid://dfgor2ntbul2f" path="res://scripts/game/selo_drop_area.gd" id="6_rgfeb"]
+[ext_resource type="Texture2D" uid="uid://bavn436pcjt2k" path="res://assets/sprites/menus/inbox_icon.png" id="7_0a7kk"]
+[ext_resource type="Script" uid="uid://cs28ffrwjf1i4" path="res://scripts/menu_button.gd" id="7_2c7ct"]
 [ext_resource type="Texture2D" uid="uid://pe06ee1hg42t" path="res://assets/sprites/interativos/Sprite_-_Envelope.png" id="7_xi4rr"]
 [ext_resource type="Texture2D" uid="uid://d20kejrue4lrq" path="res://assets/sprites/interativos/Sprite_-_Caixa_carimbo.png" id="8_rrnjn"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
 [ext_resource type="Texture2D" uid="uid://d2uiguvjxv3ct" path="res://assets/sprites/cenario/Sprite_-_Pilha_de_envelopes.png" id="13_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://ch0kn7d2nhhu2" path="res://assets/sprites/Mimos_Jogo.png" id="13_5wb4p"]
+[ext_resource type="Texture2D" uid="uid://b7qg2dc1nl2v" path="res://assets/sprites/papel.png" id="13_raskq"]
 [ext_resource type="Resource" uid="uid://d3smy8fmlbe82" path="res://resources/tintas/tinta_vermelha.tres" id="13_s8jj3"]
 [ext_resource type="PackedScene" uid="uid://gesrab6l5tt5" path="res://nodes/carimbos/carimbo_heart.tscn" id="16_ts78b"]
 [ext_resource type="PackedScene" uid="uid://cguypgt7oisfa" path="res://nodes/carimbos/carimbo_felps.tscn" id="17_1qjtw"]
@@ -28,6 +33,8 @@
 [ext_resource type="Script" uid="uid://ddoxspi7kfb2c" path="res://scripts/game/tinta_drag.gd" id="26_7tlso"]
 [ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tintas/tinta_resource.gd" id="27_qj43v"]
 [ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="28_ho3qs"]
+[ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="30_md6ll"]
+[ext_resource type="Script" uid="uid://bbbdcb4kq1eqe" path="res://scripts/book_button.gd" id="33_328cw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
 atlas = ExtResource("13_5wb4p")
@@ -45,10 +52,6 @@ region = Rect2(1360, 536, 204, 104)
 atlas = ExtResource("13_5wb4p")
 region = Rect2(1736, 432, 228, 208)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgfeb"]
-atlas = ExtResource("3_rgfeb")
-region = Rect2(1, 4, 91, 29)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0amvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsjld"]
@@ -58,10 +61,6 @@ region = Rect2(0, 0, 81, 82)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdy5h"]
 atlas = ExtResource("21_rrnjn")
 region = Rect2(162, 0, 81, 82)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f8qdq"]
-atlas = ExtResource("21_rrnjn")
-region = Rect2(81, 0, 81, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd5f8"]
 atlas = ExtResource("24_dry2i")
@@ -143,6 +142,29 @@ selo_texture = ExtResource("28_ho3qs")
 color = Color(0.5058824, 0.4627451, 0.40392157, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c7ct"]
+atlas = ExtResource("6_e6dgn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_md6ll"]
+load_path = "res://.godot/imported/menus.png-ad3a8d4c82336fdd2e75ca1db46d2dd4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_328cw"]
+atlas = SubResource("CompressedTexture2D_md6ll")
+region = Rect2(64, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raskq"]
+atlas = ExtResource("7_0a7kk")
+region = Rect2(64, 55, 63, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f0x7"]
+atlas = ExtResource("3_rgfeb")
+region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8dyl"]
+atlas = ExtResource("3_rgfeb")
+region = Rect2(81, 66, 14, 13)
+
 [node name="GameCore" type="Control" unique_id=900097777]
 clip_contents = true
 layout_mode = 3
@@ -156,8 +178,9 @@ metadata/_edit_horizontal_guides_ = [209.0, 464.0]
 metadata/_edit_use_anchors_ = true
 
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
+process_mode = 3
 script = ExtResource("1_oln2x")
-current_game_step = 3
+current_game_step = 2
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -358,39 +381,50 @@ offset_right = 623.5
 offset_bottom = 136.5
 
 [node name="Carta" type="Control" parent="." unique_id=712507268]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -195.0
+offset_left = -120.0
 offset_top = -353.0
-offset_right = 204.0
-offset_bottom = -87.0
+offset_right = 120.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_uty5c")
 
-[node name="TextureRect" type="TextureRect" parent="Carta" unique_id=1877624554]
-show_behind_parent = true
+[node name="CartaSprite" type="TextureRect" parent="Carta" unique_id=1438733050]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.5
+offset_left = -160.0
 offset_top = -166.5
-offset_right = 222.5
-offset_bottom = 163.5
+offset_right = 171.0
+offset_bottom = 165.5
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_rgfeb")
+texture = ExtResource("13_raskq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Carta/CartaSprite" unique_id=560167509]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0755287
+anchor_top = 0.036144577
+anchor_right = 0.8912387
+anchor_bottom = 0.9578313
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CartaEnvelopada" type="Control" parent="." unique_id=535269832]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -485,6 +519,7 @@ offset_left = -99.32001
 offset_top = -115.56003
 offset_right = 125.67999
 offset_bottom = 101.43997
+mouse_filter = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("13_1qjtw")
 ignore_texture_size = true
@@ -545,7 +580,6 @@ offset_left = -113.0
 offset_top = -68.0
 offset_right = -47.0
 offset_bottom = -1.0
-texture = SubResource("AtlasTexture_f8qdq")
 
 [node name="Tintas" type="Control" parent="CaixaSinete" unique_id=1456353640]
 anchors_preset = 0
@@ -753,8 +787,116 @@ script = ExtResource("26_7tlso")
 tinta = SubResource("Resource_q5rh8")
 preview_size = Vector2(62, 62)
 
+[node name="------------------------" type="Node" parent="." unique_id=21334249]
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=184922837]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.089
+anchor_right = 0.033
+anchor_bottom = 0.089
+offset_left = -17.239998
+offset_top = -17.080002
+offset_right = 16.760002
+offset_bottom = 16.919998
+texture_normal = SubResource("AtlasTexture_2c7ct")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_2c7ct")
+
+[node name="BookButton" type="TextureButton" parent="." unique_id=2092946481]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.089
+anchor_right = 0.033
+anchor_bottom = 0.089
+offset_left = -17.239998
+offset_top = 28.919998
+offset_right = 18.760002
+offset_bottom = 62.92
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_328cw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("33_328cw")
+
+[node name="InboxButton" type="TextureButton" parent="." unique_id=1123390573]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.089
+anchor_right = 0.033
+anchor_bottom = 0.089
+offset_left = -13.239998
+offset_top = 73.92
+offset_right = 12.760002
+offset_bottom = 102.92
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_raskq")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="PauseMenu" parent="." unique_id=1831438844 instance=ExtResource("2_0a7kk")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 61.0
+
+[node name="Panel" parent="PauseMenu" index="1" unique_id=2128962313]
+offset_left = -142.0
+
+[node name="Moldura" parent="PauseMenu" index="2" unique_id=1872986391]
+offset_left = -259.5
+offset_top = -247.0
+offset_right = 206.5
+offset_bottom = 248.0
+
+[node name="Books" type="Panel" parent="." unique_id=1195369962]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LivroTeste" parent="Books" unique_id=861035652 instance=ExtResource("30_md6ll")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.074
+anchor_top = 0.067
+anchor_right = 0.95000005
+anchor_bottom = 0.91700006
+offset_left = -34.72
+offset_top = -10.240002
+offset_right = -20.0
+offset_bottom = 16.759949
+
+[node name="CloseMenu" type="TextureButton" parent="Books/LivroTeste" unique_id=340717962]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = -15.0
+offset_right = -4.0
+offset_bottom = 25.0
+grow_horizontal = 0
+texture_normal = SubResource("AtlasTexture_8f0x7")
+texture_pressed = SubResource("AtlasTexture_r8dyl")
+stretch_mode = 0
+script = ExtResource("33_328cw")
+
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
+[connection signal="button_down" from="Envelopes" to="GameManager" method="_on_envelopes_button_down"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
+[connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
+[connection signal="button_down" from="BookButton" to="BookButton" method="_on_button_down"]
+[connection signal="button_down" from="Books/LivroTeste/CloseMenu" to="Books/LivroTeste/CloseMenu" method="_on_close_button_down"]
 
 [editable path="Forninho"]
+[editable path="PauseMenu"]
