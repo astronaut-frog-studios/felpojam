@@ -879,6 +879,7 @@ stretch_mode = 4
 
 [node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 table_letter = NodePath("../Carta/CartaTable/CartaTableLabel")
 
