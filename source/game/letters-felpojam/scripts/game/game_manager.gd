@@ -11,9 +11,13 @@ enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 @onready var carta: Control = $"../Carta"
 @onready var carta_content: Label = $"../Carta/CartaTable/CartaTableLabel"
 @onready var carta_envelopada: Control = $"../CartaEnvelopada"
+@onready var selo_area: Control = $"../CartaEnvelopada/envelope/SeloArea"
 
 var spoon: SpoonDrag
 var stamps: Array
+
+var enable_stamps_run: bool = false
+var disable_stamps_run: bool = false
 
 func _ready() -> void:
 	spoon = get_tree().get_first_node_in_group("spoon") as SpoonDrag
@@ -27,6 +31,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if get_tree().paused:
+		enable_stamps_run = false
 		_enable_all_stamps()
 	
 	match current_game_step:
@@ -36,6 +41,8 @@ func _process(_delta: float) -> void:
 			caixa_sinetes.disable_tinta_interactions()
 		GameStep.BEGIN:
 			# etapa do inbox
+			disable_stamps_run = false
+			enable_stamps_run = false
 			_disable_all_stamps()
 		GameStep.LETTER:
 			pass
@@ -44,11 +51,12 @@ func _process(_delta: float) -> void:
 		GameStep.POSTMARK:
 			_postmark_step()
 		GameStep.ENDED:
-			carta.show()
-			carta_content.text = ""
-			carta_envelopada.hide()
-			# seloArea.texture = null
-			# aparece o bottao de Entregar carta
+			# carta.show()
+			# carta_content.text = ""
+			# carta_envelopada.hide()
+			# disable_stamps_run = false
+			# selo_area.texture = null
+			# aparece o bottao de Entregar carta, nele desabilito e reseto tudo
 			# ao clicar escurece e carrega a próxima cena que estiver nele
 			# recebe o nome da cena como parametro
 			_disable_all_stamps()
@@ -56,11 +64,15 @@ func _process(_delta: float) -> void:
 
 func _free_stamp_step() -> void:
 	envelopes.mouse_filter = Control.MOUSE_FILTER_PASS
+	envelopes.modulate = Color.WHITE
+	envelopes.get_node("Panel").show()
 	_enable_all_stamps()
 	# new feature: salvar carta?
 
 func _postmark_step() -> void:
 	envelopes.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	envelopes.get_node("Panel").hide()
+	envelopes.modulate = Color("cdcdcd")
 	match current_selo_step:
 		SeloStep.ENDED:
 			current_game_step = GameStep.ENDED
@@ -80,23 +92,16 @@ func _postmark_step() -> void:
 			caixa_sinetes.enable_sinete_interactions()
 
 func _disable_all_stamps() -> void:
-	var x: int = 0
-	while x < 1:
-		if x == 1:
-			break
+	if !disable_stamps_run:
 		for stamp: Stamp_Drag in stamps:
 			stamp.disable_interaction()
-		x+=1
+		disable_stamps_run = true
 
 func _enable_all_stamps() -> void:
-	var x: int = 0
-	while x < 1:
-		if x == 1:
-			break
+	if !enable_stamps_run:
 		for stamp: Stamp_Drag in stamps:
 			stamp.enable_interaction()
-			stamp.show()
-		x+=1
+		enable_stamps_run = true
 
 func _on_forninho_change_to_drop_step() -> void:
 	current_selo_step = SeloStep.DROP_PAINT
