@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://cir8t1b3v2lp8"]
+
+[ext_resource type="Script" uid="uid://budtn0glcmf1y" path="res://scripts/game/write_letter_menu.gd" id="1_8ytpr"]
+[ext_resource type="Texture2D" uid="uid://b7qg2dc1nl2v" path="res://assets/sprites/papel.png" id="2_eim74"]
+[ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="3_trogw"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_bvbt1"]
+[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="5_52reb"]
+[ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_naslv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad66y"]
+atlas = ExtResource("5_52reb")
+region = Rect2(163, 178, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u7uf"]
+atlas = ExtResource("5_52reb")
+region = Rect2(259, 180, 90, 25)
+
+[node name="WriteLetterMenu" type="Control" unique_id=923397039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ytpr")
+
+[node name="Panel" type="Panel" parent="." unique_id=930910755]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CartaMenu" type="TextureRect" parent="Panel" unique_id=1013584479]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -327.0
+offset_right = 738.0
+offset_bottom = 338.003
+grow_vertical = 2
+texture = ExtResource("2_eim74")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="label" type="Label" parent="Panel/CartaMenu" unique_id=438761792]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07154742
+anchor_top = 0.030005168
+anchor_right = 0.8951747
+anchor_bottom = 0.9606379
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.28118676, 0.2811869, 0.2811868, 1)
+theme_override_fonts/font = ExtResource("3_trogw")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_bvbt1")
+min_font_size = 20
+max_font_size = 24
+metadata/_custom_type_script = "uid://d11kfgsd6jgt"
+metadata/_edit_use_anchors_ = true
+
+[node name="ChoicesContainer" type="PanelContainer" parent="Panel" unique_id=898754697]
+self_modulate = Color(0.24296579, 0.24296573, 0.24296573, 1)
+layout_mode = 0
+offset_left = 708.0
+offset_top = 128.0
+offset_right = 1254.0
+offset_bottom = 610.0
+mouse_filter = 2
+
+[node name="ChoiceContainer" type="MarginContainer" parent="Panel/ChoicesContainer" unique_id=1522064674]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="ChoiceWrapper" type="VBoxContainer" parent="Panel/ChoicesContainer/ChoiceContainer" unique_id=1252131316]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="reset" type="TextureButton" parent="Panel" unique_id=201530091]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82900006
+anchor_top = 0.882
+anchor_right = 0.82900006
+anchor_bottom = 0.882
+offset_left = -52.120117
+offset_top = -21.04004
+offset_right = 50.879883
+offset_bottom = 20.95996
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_ad66y")
+texture_pressed = SubResource("AtlasTexture_6u7uf")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/reset" unique_id=1939568197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -14.5
+offset_right = 33.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.21950084, 0.21950108, 0.21950093, 1)
+theme_override_fonts/font = ExtResource("6_naslv")
+theme_override_font_sizes/font_size = 11
+text = "Limpar
+carta"
+horizontal_alignment = 1
+
+[node name="next" type="TextureButton" parent="Panel" unique_id=2115212397]
+modulate = Color(0.2784314, 0.2784314, 0.2784314, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92600006
+anchor_top = 0.882
+anchor_right = 0.92600006
+anchor_bottom = 0.882
+offset_left = -61.28003
+offset_top = -21.04004
+offset_right = 61.71997
+offset_bottom = 20.95996
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_ad66y")
+texture_pressed = SubResource("AtlasTexture_6u7uf")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/next" unique_id=1483059148]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -14.5
+offset_right = 33.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.21950084, 0.21950108, 0.21950093, 1)
+theme_override_fonts/font = ExtResource("6_naslv")
+theme_override_font_sizes/font_size = 11
+text = "Continuar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Panel/reset" to="." method="_on_reset_button_down"]
+[connection signal="button_down" from="Panel/next" to="." method="_on_next_button_down"]

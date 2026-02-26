@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cr1oxioskune3"]
+
+[ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="1_i1ub0"]
+[ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_m6t32"]
+
+[node name="choice" type="HBoxContainer" unique_id=956629736]
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="." unique_id=1917935091]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_i1ub0")
+theme_override_font_sizes/font_size = 24
+text = "*"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="." unique_id=742661725]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_m6t32")
+theme_override_font_sizes/font_size = 18
+action_mode = 0
+text = "Texto da escolha"
+alignment = 0

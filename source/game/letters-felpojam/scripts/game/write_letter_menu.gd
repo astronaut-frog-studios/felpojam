@@ -1,7 +1,12 @@
 class_name Write_Letter extends Control
 
-@onready var text_label: Label = $Panel/CartaMenu/label
+const choice_prefab = preload("res://nodes/letter/choice.tscn")
 
+@onready var text_label: Label = $Panel/CartaMenu/label
+@onready var choice_container: Control = $Panel/ChoicesContainer/ChoiceContainer/ChoiceWrapper
+@onready var next_button: TextureButton = $Panel/next
+
+@export var table_letter: Label
 @export var steps: Array[Choice_Resource] = []
 
 var queue: Array[Choice_Resource] = []
@@ -9,6 +14,8 @@ var current_step: Choice_Resource
 var current_text: String = ""  # texto acumulado
 
 var typing_id: int = 0
+var typing_speed: float = 0.04
+var is_typing: bool = false
 
 var step1 := Choice_Resource.new(
 	"my approved name is ___. And blablabla",
@@ -25,74 +32,110 @@ var step3 := Choice_Resource.new(
 	["uva", "laranja", "maracuja"]
 )
 
-var typing_speed: float = 0.04
-var is_typing: bool = false
+func on_activate() -> void:
+	restart_letter(true)
 
 func _ready() -> void:
 	if steps.is_empty():
 		steps = [step1, step2, step3]
 
-	for s in steps:
-		queue.push_back(s)
-
+	queue = steps.duplicate()
 	_next_step()
 
 func _next_step() -> void:
 	if queue.is_empty():
-		#await type_text(current_text, current_text)
 		text_label.text = current_text
-		print("Fim! Texto final:")
-		print(current_text)
+		is_typing = false
+		print("Texto final: ", current_text)
+		next_button.disabled = false
+		next_button.modulate = Color.WHITE
 		return
 
 	current_step = queue.pop_front()
 	
 	var old_text := text_label.text
-	print("LABEL_before:", text_label.text)
-	print("OLD_before:", old_text)
-	print("NEW_before:", current_text)
 	if current_text.is_empty():
 		current_text = current_step.text
 	else:
-		current_text += "\n" + current_step.text  # ou " " se preferir
+		current_text += "\n" + current_step.text # trocar por " "
 	
 	await type_text(old_text, current_text)
 	#text_label.text = current_text
 	print("\nCURRENT_TEXT:\n", current_text)
 	print("\nOPTIONS:", current_step.options)
+	_instantiate_choices(current_step.options)
 
-# Chame quando o jogador clicar numa opção
 func choose_option(option_text: String) -> void:
 	if is_typing:
 		return
 	
+	_disable_choices()
+	
 	var old_text := text_label.text
 	current_text = _replace_with_choice(current_text, current_step.placeholder, option_text)
-	
 	#text_label.text = current_text
 	await type_text(old_text, current_text)
 
 	_next_step()
 
 func type_text(old_text: String, text: String)-> void:
+	typing_id += 1
+	var my_id := typing_id
 	is_typing = true
 
-	# 1) achar o primeiro índice diferente
-	var min_len = min(old_text.length(), text.length())
-	var diff := 0
-	while diff < min_len and old_text[diff] == text[diff]:
-		diff += 1
+	var index := 0
+	while index < old_text.length() and old_text[index] == text[index]:
+		index += 1 # o index tem que ser menor que o length e só soma enquando os indexes dos dois forem iguais (ate o limite da frase)
 
-	# 2) fixa a label na parte igual do NEW (não do old)
-	text_label.text = text.substr(0, diff)
-
-	# 3) digita o resto do NEW
-	var rest := text.substr(diff)
+	text_label.text = text.substr(0, index) # a label vai ter o valor de 0 até o index do novo texto
+	var rest := text.substr(index) # do index do texto pra frente vai escrever
 	for ch in rest:
+		if my_id != typing_id:
+			return # breaks loop
 		text_label.text += ch
 		await get_tree().create_timer(typing_speed).timeout
 
-	is_typing = false
+	if my_id == typing_id:
+		is_typing = false
+
+func _instantiate_choices(options: Array[String]) -> void:
+	_clear_choices()
+	for option_text in options:
+		var choice := choice_prefab.instantiate()
+		choice_container.add_child(choice)
+
+		var btn: Button = choice.get_node("Button")
+		btn.text = option_text
+
+		btn.button_down.connect(func() -> void:
+			choose_option(option_text)
+		)
+
+func _clear_choices() -> void:
+	for child in choice_container.get_children():
+		child.queue_free()
+
+func _disable_choices() -> void:
+	for child in choice_container.get_children():
+		var button := child.get_node_or_null("Button")
+		if button:
+			button.disabled = true
+
+func restart_letter(activate: bool = false) -> void:
+	if !activate:
+		typing_id += 1
+		is_typing = false
+	
+	next_button.disabled = true
+	next_button.modulate = Color("474747ff")
+	current_text = ""
+	current_step = null
+	text_label.text = ""
+	_clear_choices()
+	queue.clear()
+	queue = steps.duplicate()
+
+	_next_step()
 
 func _replace_with_choice(text: String, placeholder: String, to_insert: String) -> String:
 	var index := text.find(placeholder)
@@ -101,16 +144,9 @@ func _replace_with_choice(text: String, placeholder: String, to_insert: String) 
 
 	return text.substr(0, index) + to_insert + text.substr(index + placeholder.length())
 
-func _on_button_button_down() -> void:
-	if !is_typing:
-		choose_option("Murilo")
+func _on_reset_button_down() -> void:
+	restart_letter()
 
-
-func _on_button_2_button_down() -> void:
-	if !is_typing:
-		choose_option("cookie")
-
-
-func _on_button_3_button_down() -> void:
-	if !is_typing:
-		choose_option("laranja")
+func _on_next_button_down() -> void:
+	table_letter.text = current_text
+	hide()

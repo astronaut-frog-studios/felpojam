@@ -35,9 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="28_ho3qs"]
 [ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="30_md6ll"]
 [ext_resource type="Script" uid="uid://bbbdcb4kq1eqe" path="res://scripts/book_button.gd" id="33_328cw"]
-[ext_resource type="Script" uid="uid://budtn0glcmf1y" path="res://scripts/game/write_letter_menu.gd" id="33_or11a"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="33_q5rh8"]
 [ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="34_dax43"]
+[ext_resource type="PackedScene" uid="uid://cir8t1b3v2lp8" path="res://nodes/letter/write_letter_menu.tscn" id="35_dax43"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
 atlas = ExtResource("13_5wb4p")
@@ -419,15 +419,25 @@ texture = ExtResource("13_raskq")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="Carta/CartaTable" unique_id=560167509]
+[node name="CartaTableLabel" type="Label" parent="Carta/CartaTable" unique_id=1855147366]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0755287
-anchor_top = 0.036144577
-anchor_right = 0.8912387
-anchor_bottom = 0.9578313
+anchor_left = 0.07154742
+anchor_top = 0.030005168
+anchor_right = 0.8951747
+anchor_bottom = 0.9606379
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.28118676, 0.2811869, 0.2811868, 1)
+theme_override_fonts/font = ExtResource("34_dax43")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("33_q5rh8")
+min_font_size = 14
+max_font_size = 17
+metadata/_custom_type_script = "uid://d11kfgsd6jgt"
 metadata/_edit_use_anchors_ = true
 
 [node name="CartaEnvelopada" type="Control" parent="." unique_id=535269832]
@@ -846,131 +856,12 @@ texture_normal = SubResource("AtlasTexture_raskq")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="WriteLetterMenu" type="Control" parent="." unique_id=1930364250]
+[node name="------------------------_" type="Node" parent="." unique_id=96153440]
+
+[node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("33_or11a")
-
-[node name="Panel" type="Panel" parent="WriteLetterMenu" unique_id=133504376]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CartaMenu" type="TextureRect" parent="WriteLetterMenu/Panel" unique_id=206322095]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = -327.0
-offset_right = 738.0
-offset_bottom = 338.003
-grow_vertical = 2
-texture = ExtResource("13_raskq")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="label" type="Label" parent="WriteLetterMenu/Panel/CartaMenu" unique_id=966999899]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.07154742
-anchor_top = 0.030005168
-anchor_right = 0.8951747
-anchor_bottom = 0.9606379
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.28118676, 0.2811869, 0.2811868, 1)
-theme_override_fonts/font = ExtResource("34_dax43")
-theme_override_font_sizes/font_size = 24
-autowrap_mode = 3
-clip_text = true
-text_overrun_behavior = 3
-script = ExtResource("33_q5rh8")
-min_font_size = 20
-max_font_size = 24
-metadata/_custom_type_script = "uid://d11kfgsd6jgt"
-metadata/_edit_use_anchors_ = true
-
-[node name="ChoicesContainer" type="PanelContainer" parent="WriteLetterMenu/Panel" unique_id=846116215]
-self_modulate = Color(0.24296579, 0.24296573, 0.24296573, 1)
-layout_mode = 0
-offset_left = 708.0
-offset_top = 128.0
-offset_right = 1254.0
-offset_bottom = 610.0
-mouse_filter = 2
-
-[node name="ChoiceContainer" type="MarginContainer" parent="WriteLetterMenu/Panel/ChoicesContainer" unique_id=226918329]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 16
-
-[node name="column" type="VBoxContainer" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer" unique_id=679049850]
-layout_mode = 2
-alignment = 1
-
-[node name="choice" type="HBoxContainer" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column" unique_id=385043155]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice" unique_id=605664543]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "1"
-
-[node name="Button" type="Button" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice" unique_id=1607966543]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
-action_mode = 0
-text = "Texto da escolha"
-alignment = 0
-
-[node name="choice2" type="HBoxContainer" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column" unique_id=969958711]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice2" unique_id=324667234]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "2"
-
-[node name="Button2" type="Button" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice2" unique_id=944392156]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
-action_mode = 0
-text = "Texto da escolha 2"
-alignment = 0
-
-[node name="choice3" type="HBoxContainer" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column" unique_id=2112166592]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice3" unique_id=115181059]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "3"
-
-[node name="Button3" type="Button" parent="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice3" unique_id=97850049]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
-action_mode = 0
-text = "Texto da escolha 3"
-alignment = 0
+table_letter = NodePath("../Carta/CartaTable/CartaTableLabel")
 
 [node name="Books" type="Panel" parent="." unique_id=1195369962]
 unique_name_in_owner = true
@@ -1030,9 +921,6 @@ offset_bottom = 248.0
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
 [connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
 [connection signal="button_down" from="BookButton" to="BookButton" method="_on_button_down"]
-[connection signal="button_down" from="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice/Button" to="WriteLetterMenu" method="_on_button_button_down"]
-[connection signal="button_down" from="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice2/Button2" to="WriteLetterMenu" method="_on_button_2_button_down"]
-[connection signal="button_down" from="WriteLetterMenu/Panel/ChoicesContainer/ChoiceContainer/column/choice3/Button3" to="WriteLetterMenu" method="_on_button_3_button_down"]
 [connection signal="button_down" from="Books/LivroTeste/CloseMenu" to="Books/LivroTeste/CloseMenu" method="_on_close_button_down"]
 
 [editable path="Forninho"]
