@@ -1,38 +1,38 @@
 [gd_scene format=3 uid="uid://b34eclyq5x4u7"]
 
 [ext_resource type="Shader" uid="uid://6nv8iia6ou2b" path="res://shaders/pause_menu.gdshader" id="1_dk148"]
-[ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="1_jprnk"]
 [ext_resource type="Script" uid="uid://bbj3q6pe61653" path="res://scripts/pause_menu.gd" id="1_q6wb8"]
-[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="2_dk148"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_q6wb8"]
+[ext_resource type="Texture2D" uid="uid://8vuymt1e513c" path="res://assets/sprites/pause.png" id="3_xvk80"]
+[ext_resource type="Texture2D" uid="uid://dwmo3wolub5gy" path="res://assets/sprites/UI_Button.png" id="4_luhed"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_xvk80"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6wb8"]
 shader = ExtResource("1_dk148")
 shader_parameter/lod = 0.0800000038
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_luhed"]
-atlas = ExtResource("1_jprnk")
-region = Rect2(8, 167, 87, 81)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5s5nn"]
-atlas = SubResource("AtlasTexture_luhed")
-region = Rect2(0, 0, 87, 81)
+atlas = ExtResource("4_luhed")
+region = Rect2(3, 2, 90, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ad66y"]
-atlas = ExtResource("2_dk148")
-region = Rect2(163, 178, 90, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_03f2s"]
+atlas = ExtResource("4_luhed")
+region = Rect2(99, 4, 90, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6u7uf"]
-atlas = ExtResource("2_dk148")
-region = Rect2(259, 180, 90, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6wb8"]
+atlas = ExtResource("4_luhed")
+region = Rect2(3, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvk80"]
+atlas = ExtResource("4_luhed")
+region = Rect2(99, 4, 90, 25)
 
 [sub_resource type="Animation" id="Animation_xvk80"]
 length = 0.001
 
 [sub_resource type="Animation" id="Animation_luhed"]
 resource_name = "blur"
-length = 0.8
+length = 0.05
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -135,7 +135,7 @@ offset_right = 233.0
 offset_bottom = 247.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_5s5nn")
+texture = ExtResource("3_xvk80")
 
 [node name="resume" type="TextureButton" parent="Moldura" unique_id=913489681]
 layout_mode = 1
@@ -150,8 +150,9 @@ offset_right = 128.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_ad66y")
-texture_pressed = SubResource("AtlasTexture_6u7uf")
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_5s5nn")
+texture_pressed = SubResource("AtlasTexture_03f2s")
 stretch_mode = 0
 
 [node name="AutoSizeLabel" type="Label" parent="Moldura/resume" unique_id=700631418]
@@ -192,8 +193,8 @@ offset_right = 90.0
 offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_ad66y")
-texture_pressed = SubResource("AtlasTexture_6u7uf")
+texture_normal = SubResource("AtlasTexture_q6wb8")
+texture_pressed = SubResource("AtlasTexture_xvk80")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Moldura/quit" unique_id=481637458]

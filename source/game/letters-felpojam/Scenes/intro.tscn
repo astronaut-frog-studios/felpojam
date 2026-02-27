@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://du1lp8fwiqwr5" path="res://scripts/intro/player_name_input.gd" id="1_b226h"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_alxvg"]
-[ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_alxvg"]
+[ext_resource type="Texture2D" uid="uid://ykdxdcxmktc0" path="res://assets/sprites/cancel_confirm.png" id="3_a7jvs"]
 [ext_resource type="Texture2D" uid="uid://b7qg2dc1nl2v" path="res://assets/sprites/papel.png" id="4_37iue"]
 [ext_resource type="Script" uid="uid://b1i0s0f03lelk" path="res://scripts/intro/carta.gd" id="5_3bmuq"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="5_rsiac"]
@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dq1m8d07a03g4" path="res://assets/sprites/Livro.png" id="11_a7jvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
-atlas = ExtResource("3_alxvg")
-region = Rect2(193, 1, 14, 14)
+atlas = ExtResource("3_a7jvs")
+region = Rect2(5, 3, 18, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r07dh"]
 atlas = ExtResource("11_a7jvs")
@@ -42,6 +42,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b226h")
@@ -74,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 157.0
-offset_top = 77.0
-offset_right = 256.0
-offset_bottom = 176.0
+offset_left = 213.0
+offset_top = 75.0
+offset_right = 264.0
+offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true

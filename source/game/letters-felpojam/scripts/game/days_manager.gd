@@ -1,15 +1,27 @@
 class_name DaysManager extends Node
 
+const show_letter_prefab = preload("res://nodes/letter/show_letter.tscn")
+
 @export var total_days: int = 5
 @export var current_day: int = 0
 @export var current_points: int = 0
 @export var days: Array[DayResource] = []
 @export var feedback: DayLetter = null
+@export var mimos: Array[Control] = []
 
-@onready var mimos: Array[Control] = [$Mimos/Mimo1, $Mimos/Mimo2, $Mimos/Mimo3, $Mimos/Mimo4]
+var extra_letter: String
 
 func start_day() -> void:
-	pass
+	var day := _get_current_day()
+	if day == null:
+		return
+	
+	extra_letter = day.extra_letter
+	if !extra_letter.is_empty():
+		var show_letter: ShowLetter = show_letter_prefab.instantiate()
+		
+		return
+	
 
 func finalize_day() -> void:
 	var day := _get_current_day()

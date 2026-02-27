@@ -4,16 +4,27 @@
 [ext_resource type="Texture2D" uid="uid://b7qg2dc1nl2v" path="res://assets/sprites/papel.png" id="2_eim74"]
 [ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="3_trogw"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_bvbt1"]
-[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="5_52reb"]
+[ext_resource type="Texture2D" uid="uid://dwmo3wolub5gy" path="res://assets/sprites/UI_Button.png" id="5_xxlhd"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_naslv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ad66y"]
-atlas = ExtResource("5_52reb")
-region = Rect2(163, 178, 90, 27)
+atlas = ExtResource("5_xxlhd")
+region = Rect2(3, 2, 90, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6u7uf"]
-atlas = ExtResource("5_52reb")
-region = Rect2(259, 180, 90, 25)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ts4gq"]
+load_path = "res://.godot/imported/UI_Button.png-35b3f0537eeaec7e5d447bcf7c0f8a07.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee57s"]
+atlas = SubResource("CompressedTexture2D_ts4gq")
+region = Rect2(99, 4, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7cry"]
+atlas = ExtResource("5_xxlhd")
+region = Rect2(3, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxkxq"]
+atlas = ExtResource("5_xxlhd")
+region = Rect2(99, 4, 90, 25)
 
 [node name="WriteLetterMenu" type="Control" unique_id=923397039]
 layout_mode = 3
@@ -105,7 +116,7 @@ offset_bottom = 23.95996
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = SubResource("AtlasTexture_ad66y")
-texture_pressed = SubResource("AtlasTexture_6u7uf")
+texture_pressed = SubResource("AtlasTexture_ee57s")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/reset" unique_id=1939568197]
@@ -143,8 +154,8 @@ offset_bottom = 25.95996
 grow_horizontal = 2
 grow_vertical = 0
 disabled = true
-texture_normal = SubResource("AtlasTexture_ad66y")
-texture_pressed = SubResource("AtlasTexture_6u7uf")
+texture_normal = SubResource("AtlasTexture_r7cry")
+texture_pressed = SubResource("AtlasTexture_qxkxq")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/next" unique_id=1483059148]

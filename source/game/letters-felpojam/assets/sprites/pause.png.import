@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fd1lpqav3ndt"
-path="res://.godot/imported/inventory_Light_example_2.png-898ea9de79946dea4244b60f74859aa7.ctex"
+uid="uid://8vuymt1e513c"
+path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sproutLands/inventory_Light_example_2.png"
-dest_files=["res://.godot/imported/inventory_Light_example_2.png-898ea9de79946dea4244b60f74859aa7.ctex"]
+source_file="res://assets/sprites/pause.png"
+dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
 
 [params]
 

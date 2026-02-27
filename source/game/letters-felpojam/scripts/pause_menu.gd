@@ -4,6 +4,7 @@ extends Control
 
 func resume() -> void:
 	get_tree().paused = false
+	$Moldura/resume.button_pressed = false
 	animation.play_backwards("blur")
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
@@ -23,7 +24,6 @@ func testEsc() -> void:
 
 func _on_resume_button_down() -> void:
 	resume()
-
 
 func _on_quit_button_down() -> void:
 	get_tree().quit()

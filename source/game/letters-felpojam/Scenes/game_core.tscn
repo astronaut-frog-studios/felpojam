@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b34eclyq5x4u7" path="res://nodes/pause_menu.tscn" id="2_0a7kk"]
 [ext_resource type="Script" uid="uid://ltpek5nvajq6" path="res://scripts/game/days_manager.gd" id="2_ocv1q"]
 [ext_resource type="Texture2D" uid="uid://u83eau0ceifx" path="res://assets/sprites/cenario/parede.png" id="3_1qjtw"]
-[ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
 [ext_resource type="Texture2D" uid="uid://b8w4u0g7g070v" path="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png" id="4_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://boiaot2ilw7bj" path="res://assets/sprites/cenario/Sprite_-_Tecido_v2.png" id="5_1qjtw"]
@@ -35,12 +34,13 @@
 [ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tintas/tinta_resource.gd" id="27_qj43v"]
 [ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="28_ho3qs"]
 [ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="30_md6ll"]
-[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="31_n5sxq"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="32_11ip6"]
+[ext_resource type="Texture2D" uid="uid://dwmo3wolub5gy" path="res://assets/sprites/UI_Button.png" id="32_ocv1q"]
 [ext_resource type="Script" uid="uid://bbbdcb4kq1eqe" path="res://scripts/book_button.gd" id="33_328cw"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="33_q5rh8"]
 [ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="34_dax43"]
 [ext_resource type="PackedScene" uid="uid://cir8t1b3v2lp8" path="res://nodes/letter/write_letter_menu.tscn" id="35_dax43"]
+[ext_resource type="Texture2D" uid="uid://ykdxdcxmktc0" path="res://assets/sprites/cancel_confirm.png" id="40_ocv1q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
 atlas = ExtResource("13_5wb4p")
@@ -152,13 +152,13 @@ selo_texture = ExtResource("28_ho3qs")
 color = Color(0.5058824, 0.4627451, 0.40392157, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ad66y"]
-atlas = ExtResource("31_n5sxq")
-region = Rect2(163, 178, 90, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpdgn"]
+atlas = ExtResource("32_ocv1q")
+region = Rect2(3, 2, 90, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6u7uf"]
-atlas = ExtResource("31_n5sxq")
-region = Rect2(259, 180, 90, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uomju"]
+atlas = ExtResource("32_ocv1q")
+region = Rect2(99, 4, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c7ct"]
 atlas = ExtResource("6_e6dgn")
@@ -176,12 +176,12 @@ atlas = ExtResource("7_0a7kk")
 region = Rect2(64, 55, 63, 73)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8f0x7"]
-atlas = ExtResource("3_rgfeb")
-region = Rect2(65, 65, 14, 14)
+atlas = ExtResource("40_ocv1q")
+region = Rect2(69, 3, 18, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8dyl"]
-atlas = ExtResource("3_rgfeb")
-region = Rect2(81, 66, 14, 13)
+atlas = ExtResource("40_ocv1q")
+region = Rect2(101, 5, 18, 18)
 
 [node name="GameCore" type="Control" unique_id=900097777]
 clip_contents = true
@@ -200,9 +200,10 @@ process_mode = 3
 script = ExtResource("1_oln2x")
 current_game_step = 2
 
-[node name="DaysManager" type="Node" parent="." unique_id=649500740]
+[node name="DaysManager" type="Node" parent="." unique_id=649500740 node_paths=PackedStringArray("mimos")]
 process_mode = 3
 script = ExtResource("2_ocv1q")
+mimos = [NodePath("../Mimos/Mimo1"), NodePath("../Mimos/Mimo2"), NodePath("../Mimos/Mimo3"), NodePath("../Mimos/Mimo4")]
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -851,8 +852,8 @@ offset_right = 147.0
 offset_bottom = 47.119995
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_ad66y")
-texture_pressed = SubResource("AtlasTexture_6u7uf")
+texture_normal = SubResource("AtlasTexture_mpdgn")
+texture_pressed = SubResource("AtlasTexture_uomju")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="DeliverLetter" unique_id=1606071271]
@@ -931,6 +932,7 @@ stretch_mode = 4
 
 [node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 mouse_filter = 2
 mouse_behavior_recursive = 1
@@ -960,13 +962,15 @@ offset_bottom = 16.759949
 
 [node name="CloseMenu" type="TextureButton" parent="Books/LivroTeste" unique_id=340717962]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -44.0
-offset_top = -15.0
-offset_right = -4.0
-offset_bottom = 25.0
+anchors_preset = -1
+anchor_left = 0.97800004
+anchor_top = 0.009000001
+anchor_right = 0.97800004
+anchor_bottom = 0.009000001
+offset_left = -16.008057
+offset_top = -16.751
+offset_right = 17.991943
+offset_bottom = 17.249
 grow_horizontal = 0
 texture_normal = SubResource("AtlasTexture_8f0x7")
 texture_pressed = SubResource("AtlasTexture_r8dyl")
@@ -980,13 +984,16 @@ layout_mode = 1
 offset_left = 62.0
 offset_right = 1.0
 
+[node name="ColorRect" parent="PauseMenu" index="0" unique_id=1961036990]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [node name="Panel" parent="PauseMenu" index="1" unique_id=2128962313]
-visible = false
-modulate = Color(1, 1, 1, 0)
 offset_left = -142.0
 
 [node name="Moldura" parent="PauseMenu" index="2" unique_id=1872986391]
-modulate = Color(1, 1, 1, 0)
 offset_left = -259.5
 offset_top = -247.0
 offset_right = 206.5

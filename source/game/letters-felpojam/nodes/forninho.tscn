@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcvklupdct3d8" path="res://scripts/game/forno_drop_area.gd" id="2_2yv27"]
 [ext_resource type="Texture2D" uid="uid://qb83mh47ww8h" path="res://assets/sprites/cenario/Aquecedor_sinete.png" id="2_ccuav"]
-[ext_resource type="Texture2D" uid="uid://dgl3huw7f8mxn" path="res://assets/sprites/sproutLands/fire animation.png" id="3_2yv27"]
+[ext_resource type="Texture2D" uid="uid://dgl3huw7f8mxn" path="res://assets/sprites/fire animation.png" id="3_2yv27"]
 [ext_resource type="Texture2D" uid="uid://b4seuswrh3tvw" path="res://assets/sprites/interativos/sinete/Sprite-_Colher_sinete.png" id="4_2yv27"]
 [ext_resource type="Texture2D" uid="uid://h7mmoi2j6y4s" path="res://assets/sprites/interativos/cores.png" id="6_55vk1"]
 [ext_resource type="Script" uid="uid://dodw7or48rygf" path="res://scripts/game/spoon_drag.gd" id="6_ccuav"]
