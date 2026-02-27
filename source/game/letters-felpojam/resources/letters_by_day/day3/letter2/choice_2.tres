@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://bmpbmhoof8jy6"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_0npst"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_rejdx"]
+
+[sub_resource type="Resource" id="Resource_4dewj"]
+script = ExtResource("1_0npst")
+choice = "Está se matando de trabalhar "
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_fkosg"]
+script = ExtResource("1_0npst")
+choice = "Está comendo direito"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_0npst"]
+script = ExtResource("1_0npst")
+choice = "Está descansando corretamente"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_rejdx"]
+script = ExtResource("1_0npst")
+choice = "Está obedecendo as regras"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_rejdx")
+text = "\\na quanto tempo não te vejo, gostaria de saber se ___"
+options = Array[ExtResource("1_0npst")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_0npst"), SubResource("Resource_rejdx")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

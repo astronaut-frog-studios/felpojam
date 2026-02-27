@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://wcecrpr040m8"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_0asaw"]
+[ext_resource type="Resource" uid="uid://cgjt3rsvx3xrh" path="res://resources/letters_by_day/day3/letter2/salutions_3_2.tres" id="2_83qkp"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_v6yha"]
+[ext_resource type="Resource" uid="uid://m0a4qk8bavlg" path="res://resources/letters_by_day/day3/letter2/first_p.tres" id="3_ymnqu"]
+[ext_resource type="Resource" uid="uid://b7ks8v1d2ad66" path="res://resources/letters_by_day/day3/letter2/choice_1.tres" id="4_dsyc5"]
+[ext_resource type="Resource" uid="uid://bmpbmhoof8jy6" path="res://resources/letters_by_day/day3/letter2/choice_2.tres" id="5_6i634"]
+[ext_resource type="Resource" uid="uid://bqaxk3i6yq6ga" path="res://resources/letters_by_day/day3/letter2/choice_3.tres" id="6_tc3la"]
+[ext_resource type="Resource" uid="uid://dnsk27icmfyot" path="res://resources/letters_by_day/day3/letter2/choice_4.tres" id="7_pu0vr"]
+[ext_resource type="Resource" uid="uid://i6llv04op3ul" path="res://resources/letters_by_day/day3/letter2/goodbye.tres" id="8_2ghm4"]
+
+[resource]
+script = ExtResource("2_v6yha")
+content = "Bom dia,
+Espero que esta carta chegue bem,
+
+Meu querido filho, Lucas, está em uma missão fora do país, ele faz parte da marinha e voltará somente mês que vem, não me aguento de saudades e queria mandar uma carta para expressar o quanto estou preocupada, mas que também estou orgulhosa, por favor, me ajude.
+
+De uma mãe ansiosa,
+Maria Helena."
+author = "Maria Helena"
+choice_steps = Array[ExtResource("1_0asaw")]([ExtResource("2_83qkp"), ExtResource("3_ymnqu"), ExtResource("4_dsyc5"), ExtResource("5_6i634"), ExtResource("6_tc3la"), ExtResource("7_pu0vr"), ExtResource("8_2ghm4")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://c82dla06362rb"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_u4pds"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_l5df4"]
+
+[sub_resource type="Resource" id="Resource_3cjsq"]
+script = ExtResource("1_u4pds")
+choice = "Vou estar muito abalada"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_7r0ld"]
+script = ExtResource("1_u4pds")
+choice = "Meu coração ainda não se recuperou"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_bkh87"]
+script = ExtResource("1_u4pds")
+choice = "Vou gastar o dinheiro da herança viajando"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_u4pds"]
+script = ExtResource("1_u4pds")
+choice = "Preciso organizar a casa de meus pais"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_l5df4")
+text = "temo não conseguir comparecer os próximos dias em confraternizações pois ___. \\nAgradeço a compreensão de todos."
+options = Array[ExtResource("1_u4pds")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87"), SubResource("Resource_u4pds")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://dnsk27icmfyot"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_s8hpv"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_pycqo"]
+
+[sub_resource type="Resource" id="Resource_4dewj"]
+script = ExtResource("1_s8hpv")
+choice = "Aguardarei sua chegada"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_fkosg"]
+script = ExtResource("1_s8hpv")
+choice = "Não fique ansioso para sua volta"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_yiaum"]
+script = ExtResource("1_s8hpv")
+choice = "Não farei nada de especial quando voltar"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_h1f35"]
+script = ExtResource("1_s8hpv")
+choice = "Vou cobrar dinheiro do aluguel quando voltar"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_s8hpv"]
+script = ExtResource("1_s8hpv")
+choice = "Eu amo você"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_pycqo")
+text = "Quero que saiba que ___. Cuide-se."
+options = Array[ExtResource("1_s8hpv")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35"), SubResource("Resource_s8hpv")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

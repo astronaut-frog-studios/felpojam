@@ -3,9 +3,22 @@
 [ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_kwx7x"]
 [ext_resource type="Resource" uid="uid://b17aqiudetuh6" path="res://resources/letters_by_day/day2/letter1/salutions_2_1.tres" id="2_6gnl7"]
 [ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_sjae4"]
+[ext_resource type="Resource" uid="uid://d3ooqeu6on3xi" path="res://resources/letters_by_day/day2/letter2/first_p.tres" id="3_uva0h"]
+[ext_resource type="Resource" uid="uid://dquxpe08eyxx" path="res://resources/letters_by_day/day2/letter2/choice_1.tres" id="4_3vn3o"]
+[ext_resource type="Resource" uid="uid://deart7hoovs8t" path="res://resources/letters_by_day/day2/letter2/choice_2.tres" id="5_3wgxs"]
+[ext_resource type="Resource" uid="uid://bcypaom40viqx" path="res://resources/letters_by_day/day2/letter2/choice_3.tres" id="6_51r58"]
+[ext_resource type="Resource" uid="uid://dqra5mx6h644" path="res://resources/letters_by_day/day2/letter2/choice_4.tres" id="7_lqtjo"]
+[ext_resource type="Resource" uid="uid://xspuhky8c4j6" path="res://resources/letters_by_day/day2/letter2/goodbye.tres" id="8_inhn5"]
 
 [resource]
 script = ExtResource("3_sjae4")
-author = "Izabela Morais"
-choice_steps = Array[ExtResource("1_kwx7x")]([ExtResource("2_6gnl7")])
+content = "Bom dia!
+Que tudo esteja lindo e maravilhoso,
+
+Comecei a cortejar uma linda mulher e desejo expressar a ela meus sentimentos profundos, para mim, ela é a mulher na qual eu vou me casar, mas não quero que ela se assuste já que nos conhecemos a poucas semanas, por favor, me ajude a declarar meus sinceros sentimentos.
+
+Do mais recente apaixonado,
+Enzo Gabriel."
+author = "Enzo Gabriel"
+choice_steps = Array[ExtResource("1_kwx7x")]([ExtResource("2_6gnl7"), ExtResource("3_uva0h"), ExtResource("4_3vn3o"), ExtResource("5_3wgxs"), ExtResource("6_51r58"), ExtResource("7_lqtjo"), ExtResource("8_inhn5")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"

@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://b0syvxdj8ljsw"]
+
+[ext_resource type="Script" uid="uid://bpjy5fmrsnkyu" path="res://resources/days/feedback.gd" id="1_cr4bx"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_cr4bx"]
+[ext_resource type="Script" uid="uid://bggefqeq3tdmk" path="res://resources/days/feedback_letter.gd" id="2_wrs1p"]
+[ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="3_wrs1p"]
+[ext_resource type="Resource" uid="uid://w4o0u67m684c" path="res://resources/letters_by_day/day3/letter1/day_letter_3_1.tres" id="4_sxdgv"]
+[ext_resource type="Resource" uid="uid://wcecrpr040m8" path="res://resources/letters_by_day/day3/letter2/day_letter_3_2.tres" id="5_3lu4c"]
+
+[sub_resource type="Resource" id="Resource_sxdgv"]
+script = ExtResource("2_wrs1p")
+content = "Bom dia!
+Tudo continua lindo e maravilhoso, a mulher dos meus sonhos disse sim ao meu pedido de namoro, sua carta foi genial! Não sei o que você tem mas é mágico. Certamente continuarei com seus serviços.
+
+Por favor, aceite este ursinho de pelúcia como forma de minha gratidão.
+
+De seu mais novo cliente,
+Enzo Gabriel."
+author = "Enzo Gabriel"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_3lu4c"]
+script = ExtResource("1_cr4bx")
+content = SubResource("Resource_sxdgv")
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[sub_resource type="Resource" id="Resource_wrs1p"]
+script = ExtResource("2_wrs1p")
+content = "Mal dia!
+O mundo está cinza e horrível, o máximo que ela podia dizer não era não. Eu não sei o que tinha naquela carta, mas arruinou minhas chances de continuar com ela.
+
+Meus sentimentos foram enterrados para sempre, nunca mais vou achar alguém como ela.
+
+De um homem triste e miserável,
+Enzo Gabriel."
+author = "Enzo Gabriel"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_dpxhk"]
+script = ExtResource("1_cr4bx")
+content = SubResource("Resource_wrs1p")
+flag = 1
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[resource]
+script = ExtResource("3_wrs1p")
+extra_letter = "PLAYER,
+Espero que esta carta lhe encontre bem.
+
+Os primeiros dias após eu ter comprado a loja foram fascinantes, tantas pessoas foram ao meu encontro de diferentes horizontes, tenho apreço por cada cliente, independentemente de ter aparecido uma ou mais vezes. Mas há aqueles clientes que nos marcam mais, ano passado atendi um cliente encantador.
+
+Eram 8 da manhã quando a carta chegou, um envelope azul, mas sem gravuras, sem um único amassado, era um senhor de idade mais avançada querendo fazer uma surpresa de casamento para a esposa, eram casados a 50 anos! Imagina minha surpresa, precisava fazer algo especial naquele dia, eu comprei um carimbo somente para eles, um carimbo de peônias.
+
+E se eu não me engano foi nessa época que recebi a carta dele, mas nunca mais recebi nada, quem sabe você não tem a sorte?
+De sua querida, tia Ana."
+feedbacks = Array[ExtResource("1_cr4bx")]([SubResource("Resource_3lu4c"), SubResource("Resource_dpxhk")])
+letters = Array[ExtResource("2_cr4bx")]([ExtResource("4_sxdgv"), ExtResource("5_3lu4c")])
+metadata/_custom_type_script = "uid://bk0nsegj63cvd"

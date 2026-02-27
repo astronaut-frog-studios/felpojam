@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Feedback" format=3 uid="uid://il5lolr1xm0g"]
+
+[ext_resource type="Script" uid="uid://bggefqeq3tdmk" path="res://resources/days/feedback_letter.gd" id="1_1qusp"]
+[ext_resource type="Script" uid="uid://bpjy5fmrsnkyu" path="res://resources/days/feedback.gd" id="1_cy7m2"]
+
+[sub_resource type="Resource" id="Resource_wshay"]
+script = ExtResource("1_1qusp")
+content = "Querida criança,
+Devo dizer que fiquei impressionada com suas palavras para minha mãe, ela ficou feliz com sua carta de aniversário e está planejando pedir uma carta a você para o aniversário do papai.
+
+Ana tinha razão, você foi a escolha certa. Espero que esse mimo que enviei te agrade, é um chaveirinho.
+
+Toda sorte do mundo,
+Izabela Morais."
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[resource]
+script = ExtResource("1_cy7m2")
+content = SubResource("Resource_wshay")
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"

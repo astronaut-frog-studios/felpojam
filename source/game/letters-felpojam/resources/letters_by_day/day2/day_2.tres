@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://douwgjv44qsbu"]
+
+[ext_resource type="Script" uid="uid://bpjy5fmrsnkyu" path="res://resources/days/feedback.gd" id="1_ebbff"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_f38y0"]
+[ext_resource type="Resource" uid="uid://il5lolr1xm0g" path="res://resources/letters_by_day/day2/feedback_good.tres" id="2_txnil"]
+[ext_resource type="Resource" uid="uid://catht3qq56ve7" path="res://resources/letters_by_day/day2/letter1/day_letter_2_1.tres" id="3_5pxuu"]
+[ext_resource type="Resource" uid="uid://dsnbe5yglo702" path="res://resources/letters_by_day/day2/feedback_bad.tres" id="3_7v7he"]
+[ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="3_bhkd4"]
+[ext_resource type="Resource" uid="uid://cxbmpgfwj3orc" path="res://resources/letters_by_day/day2/letter2/day_letter_2_2.tres" id="4_txnil"]
+
+[resource]
+script = ExtResource("3_bhkd4")
+feedbacks = Array[ExtResource("1_ebbff")]([ExtResource("2_txnil"), ExtResource("3_7v7he")])
+letters = Array[ExtResource("2_f38y0")]([ExtResource("3_5pxuu"), ExtResource("4_txnil")])
+metadata/_custom_type_script = "uid://bk0nsegj63cvd"

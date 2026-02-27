@@ -1,6 +1,6 @@
 class_name FeedbackLetter extends Resource
 
-@export var content: String
+@export_multiline() var content: String
 @export var author: String
 
 func _init(

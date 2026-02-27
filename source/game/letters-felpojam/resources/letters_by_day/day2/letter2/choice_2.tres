@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://deart7hoovs8t"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_l74dp"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_limqp"]
+
+[sub_resource type="Resource" id="Resource_3cjsq"]
+script = ExtResource("1_l74dp")
+choice = "Mulher dos meus sonhos "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_7r0ld"]
+script = ExtResource("1_l74dp")
+choice = "Carne da minha empadinha"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_bkh87"]
+script = ExtResource("1_l74dp")
+choice = "Bosta da minha mosca"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_l74dp"]
+script = ExtResource("1_l74dp")
+choice = "Mulher mais linda que já conheci"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_limqp"]
+script = ExtResource("1_l74dp")
+choice = "Mulher mais charmosa que já conheci"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_svry3"]
+script = ExtResource("1_l74dp")
+choice = "Mulher que eu tive mais vontade de perseguir"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_limqp")
+text = "você é a "
+options = Array[ExtResource("1_l74dp")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87"), SubResource("Resource_l74dp"), SubResource("Resource_limqp"), SubResource("Resource_svry3")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

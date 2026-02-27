@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://w4o0u67m684c"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_4rcxe"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_4jfg6"]
+[ext_resource type="Resource" uid="uid://ddqjtinng7iix" path="res://resources/letters_by_day/day3/letter1/salutions_3_1.tres" id="2_l7ky5"]
+[ext_resource type="Resource" uid="uid://dykt6dnhmienh" path="res://resources/letters_by_day/day3/letter1/first_p.tres" id="3_hqkik"]
+[ext_resource type="Resource" uid="uid://3dgls0colvkv" path="res://resources/letters_by_day/day3/letter1/choice_1.tres" id="4_mgv6u"]
+[ext_resource type="Resource" uid="uid://bbcu1fpllts2o" path="res://resources/letters_by_day/day3/letter1/choice_2.tres" id="5_gvb2y"]
+[ext_resource type="Resource" uid="uid://682j4e4najes" path="res://resources/letters_by_day/day3/letter1/choice_3.tres" id="6_88081"]
+[ext_resource type="Resource" uid="uid://ngqgkvut32od" path="res://resources/letters_by_day/day3/letter1/choice_4.tres" id="7_ny8br"]
+[ext_resource type="Resource" uid="uid://cmhy1ydlbdhlc" path="res://resources/letters_by_day/day3/letter1/goodbye.tres" id="8_23gnf"]
+
+[resource]
+script = ExtResource("2_4jfg6")
+content = "Olá, PLAYER
+Não sei como começar esta carta, mas espero que entenda a mensagem. Faz cinco anos que não falo com meu pai, desde que sai de casa, e acho que está na hora de nos reconciliarmos.
+
+Se ele aceitar meus sentimentos, sei que vamos poder nos falar de novo, eu o amo e espero que ele ainda me ame, dizem que o amor dos pais nunca morre. Espero que seja verdade.
+De um esperançoso filho,"
+author = "Nicolas"
+choice_steps = Array[ExtResource("1_4rcxe")]([ExtResource("2_l7ky5"), ExtResource("3_hqkik"), ExtResource("4_mgv6u"), ExtResource("5_gvb2y"), ExtResource("6_88081"), ExtResource("7_ny8br"), ExtResource("8_23gnf")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

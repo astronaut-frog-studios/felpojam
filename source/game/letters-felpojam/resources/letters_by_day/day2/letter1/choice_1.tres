@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://bo47osdas63yi"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_2g7fa"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_xgg28"]
+
+[sub_resource type="Resource" id="Resource_3cjsq"]
+script = ExtResource("1_2g7fa")
+choice = "Se sente"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_7r0ld"]
+script = ExtResource("1_2g7fa")
+choice = "Tome um suquinho de maracujá"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_oymoa"]
+script = ExtResource("1_2g7fa")
+choice = "Passe normalmente o seu dia"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_2g7fa"]
+script = ExtResource("1_2g7fa")
+choice = "Não ligue muito"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_xgg28")
+text = "O assunto desta carta é delicado, oriento que ___"
+options = Array[ExtResource("1_2g7fa")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_oymoa"), SubResource("Resource_2g7fa")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

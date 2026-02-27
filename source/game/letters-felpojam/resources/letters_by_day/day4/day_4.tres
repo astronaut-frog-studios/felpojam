@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://cqhek2aa63ws2"]
+
+[ext_resource type="Script" uid="uid://bpjy5fmrsnkyu" path="res://resources/days/feedback.gd" id="1_j444v"]
+[ext_resource type="Script" uid="uid://bggefqeq3tdmk" path="res://resources/days/feedback_letter.gd" id="2_0sl0s"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_n0f1h"]
+[ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="6_uojyo"]
+
+[sub_resource type="Resource" id="Resource_otdyc"]
+script = ExtResource("2_0sl0s")
+content = "Bom dia, PLAYER
+Estimo que esteja bem.
+
+Meu filho respondeu sua carta e estava extremamente feliz com suas palavras, e se meu filho está feliz, eu também estou. Ele está bem e se alimentando direito, além disso, me enviou um pequeno mimo que estou repassando a você, não saberia onde colocar este barquinho engarrafado. Espero que seja de seu agrado.
+
+De uma mãe muito feliz,
+Maria Helena."
+author = "Maria Helena"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_1k4ua"]
+script = ExtResource("1_j444v")
+content = SubResource("Resource_otdyc")
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[sub_resource type="Resource" id="Resource_wgt1x"]
+script = ExtResource("2_0sl0s")
+content = "Gostaria de saber o que você escreveu ao meu filho, ele me enviou uma carta perguntando quem escreveu a carta pois eu, com certeza não falaria daquela forma com ele.
+
+Eu disse a você como era importante que ele recebesse bem a mensagem, se eu soubesse que não teria sido do agrado dele, eu nem teria pedido.
+
+De uma mãe decepcionada,
+Maria Helena."
+author = "Maria Helena"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_0ooty"]
+script = ExtResource("1_j444v")
+content = SubResource("Resource_wgt1x")
+flag = 1
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[resource]
+script = ExtResource("6_uojyo")
+extra_letter = "PLAYER,
+Espero que esta carta lhe encontre bem.
+
+Os primeiros dias após eu ter comprado a loja foram fascinantes, tantas pessoas foram ao meu encontro de diferentes horizontes, tenho apreço por cada cliente, independentemente de ter aparecido uma ou mais vezes. Mas há aqueles clientes que nos marcam mais, ano passado atendi um cliente encantador.
+
+Eram 8 da manhã quando a carta chegou, um envelope azul, mas sem gravuras, sem um único amassado, era um senhor de idade mais avançada querendo fazer uma surpresa de casamento para a esposa, eram casados a 50 anos! Imagina minha surpresa, precisava fazer algo especial naquele dia, eu comprei um carimbo somente para eles, um carimbo de peônias.
+
+E se eu não me engano foi nessa época que recebi a carta dele, mas nunca mais recebi nada, quem sabe você não tem a sorte?
+De sua querida, tia Ana."
+feedbacks = Array[ExtResource("1_j444v")]([SubResource("Resource_1k4ua"), SubResource("Resource_0ooty")])
+metadata/_custom_type_script = "uid://bk0nsegj63cvd"

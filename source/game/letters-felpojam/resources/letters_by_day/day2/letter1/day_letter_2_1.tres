@@ -3,9 +3,22 @@
 [ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_h4sms"]
 [ext_resource type="Resource" uid="uid://b17aqiudetuh6" path="res://resources/letters_by_day/day2/letter1/salutions_2_1.tres" id="2_kmtsg"]
 [ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_o0o4y"]
+[ext_resource type="Resource" uid="uid://cviv56vx1j1k" path="res://resources/letters_by_day/day2/letter1/first_p.tres" id="3_x3hpv"]
+[ext_resource type="Resource" uid="uid://bo47osdas63yi" path="res://resources/letters_by_day/day2/letter1/choice_1.tres" id="4_6us2q"]
+[ext_resource type="Resource" uid="uid://b5uuahqbjrdtx" path="res://resources/letters_by_day/day2/letter1/choice_2.tres" id="5_kvtn6"]
+[ext_resource type="Resource" uid="uid://c82dla06362rb" path="res://resources/letters_by_day/day2/letter1/choice_3.tres" id="6_eebqw"]
+[ext_resource type="Resource" uid="uid://dtrktlimv7kg3" path="res://resources/letters_by_day/day2/letter1/choice_4.tres" id="7_en6pp"]
+[ext_resource type="Resource" uid="uid://dcihbgb42uky5" path="res://resources/letters_by_day/day2/letter1/goodbye.tres" id="8_v8grq"]
 
 [resource]
 script = ExtResource("3_o0o4y")
-author = "Izabela Morais"
-choice_steps = Array[ExtResource("1_h4sms")]([ExtResource("2_kmtsg")])
+content = "Olá,
+espero que esteja bem já que eu mesmo não estou,
+
+Perdi meus pais em um acidente e preciso informar a família sobre o funeral, mas não vou conseguir escrever por mim mesmo, tentei diversas vezes, mas quanto falo sobre, mais eu choro, esta é a quinta tentativa de escrever a você, por favor, me ajude.
+
+Com pesar,
+Maria Clara Fonseca."
+author = "Maria Clara Fonseca."
+choice_steps = Array[ExtResource("1_h4sms")]([ExtResource("2_kmtsg"), ExtResource("3_x3hpv"), ExtResource("4_6us2q"), ExtResource("5_kvtn6"), ExtResource("6_eebqw"), ExtResource("7_en6pp"), ExtResource("8_v8grq")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"

@@ -78,7 +78,7 @@ func _next_step() -> void:
 	if current_text.is_empty():
 		current_text = current_step.text
 	else:
-		current_text += "\n" + current_step.text # trocar por " "
+		current_text += " " + current_step.text # trocar por " "
 	
 	await type_text(old_text, current_text)
 	#text_label.text = current_text

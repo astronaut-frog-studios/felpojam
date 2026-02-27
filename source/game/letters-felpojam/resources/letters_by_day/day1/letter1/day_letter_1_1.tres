@@ -1,11 +1,25 @@
 [gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://cav0hjsts2rir"]
 
-[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_xwms5"]
-[ext_resource type="Resource" uid="uid://qkfhybtmaj06" path="res://resources/letters_by_day/day1/letter1/salutions_1_1.tres" id="2_hnd5j"]
-[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_vgp7s"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_3ebit"]
+[ext_resource type="Resource" uid="uid://qkfhybtmaj06" path="res://resources/letters_by_day/day1/letter1/salutions_1_1.tres" id="2_5cvsg"]
+[ext_resource type="Resource" uid="uid://b6ke75mbqs7cm" path="res://resources/letters_by_day/day1/letter1/first_p.tres" id="3_fj8al"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="4_ulmlk"]
+[ext_resource type="Resource" uid="uid://bl6dul55js7b5" path="res://resources/letters_by_day/day1/letter1/choice_1.tres" id="4_y7o1c"]
+[ext_resource type="Resource" uid="uid://bv0xt6joprebs" path="res://resources/letters_by_day/day1/letter1/choice_2.tres" id="5_ymgkd"]
+[ext_resource type="Resource" uid="uid://d3phfhl5268bc" path="res://resources/letters_by_day/day1/letter1/choice_3.tres" id="6_1njsg"]
+[ext_resource type="Resource" uid="uid://bb7ioa57eistx" path="res://resources/letters_by_day/day1/letter1/goodbye.tres" id="7_mr8st"]
 
 [resource]
-script = ExtResource("3_vgp7s")
+script = ExtResource("4_ulmlk")
+content = "Olá, jovem,
+Ouvi dizer que minha querida amiga Ana passou a loja adiante! Imagine a surpresa quando recebi a carta dela informando essa decisão.
+
+Foi me dito que você tem incríveis habilidades de passar sentimentos pelas palavras desde que era criança, e eu gostaria de colocar isso a prova!
+
+Como fui a primeira cliente de Ana, serei sua também. Quero que escreva uma carta para minha mãe, essa semana é o aniversário dela e gostaria que ela recebesse palavras gentis e calorosas.
+
+Espero que tudo ocorra bem,
+Izabela Morais."
 author = "Izabela Morais"
-choice_steps = Array[ExtResource("1_xwms5")]([ExtResource("2_hnd5j")])
+choice_steps = Array[ExtResource("1_3ebit")]([ExtResource("2_5cvsg"), ExtResource("3_fj8al"), ExtResource("4_y7o1c"), ExtResource("5_ymgkd"), ExtResource("6_1njsg"), ExtResource("7_mr8st")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"

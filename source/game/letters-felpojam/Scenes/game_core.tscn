@@ -206,6 +206,14 @@ current_game_step = 2
 days = Array[ExtResource("3_uomju")]([])
 mimos = Array[ExtResource("3_uomju")]([])
 
+[node name="DaysManager" parent="DaysManager" unique_id=1337174719 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
+days = Array[ExtResource("3_uomju")]([])
+mimos = Array[ExtResource("3_uomju")]([])
+
+[node name="DaysManager2" parent="DaysManager" unique_id=973546350 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
+days = Array[ExtResource("3_uomju")]([])
+mimos = Array[ExtResource("3_uomju")]([])
+
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
 [node name="Parede" type="TextureRect" parent="." unique_id=1811231072]

@@ -1,11 +1,24 @@
 [gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://dhme1l3vib2re"]
 
 [ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_biicn"]
-[ext_resource type="Resource" uid="uid://qkfhybtmaj06" path="res://resources/letters_by_day/day1/letter1/salutions_1_1.tres" id="2_328i5"]
+[ext_resource type="Resource" uid="uid://c3lh536vmak0d" path="res://resources/letters_by_day/day1/letter2/salutions_1_2.tres" id="2_tuayn"]
+[ext_resource type="Resource" uid="uid://do187tjyawwsi" path="res://resources/letters_by_day/day1/letter2/first_p.tres" id="3_gvbjb"]
 [ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_mladj"]
+[ext_resource type="Resource" uid="uid://bv45vsfdu66sp" path="res://resources/letters_by_day/day1/letter2/choice_1.tres" id="4_kklrw"]
+[ext_resource type="Resource" uid="uid://dsl81y10nambk" path="res://resources/letters_by_day/day1/letter2/choice_2.tres" id="5_ikicw"]
+[ext_resource type="Resource" uid="uid://cpocsjrkxynpt" path="res://resources/letters_by_day/day1/letter2/choice_3.tres" id="6_ugevy"]
+[ext_resource type="Resource" uid="uid://b6vigprgs3ppl" path="res://resources/letters_by_day/day1/letter2/choice_4.tres" id="7_qsg65"]
+[ext_resource type="Resource" uid="uid://cwqf8si0hrgdd" path="res://resources/letters_by_day/day1/letter2/goodbye.tres" id="8_rvd0k"]
 
 [resource]
 script = ExtResource("3_mladj")
-author = "Izabela Morais"
-choice_steps = Array[ExtResource("1_biicn")]([ExtResource("2_328i5")])
+content = "Bom dia, PLAYER
+Preciso escrever uma carta a minha família contando que decidi seguir meus sonhos e ir para a cidade vizinha para abrir minha própria loja, vou cuidar de barbas e cabelos.
+
+Não quero estar no mesmo ambiente que eles para que me façam desistir. Por isso, escrevo a carta, por favor, faça o possível para que eles recebam bem a notícia, eu os amo, mas não posso viver se não tentar ao menos uma vez.
+
+Com esperanças,
+André Carvalho."
+author = "André Carvalho"
+choice_steps = Array[ExtResource("1_biicn")]([ExtResource("2_tuayn"), ExtResource("3_gvbjb"), ExtResource("4_kklrw"), ExtResource("5_ikicw"), ExtResource("6_ugevy"), ExtResource("7_qsg65"), ExtResource("8_rvd0k")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"

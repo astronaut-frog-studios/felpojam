@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://cpocsjrkxynpt"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_igqv4"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_ruq18"]
+
+[sub_resource type="Resource" id="Resource_3cjsq"]
+script = ExtResource("1_igqv4")
+choice = "Que não me encham o saco"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_7r0ld"]
+script = ExtResource("1_igqv4")
+choice = "Que me entendam"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_bkh87"]
+script = ExtResource("1_igqv4")
+choice = "Que me amem o suficiente para me deixar partir"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_ruq18")
+text = "vim atrás dos meus sonhos e espero ___,"
+options = Array[ExtResource("1_igqv4")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"
