@@ -2,7 +2,7 @@ class_name Write_Letter extends Control
 
 const choice_prefab = preload("res://nodes/letter/choice.tscn")
 
-signal on_choice_punction(point: int)
+signal on_letter_finished(point: int)
 
 @onready var text_label: Label = $Panel/CartaMenu/label
 @onready var choice_container: Control = $Panel/ChoicesContainer/ChoiceContainer/ChoiceWrapper
@@ -14,6 +14,7 @@ signal on_choice_punction(point: int)
 var queue: Array[ChoiceResource] = []
 var current_step: ChoiceResource
 var current_text: String = ""  # texto acumulado
+var letter_points: int = 0
 
 var typing_id: int = 0
 var typing_speed: float = 0.04
@@ -125,7 +126,7 @@ func _instantiate_choices(options: Array[Choice_Option_Resource]) -> void:
 		var btn: Button = choice.get_node("Button")
 		var option_text: String = option.choice["option"]
 		btn.text = option_text
-		on_choice_punction.emit(option.choice["point"])
+		letter_points += option.choice["point"]
 		btn.button_down.connect(func() -> void:
 			choose_option(option_text)
 		)
@@ -145,6 +146,7 @@ func restart_letter(activate: bool = false) -> void:
 		typing_id += 1
 		is_typing = false
 	
+	letter_points = 0
 	next_button.disabled = true
 	next_button.modulate = Color("474747ff")
 	current_text = ""
@@ -170,4 +172,5 @@ func _on_next_button_down() -> void:
 	table_letter.text = current_text
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
+	on_letter_finished.emit(letter_points)
 	hide()

@@ -3,7 +3,7 @@ class_name GameManager extends Node
 enum GameStep { BEGIN, LETTER, FREE_STAMP, POSTMARK, ENDED }  
 enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 
-signal on_letter_end
+signal on_letter_delivery_end
 
 @export var current_game_step: GameStep = GameStep.BEGIN
 @export var current_selo_step: SeloStep = SeloStep.MELTING_PAINT
@@ -25,7 +25,7 @@ var disable_stamps_run: bool = false
 func _ready() -> void:
 	spoon = get_tree().get_first_node_in_group("spoon") as SpoonDrag
 	stamps = get_tree().get_nodes_in_group("stamp") as Array[Stamp_Drag]
-	#current_game_step = GameStep.BEGIN
+	current_game_step = GameStep.BEGIN
 	match current_game_step:
 		GameStep.BEGIN:
 			print("begin")
@@ -65,13 +65,9 @@ func _process(_delta: float) -> void:
 				disable_stamps_run = false
 				selo_area.texture = null
 				deliver_button.hide()
-				on_letter_end.emit()
+				on_letter_delivery_end.emit()
 				)
 			current_game_step = GameStep.BEGIN
-				
-			# aparece o bottao de Entregar carta, nele desabilito e reseto tudo
-			# ao clicar escurece e carrega a próxima cena que estiver nele
-			# recebe o nome da cena como parametro
 
 func _free_stamp_step() -> void:
 	envelopes.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -127,3 +123,6 @@ func _on_envelopes_button_down() -> void:
 	carta.hide()
 	carta_envelopada.show()
 	current_game_step = GameStep.POSTMARK
+
+func _on_write_letter_menu_on_letter_finished(_point: int) -> void:
+	current_game_step = GameStep.FREE_STAMP
