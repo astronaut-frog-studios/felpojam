@@ -10,6 +10,7 @@ signal on_letter_finished(point: int)
 
 @export var table_letter: Label
 @export var steps: Array[ChoiceResource] = []
+@export var author: String = ""
 
 var queue: Array[ChoiceResource] = []
 var current_step: ChoiceResource
@@ -65,7 +66,7 @@ func _ready() -> void:
 
 func _next_step() -> void:
 	if queue.is_empty():
-		text_label.text = current_text
+		text_label.text = current_text + "\n" + author
 		is_typing = false
 		next_button.disabled = false
 		next_button.modulate = Color.WHITE
@@ -172,4 +173,5 @@ func _on_next_button_down() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
 	on_letter_finished.emit(letter_points)
+	author = ""
 	hide()

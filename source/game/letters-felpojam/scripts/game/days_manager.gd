@@ -68,6 +68,7 @@ func add_points(value: int) -> void:
 
 func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
 	show_letter.label.text = letter
+	show_letter.author.text.replace("PLAYER", GlobalName.player_name)
 	show_letter.show()
 	await get_tree().create_timer(3.0).timeout
 	show_letter.enable_interaction()
@@ -75,6 +76,7 @@ func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
 
 func _next_day() -> void:
 	if current_day > total_days - 1:
+		get_tree().change_scene_to_file("res://Scenes/final.tscn")
 		return
 	current_points = 0
 	current_day += 1
@@ -102,6 +104,7 @@ func _on_next_feedback_letter_click() -> void:
 
 func _on_next_customer_letter_click() -> void:
 	show_letter.hide()
+	write_letter.author = current_letter.author
 	write_letter.steps = current_letter.choice_steps.duplicate()
 	write_letter.on_activate()
 	return

@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://bn1mdhbkrl6o"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_1klw5"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_lg0el"]
+
+[sub_resource type="Resource" id="Resource_x8vv4"]
+script = ExtResource("1_1klw5")
+choice = "Sinto saudades de você."
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_d6st4"]
+script = ExtResource("1_1klw5")
+choice = "Espero não te ver."
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_o7gx4"]
+script = ExtResource("1_1klw5")
+choice = "Estimo que esteja bem. "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_d5pa1"]
+script = ExtResource("1_1klw5")
+choice = "Conto as horas para poder te ver."
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_tnace"]
+script = ExtResource("1_1klw5")
+choice = "Venho por meio desta informar."
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_5tp2y"]
+script = ExtResource("1_1klw5")
+choice = "Espero que esta carta lhe encontre com saúde."
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_lg0el")
+options = Array[ExtResource("1_1klw5")]([SubResource("Resource_x8vv4"), SubResource("Resource_d6st4"), SubResource("Resource_o7gx4"), SubResource("Resource_d5pa1"), SubResource("Resource_tnace"), SubResource("Resource_5tp2y")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

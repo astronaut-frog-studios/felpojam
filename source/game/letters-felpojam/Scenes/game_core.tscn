@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bldmpnh73y7mc" path="res://nodes/letter/days_manager.tscn" id="2_mpdgn"]
 [ext_resource type="Texture2D" uid="uid://u83eau0ceifx" path="res://assets/sprites/cenario/parede.png" id="3_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
+[ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="3_uomju"]
 [ext_resource type="Texture2D" uid="uid://b8w4u0g7g070v" path="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png" id="4_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://boiaot2ilw7bj" path="res://assets/sprites/cenario/Sprite_-_Tecido_v2.png" id="5_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://c10a1ynqfpmqt" path="res://assets/sprites/menus/menus.png" id="6_e6dgn"]
@@ -201,7 +202,9 @@ process_mode = 3
 script = ExtResource("1_oln2x")
 current_game_step = 2
 
-[node name="DaysManager" parent="." unique_id=879327459 instance=ExtResource("2_mpdgn")]
+[node name="DaysManager" parent="." unique_id=879327459 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
+days = Array[ExtResource("3_uomju")]([])
+mimos = Array[ExtResource("3_uomju")]([])
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -837,78 +840,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Envelopes" type="TextureButton" parent="Envelopes" unique_id=1808971102]
-modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.623
-anchor_right = 0.094000004
-anchor_bottom = 0.623
-offset_left = -99.32001
-offset_top = -115.56003
-offset_right = 125.67999
-offset_bottom = 101.43997
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_1qjtw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Envelopes/Envelopes" unique_id=11517988]
-visible = false
-modulate = Color(1, 1, 1, 0.16862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -92.5
-offset_right = 117.5
-offset_bottom = 88.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Envelopes" type="TextureButton" parent="Envelopes/Envelopes" unique_id=226171897]
-modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.623
-anchor_right = 0.094000004
-anchor_bottom = 0.623
-offset_left = -99.32001
-offset_top = -115.56003
-offset_right = 125.67999
-offset_bottom = 101.43997
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_1qjtw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Envelopes/Envelopes/Envelopes" unique_id=1254740713]
-visible = false
-modulate = Color(1, 1, 1, 0.16862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -92.5
-offset_right = 117.5
-offset_bottom = 88.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="DeliverLetter" type="TextureButton" parent="." unique_id=1154157177]
 visible = false
 layout_mode = 1
@@ -1074,78 +1005,6 @@ offset_left = -259.5
 offset_top = -247.0
 offset_right = 206.5
 offset_bottom = 248.0
-
-[node name="Envelopes2" type="TextureButton" parent="." unique_id=250110379]
-modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.623
-anchor_right = 0.094000004
-anchor_bottom = 0.623
-offset_left = -99.32001
-offset_top = -115.56003
-offset_right = 125.67999
-offset_bottom = 101.43997
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_1qjtw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Envelopes2" unique_id=704446818]
-visible = false
-modulate = Color(1, 1, 1, 0.16862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -92.5
-offset_right = 117.5
-offset_bottom = 88.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Envelopes" type="TextureButton" parent="Envelopes2" unique_id=1317810806]
-modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.623
-anchor_right = 0.094000004
-anchor_bottom = 0.623
-offset_left = -99.32001
-offset_top = -115.56003
-offset_right = 125.67999
-offset_bottom = 101.43997
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_1qjtw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Envelopes2/Envelopes" unique_id=110338824]
-visible = false
-modulate = Color(1, 1, 1, 0.16862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -92.5
-offset_right = 117.5
-offset_bottom = 88.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]

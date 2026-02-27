@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci3jtyy3imxrk"
-path="res://.godot/imported/cozy-library.webp-e469a6b5ad81adcfc823fcc106c27cb8.ctex"
+uid="uid://csgti643aiha5"
+path="res://.godot/imported/fundo_jogo.png-cb498fe941222945c1f64ee7f5a18531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cozy-library.webp"
-dest_files=["res://.godot/imported/cozy-library.webp-e469a6b5ad81adcfc823fcc106c27cb8.ctex"]
+source_file="res://assets/sprites/fundo_jogo.png"
+dest_files=["res://.godot/imported/fundo_jogo.png-cb498fe941222945c1f64ee7f5a18531.ctex"]
 
 [params]
 

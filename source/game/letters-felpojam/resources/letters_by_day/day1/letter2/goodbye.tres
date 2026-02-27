@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://cwqf8si0hrgdd"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_2j86n"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_fbm4v"]
+
+[sub_resource type="Resource" id="Resource_gq3hm"]
+script = ExtResource("1_2j86n")
+choice = "Com carinho, "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_k84ha"]
+script = ExtResource("1_2j86n")
+choice = "Atenciosamente,"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_q004h"]
+script = ExtResource("1_2j86n")
+choice = "Abraços,"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_wott7"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa feliz, "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_3dcae"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa decepcionada,"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_474sa"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa apaixonada,"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_utfgh"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa esperançosa,"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_13y75"]
+script = ExtResource("1_2j86n")
+choice = "Com muito amor, "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_u6ka3"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa decidida,"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_8wmlb"]
+script = ExtResource("1_2j86n")
+choice = "De uma pessoa agradecida,"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_fbm4v")
+options = Array[ExtResource("1_2j86n")]([SubResource("Resource_gq3hm"), SubResource("Resource_k84ha"), SubResource("Resource_q004h"), SubResource("Resource_wott7"), SubResource("Resource_3dcae"), SubResource("Resource_474sa"), SubResource("Resource_utfgh"), SubResource("Resource_13y75"), SubResource("Resource_u6ka3"), SubResource("Resource_8wmlb")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"
