@@ -21,6 +21,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_cadlp")
-text = "Estou morrendo de ___"
+text = "Estou morrendo de ___ "
 options = Array[ExtResource("1_clj1n")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

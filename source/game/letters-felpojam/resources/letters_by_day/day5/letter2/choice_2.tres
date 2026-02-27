@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://2nej0ycdtyd8"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_dq2yt"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_k2qog"]
+
+[sub_resource type="Resource" id="Resource_4dewj"]
+script = ExtResource("1_dq2yt")
+choice = "Agradeço por estar ao meu lado nos dias difíceis"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_fkosg"]
+script = ExtResource("1_dq2yt")
+choice = "Agradeço por ser essa maravilhosa pessoa"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_dq2yt"]
+script = ExtResource("1_dq2yt")
+choice = "Agradeço por tudo o que fez por mim"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_k2qog"]
+script = ExtResource("1_dq2yt")
+choice = "Não gosto tanto assim de você"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_gffou"]
+script = ExtResource("1_dq2yt")
+choice = "Esperava mais de você"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_ypemf"]
+script = ExtResource("1_dq2yt")
+choice = "Me decepcionou quando eu mais precisei"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_k2qog")
+text = "mas além disso também queria que soubesse que eu ___ "
+options = Array[ExtResource("1_dq2yt")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_dq2yt"), SubResource("Resource_k2qog"), SubResource("Resource_gffou"), SubResource("Resource_ypemf")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

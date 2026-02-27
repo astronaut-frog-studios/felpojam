@@ -21,6 +21,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_7gvc5")
-text = "Eu ___,"
+text = "Eu ___, "
 options = Array[ExtResource("1_oymoa")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_oymoa")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

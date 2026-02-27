@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_xgg28")
-text = "O assunto desta carta é delicado, oriento que ___"
+text = "O assunto desta carta é delicado, oriento que ___ "
 options = Array[ExtResource("1_2g7fa")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_oymoa"), SubResource("Resource_2g7fa")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

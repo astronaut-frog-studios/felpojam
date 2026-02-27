@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://bis1t1tptm2ls"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_12uf2"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_eardo"]
+
+[sub_resource type="Resource" id="Resource_4dewj"]
+script = ExtResource("1_12uf2")
+choice = "Eu mudei "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_fkosg"]
+script = ExtResource("1_12uf2")
+choice = "Eu fui muito duro com você "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_12uf2"]
+script = ExtResource("1_12uf2")
+choice = "Eu nunca estive errado"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_eardo"]
+script = ExtResource("1_12uf2")
+choice = "Eu estava errado o tempo todo"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_ri4js"]
+script = ExtResource("1_12uf2")
+choice = "Nós dois erramos "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_eardo")
+text = "eu com certeza sei que ___,"
+options = Array[ExtResource("1_12uf2")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_12uf2"), SubResource("Resource_eardo"), SubResource("Resource_ri4js")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

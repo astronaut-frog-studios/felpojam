@@ -22,6 +22,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_0bn1o")
-text = "\\nÉ com pesar que informo que meus pais faleceram esta manhã, e o funeral será esta tarde, conto com ___,"
+text = "\\nÉ com pesar que informo que meus pais faleceram esta manhã, e o funeral será esta tarde, conto com ___, "
 options = Array[ExtResource("1_2qx6t")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://24fqeqm2oew8"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_v7xol"]
+[ext_resource type="Resource" uid="uid://hdprr088bmc7" path="res://resources/letters_by_day/day5/letter1/salutions_5_1.tres" id="2_oxi0l"]
+[ext_resource type="Resource" uid="uid://125jb0oo077k" path="res://resources/letters_by_day/day5/letter1/first_p.tres" id="3_1hrer"]
+[ext_resource type="Resource" uid="uid://crarrbc8kakhg" path="res://resources/letters_by_day/day5/letter1/choice_1.tres" id="4_4g6da"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="4_hasl0"]
+[ext_resource type="Resource" uid="uid://dnyfatdl7njng" path="res://resources/letters_by_day/day5/letter1/choice_2.tres" id="5_rwlr0"]
+[ext_resource type="Resource" uid="uid://y82ud1mlqg3f" path="res://resources/letters_by_day/day5/letter1/choice_3.tres" id="6_c01oo"]
+[ext_resource type="Resource" uid="uid://x107agywbmk5" path="res://resources/letters_by_day/day5/letter1/choice_4.tres" id="7_rqxi3"]
+[ext_resource type="Resource" uid="uid://bwkuiqe8h5g1u" path="res://resources/letters_by_day/day5/letter1/goodbye.tres" id="8_ryk5h"]
+
+[resource]
+script = ExtResource("4_hasl0")
+content = "Saudações, PPLAYER
+Venho por meio desta carta pedir que avise a minha família para não me procurar, estou fugindo com o amor da minha vida e não posso me casar com a pessoa que eles escolheram, Eduardo é meu grande amor, e eu jamais o deixaria, independente de qualquer dinheiro que possam me oferecer.
+
+Seja bem incisivo, eu não vou mudar de ideia, eles precisam entender que apesar de eu agradecer tudo que fizeram por mim, eu não devo nada a eles.
+
+De alguém decidido,
+L. Sousa."
+author = "L. Sousa"
+choice_steps = Array[ExtResource("1_v7xol")]([ExtResource("2_oxi0l"), ExtResource("3_1hrer"), ExtResource("4_4g6da"), ExtResource("5_rwlr0"), ExtResource("6_c01oo"), ExtResource("7_rqxi3"), ExtResource("8_ryk5h")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

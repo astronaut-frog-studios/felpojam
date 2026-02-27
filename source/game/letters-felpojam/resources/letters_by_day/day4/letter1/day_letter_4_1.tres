@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://ccov72uvnnr6g"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_26qe0"]
+[ext_resource type="Resource" uid="uid://1eblwh1shymn" path="res://resources/letters_by_day/day4/letter1/salutions_4_1.tres" id="2_7li62"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_36nnk"]
+[ext_resource type="Resource" uid="uid://bn1mdhbkrl6o" path="res://resources/letters_by_day/day4/letter1/first_p.tres" id="3_dd118"]
+[ext_resource type="Resource" uid="uid://behfdj6v68spn" path="res://resources/letters_by_day/day4/letter1/choice_1.tres" id="4_cfpuy"]
+[ext_resource type="Resource" uid="uid://bis1t1tptm2ls" path="res://resources/letters_by_day/day4/letter1/choice_2.tres" id="5_33uen"]
+[ext_resource type="Resource" uid="uid://noo6g3jxiyx7" path="res://resources/letters_by_day/day4/letter1/choice_3.tres" id="6_78bjo"]
+[ext_resource type="Resource" uid="uid://b6hn6ath35ryd" path="res://resources/letters_by_day/day4/letter1/choice_4.tres" id="7_2jlen"]
+[ext_resource type="Resource" uid="uid://c78yb2gqwf68a" path="res://resources/letters_by_day/day4/letter1/goodbye.tres" id="8_bpxep"]
+
+[resource]
+script = ExtResource("2_36nnk")
+content = "Olá, PLAYER
+Meu filho, Nicolas, pediu auxílio a você para voltar a falar comigo e eu preciso de ajuda agora. A verdade é que eu pedi para que ele se retirasse e foi a pior decisão da minha vida.
+
+Me arrependo todos os dias, pois independente de tudo, ele ainda é meu filho querido, e nenhuma briga entre nós deveria existir por tanto tempo, eu espero, de todo o coração que meu filho me perdoe um dia.
+
+De um pai arrependido,
+Marcelo."
+author = "Marcelo"
+choice_steps = Array[ExtResource("1_26qe0")]([ExtResource("2_7li62"), ExtResource("3_dd118"), ExtResource("4_cfpuy"), ExtResource("5_33uen"), ExtResource("6_78bjo"), ExtResource("7_2jlen"), ExtResource("8_bpxep")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

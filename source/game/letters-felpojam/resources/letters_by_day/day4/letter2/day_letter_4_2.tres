@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://ddewtftqgbgqi"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_ap17f"]
+[ext_resource type="Resource" uid="uid://b6cdwfi1lmdnc" path="res://resources/letters_by_day/day4/letter2/salutions_4_2.tres" id="2_082nm"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_wuso4"]
+[ext_resource type="Resource" uid="uid://di8a6bsqd8scd" path="res://resources/letters_by_day/day4/letter2/first_p.tres" id="3_hpnob"]
+[ext_resource type="Resource" uid="uid://c2qyvjx56hyoe" path="res://resources/letters_by_day/day4/letter2/choice_1.tres" id="4_vjox2"]
+[ext_resource type="Resource" uid="uid://c8xmnwqm5kmaj" path="res://resources/letters_by_day/day4/letter2/choice_2.tres" id="5_3pxjr"]
+[ext_resource type="Resource" uid="uid://cg1ei8rwvs1dl" path="res://resources/letters_by_day/day4/letter2/choice_3.tres" id="6_byc54"]
+[ext_resource type="Resource" uid="uid://c2vyomxb6hb44" path="res://resources/letters_by_day/day4/letter2/choice_4.tres" id="7_83k7v"]
+[ext_resource type="Resource" uid="uid://b6o08dcv6tgcg" path="res://resources/letters_by_day/day4/letter2/goodbye.tres" id="8_3pxjr"]
+
+[resource]
+script = ExtResource("2_wuso4")
+content = "Saudações,
+Fiquei sabendo que a Ana passou sua loja para você, fico feliz que a loja continua a ativa. Ano passado pedi para que ela enviasse uma carta a minha esposa, comemorando nossos 50 anos de casado, ela gostou tanto que resolvi pedir esse ano novamente.
+
+Espero que você tenha o mesmo talento de sua tia.
+
+De um homem apaixonado,
+Julio."
+author = "Julio"
+choice_steps = Array[ExtResource("1_ap17f")]([ExtResource("2_082nm"), ExtResource("3_hpnob"), ExtResource("4_vjox2"), ExtResource("5_3pxjr"), ExtResource("6_byc54"), ExtResource("7_83k7v"), ExtResource("8_3pxjr")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

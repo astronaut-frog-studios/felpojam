@@ -26,6 +26,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_t1teo")
-text = "\\nmas agora é tarde demais para voltar atrás. Gostaria muito de ___, espero que leia esta carta"
+text = "\\nmas agora é tarde demais para voltar atrás. Gostaria muito de ___, espero que leia esta carta "
 options = Array[ExtResource("1_1u2gy")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

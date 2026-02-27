@@ -21,6 +21,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_ruq18")
-text = "vim atrás dos meus sonhos e espero ___,"
+text = "vim atrás dos meus sonhos e espero ___, "
 options = Array[ExtResource("1_igqv4")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

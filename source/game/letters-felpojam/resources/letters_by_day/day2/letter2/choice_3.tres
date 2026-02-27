@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_pl63s")
-text = "\\nPenso em você com frequência e gostaria que pensasse em mim também, nos conhecemos a pouco tempo, mas quero que saiba que ___."
+text = "\\nPenso em você com frequência e gostaria que pensasse em mim também, nos conhecemos a pouco tempo, mas quero que saiba que ___. "
 options = Array[ExtResource("1_38jnh")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87"), SubResource("Resource_u4pds")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

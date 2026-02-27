@@ -33,6 +33,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_pycqo")
-text = "Quero que saiba que ___. Cuide-se."
+text = "Quero que saiba que ___. Cuide-se. "
 options = Array[ExtResource("1_s8hpv")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35"), SubResource("Resource_s8hpv")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

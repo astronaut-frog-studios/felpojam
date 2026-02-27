@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_a3478")
-text = "\\nPor favor, aceite meus sentimentos e quem sabe você ___."
+text = "\\nPor favor, aceite meus sentimentos e quem sabe você ___. "
 options = Array[ExtResource("1_wgey8")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87"), SubResource("Resource_wgey8")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

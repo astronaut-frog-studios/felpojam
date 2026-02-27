@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://behfdj6v68spn"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_0y4kw"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_nxru0"]
+
+[sub_resource type="Resource" id="Resource_4dewj"]
+script = ExtResource("1_0y4kw")
+choice = "Te mandar ir a merda"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_fkosg"]
+script = ExtResource("1_0y4kw")
+choice = "Fazer as pazes "
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_yiaum"]
+script = ExtResource("1_0y4kw")
+choice = "Conversar sobre nossas diferenças"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_h1f35"]
+script = ExtResource("1_0y4kw")
+choice = "Ver se você mudou"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_nxru0")
+text = "Meu filho, endereço essa carta a você com o intuito de ___,"
+options = Array[ExtResource("1_0y4kw")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

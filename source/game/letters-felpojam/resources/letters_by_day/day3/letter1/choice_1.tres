@@ -33,6 +33,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_fkosg")
-text = "Pai, gostaria de começar esta carta dizendo que ___"
+text = "Pai, gostaria de começar esta carta dizendo que ___ "
 options = Array[ExtResource("1_4dewj")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35"), SubResource("Resource_uqg52")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

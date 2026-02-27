@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DayResource" format=3 uid="uid://jqcxgi0enqyy"]
+
+[ext_resource type="Script" uid="uid://bpjy5fmrsnkyu" path="res://resources/days/feedback.gd" id="1_bhfv8"]
+[ext_resource type="Script" uid="uid://bggefqeq3tdmk" path="res://resources/days/feedback_letter.gd" id="2_xxbhu"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_fmykd"]
+[ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="4_65sga"]
+[ext_resource type="Resource" uid="uid://24fqeqm2oew8" path="res://resources/letters_by_day/day5/letter1/day_letter_5_1.tres" id="4_x7onk"]
+[ext_resource type="Resource" uid="uid://cl7tt2fy8rb8c" path="res://resources/letters_by_day/day5/letter2/day_letter_5_2.tres" id="5_4peq3"]
+
+[sub_resource type="Resource" id="Resource_otdyc"]
+script = ExtResource("2_xxbhu")
+content = "Saudações,
+Fiquei muito feliz com o resultado da carta, minha esposa amou suas palavras, vejo que a loja continua no auge mesmo após a troca de proprietário, com certeza ano que vem vou pedir outra carta para nosso aniversário de 52 anos.
+
+Aceite este pequeno presente como agradecimento, minha mulher o fez, é uma abelha de crochê. Que mais anos venham.
+
+De um homem feliz e satisfeito,
+Julio."
+author = "Julio"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_1x0yn"]
+script = ExtResource("1_bhfv8")
+content = SubResource("Resource_otdyc")
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[sub_resource type="Resource" id="Resource_wgt1x"]
+script = ExtResource("2_xxbhu")
+content = "Saudações,
+Fiquei muito triste com o resultado da carta, minha esposa se decepcionou com suas palavras, vejo que a loja não está em seu melhor estado após a troca de proprietário, gostaria de pedir uma carta ano que vem, mas temo gastar meu dinheiro atoa.
+
+Espero sinceramente que melhore.
+
+De um senhor decepcionado,
+Julio."
+author = "Julio"
+metadata/_custom_type_script = "uid://bggefqeq3tdmk"
+
+[sub_resource type="Resource" id="Resource_8cjo0"]
+script = ExtResource("1_bhfv8")
+content = SubResource("Resource_wgt1x")
+flag = 1
+metadata/_custom_type_script = "uid://bpjy5fmrsnkyu"
+
+[resource]
+script = ExtResource("4_65sga")
+feedbacks = Array[ExtResource("1_bhfv8")]([SubResource("Resource_1x0yn"), SubResource("Resource_8cjo0")])
+letters = Array[ExtResource("3_fmykd")]([ExtResource("4_x7onk"), ExtResource("5_4peq3")])
+metadata/_custom_type_script = "uid://bk0nsegj63cvd"

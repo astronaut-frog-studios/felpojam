@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_wq30l")
-text = "nesses cinco anos longe de você só me fez pensar o quanto eu ___"
+text = "nesses cinco anos longe de você só me fez pensar o quanto eu ___ "
 options = Array[ExtResource("1_0sajn")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

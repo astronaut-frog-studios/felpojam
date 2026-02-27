@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://cl7tt2fy8rb8c"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_4n3k1"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="2_3pddf"]
+[ext_resource type="Resource" uid="uid://bc6y2uxcyjfpl" path="res://resources/letters_by_day/day5/letter2/salutions_5_2.tres" id="2_vwgqj"]
+[ext_resource type="Resource" uid="uid://7jrawyq7q1vv" path="res://resources/letters_by_day/day5/letter2/first_p.tres" id="3_gu74y"]
+[ext_resource type="Resource" uid="uid://ey764epfl33g" path="res://resources/letters_by_day/day5/letter2/choice_1.tres" id="4_2uy5d"]
+[ext_resource type="Resource" uid="uid://2nej0ycdtyd8" path="res://resources/letters_by_day/day5/letter2/choice_2.tres" id="5_jeaqe"]
+[ext_resource type="Resource" uid="uid://ckalnf0kcj4m5" path="res://resources/letters_by_day/day5/letter2/choice_3.tres" id="6_re4vv"]
+[ext_resource type="Resource" uid="uid://bhhlkf512twlp" path="res://resources/letters_by_day/day5/letter2/choice_4.tres" id="7_j2ta6"]
+[ext_resource type="Resource" uid="uid://b7xhqfm2f7dqs" path="res://resources/letters_by_day/day5/letter2/goodbye.tres" id="8_bxir2"]
+
+[resource]
+script = ExtResource("2_3pddf")
+content = "Olá,
+Espero que esteja bem,
+
+Tenho um amigo muito importante que faz aniversário hoje, mas além de um presente gostaria de o dizer o quanto ele é especial para minha vida e o quanto eu espero que ele prospere na vida.
+
+Somos amigos de infância e temo não ter agradecido o suficiente o que ele fez por mim na época de escola, o quanto eu lembro com carinho e fico feliz ao pensar em nossas memórias juntos.
+Por favor, transmita toda essa felicidade a ele.
+
+De um amigo agradecido,
+Felipe."
+author = "Felipe"
+choice_steps = Array[ExtResource("1_4n3k1")]([ExtResource("2_vwgqj"), ExtResource("3_gu74y"), ExtResource("4_2uy5d"), ExtResource("5_jeaqe"), ExtResource("6_re4vv"), ExtResource("7_j2ta6"), ExtResource("8_bxir2")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

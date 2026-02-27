@@ -28,6 +28,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_xgj2e")
-text = "Eu jamais pensei que ___ dessa maneira,"
+text = "Eu jamais pensei que ___ dessa maneira, "
 options = Array[ExtResource("1_dbrq2")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_oymoa"), SubResource("Resource_2g7fa")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"
