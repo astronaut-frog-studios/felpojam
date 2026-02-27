@@ -2,34 +2,48 @@ class_name Write_Letter extends Control
 
 const choice_prefab = preload("res://nodes/letter/choice.tscn")
 
+signal on_choice_punction(point: int)
+
 @onready var text_label: Label = $Panel/CartaMenu/label
 @onready var choice_container: Control = $Panel/ChoicesContainer/ChoiceContainer/ChoiceWrapper
 @onready var next_button: TextureButton = $Panel/next
 
 @export var table_letter: Label
-@export var steps: Array[Choice_Resource] = []
+@export var steps: Array[ChoiceResource] = []
 
-var queue: Array[Choice_Resource] = []
-var current_step: Choice_Resource
+var queue: Array[ChoiceResource] = []
+var current_step: ChoiceResource
 var current_text: String = ""  # texto acumulado
 
 var typing_id: int = 0
 var typing_speed: float = 0.04
 var is_typing: bool = false
 
-var step1 := Choice_Resource.new(
+var step1 := ChoiceResource.new(
 	"my approved name is ___. And blablabla",
-	["Joao", "Murilo", "Jorge"]
+	[
+		Choice_Option_Resource.new({"option": "Joao", "point": 0}),
+		Choice_Option_Resource.new({"option": "Murilo", "point": 0}),
+		Choice_Option_Resource.new({"option": "Jorge", "point": 0})
+	]
 )
 
-var step2 := Choice_Resource.new(
+var step2 := ChoiceResource.new(
 	"and I like ___",
-	["coffee", "cookie", "chocolate"]
+	[
+	Choice_Option_Resource.new({"option": "coffee", "point": 10}),
+	Choice_Option_Resource.new(	{"option": "cookie", "point": 30}),
+	Choice_Option_Resource.new({"option": "chocolate", "point": 5})
+	]
 )
 
-var step3 := Choice_Resource.new(
+var step3 := ChoiceResource.new(
 	" with fanta of ___ flavor",
-	["uva", "laranja", "maracuja"]
+	[
+		Choice_Option_Resource.new({"option": "uva", "point": 15}),
+		Choice_Option_Resource.new({"option": "laranja", "point": 25}),
+		Choice_Option_Resource.new({"option": "maracuja", "point": 10})
+	]
 )
 
 func on_activate() -> void:
@@ -93,24 +107,25 @@ func type_text(old_text: String, text: String)-> void:
 
 	text_label.text = text.substr(0, index) # a label vai ter o valor de 0 até o index do novo texto
 	var rest := text.substr(index) # do index do texto pra frente vai escrever
-	for ch in rest:
+	for character in rest:
 		if my_id != typing_id:
 			return # breaks loop
-		text_label.text += ch
+		text_label.text += character
 		await get_tree().create_timer(typing_speed).timeout
 
 	if my_id == typing_id:
 		is_typing = false
 
-func _instantiate_choices(options: Array[String]) -> void:
+func _instantiate_choices(options: Array[Choice_Option_Resource]) -> void:
 	_clear_choices()
-	for option_text in options:
+	for option in options:
 		var choice := choice_prefab.instantiate()
 		choice_container.add_child(choice)
 
 		var btn: Button = choice.get_node("Button")
+		var option_text: String = option.choice["option"]
 		btn.text = option_text
-
+		on_choice_punction.emit(option.choice["point"])
 		btn.button_down.connect(func() -> void:
 			choose_option(option_text)
 		)
