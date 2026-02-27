@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://du1lp8fwiqwr5" path="res://scripts/intro/player_name_input.gd" id="1_b226h"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_alxvg"]
-[ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="2_duh1u"]
 [ext_resource type="Texture2D" uid="uid://c5ol46r1px302" path="res://assets/sprites/freeversion.png" id="3_alxvg"]
+[ext_resource type="Texture2D" uid="uid://b7qg2dc1nl2v" path="res://assets/sprites/papel.png" id="4_37iue"]
 [ext_resource type="Script" uid="uid://b1i0s0f03lelk" path="res://scripts/intro/carta.gd" id="5_3bmuq"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="5_rsiac"]
 [ext_resource type="FontFile" uid="uid://p2qqeasb8iia" path="res://assets/fonts/dpcomic/dpcomic.ttf" id="7_3bmuq"]
@@ -15,10 +15,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_geirw"]
 atlas = ExtResource("3_alxvg")
 region = Rect2(193, 1, 14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nn7w8"]
-atlas = ExtResource("2_duh1u")
-region = Rect2(2, 5, 90, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r07dh"]
 atlas = ExtResource("11_a7jvs")
@@ -99,12 +95,12 @@ anchor_top = 0.101
 anchor_right = 0.87900007
 anchor_bottom = 0.855
 offset_left = 0.023986816
-offset_top = 8.551994
-offset_right = -0.27478027
+offset_top = -9.720001
+offset_right = 122.87988
 offset_bottom = -0.040039063
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_nn7w8")
+texture = ExtResource("4_37iue")
 script = ExtResource("5_3bmuq")
 
 [node name="Content" type="Label" parent="Carta" unique_id=708168786]
@@ -114,15 +110,15 @@ anchor_left = 0.046000004
 anchor_top = 0.15200001
 anchor_right = 0.96000004
 anchor_bottom = 0.674
-offset_left = 17.746666
-offset_top = -6.9600067
-offset_right = -0.2000122
-offset_bottom = 9.47998
+offset_left = 37.719658
+offset_top = -26.989128
+offset_right = -119.146545
+offset_bottom = 114.574554
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 theme_override_fonts/font = ExtResource("5_rsiac")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 17
 text = "Lembra quando eu lhe contei que comprei esta loja há 30 anos? Eu pensei muito nesses últimos meses e decidi passar ela a diante, e a melhor escolha sem dúvidas é você. Quando eu abri essa loja as pessoas comentaram que ninguém pediria meus serviços, afinal, quem pagaria a alguém para escrever cartas? Mas meu trabalho ia muito além de escrever, é colocar sentimentos, desejos e claro, carimbos lindos e maravilhosos que enchem os olhos. 
 
 E logo, as pessoas começaram a aparecer, pedindo que eu escrevesse uma carta aos pais, filhos, amores e amigos, pois as pessoas descobriram o quão agradável é transmitir corretamente uma mensagem, de forma amorosa, respeitosa e até com pesar, se a notícia não for boa.
@@ -136,14 +132,11 @@ script = ExtResource("7_bu1yb")
 [node name="Label" type="Label" parent="Carta" unique_id=835628507]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.674
-anchor_top = 0.74600005
-anchor_right = 0.952
-anchor_bottom = 0.86200005
-offset_left = -18.146667
-offset_top = -22.080017
-offset_right = -0.37335205
-offset_bottom = 0.23999023
+anchor_left = 0.61730033
+anchor_top = 0.8089619
+anchor_right = 0.9118902
+anchor_bottom = 0.9653558
+offset_left = -6.1035156e-05
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
@@ -151,13 +144,14 @@ theme_override_fonts/font = ExtResource("7_3bmuq")
 theme_override_font_sizes/font_size = 36
 text = "Com amor, tia Ana."
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("7_bu1yb")
 min_font_size = 24
 max_font_size = 36
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Carta" unique_id=719417249]
 visible = false
@@ -184,48 +178,6 @@ script = ExtResource("10_272cy")
 
 [node name="AnimatedTextureRect" parent="LivroTeste/book" parent_id_path=PackedInt32Array(861035652, 1447565315) index="0" unique_id=737126702]
 texture = SubResource("AtlasTexture_r07dh")
-
-[node name="Label" parent="LivroTeste/book/Page1/Container2" parent_id_path=PackedInt32Array(861035652, 699437771) index="0" unique_id=325698618]
-theme_override_font_sizes/font_size = 17
-
-[node name="Label3" parent="LivroTeste/book/Page1/Container" parent_id_path=PackedInt32Array(861035652, 1550404961) index="0" unique_id=915813171]
-theme_override_font_sizes/font_size = 20
-
-[node name="Label3" parent="LivroTeste/book/Page1/Container3" parent_id_path=PackedInt32Array(861035652, 469865491) index="0" unique_id=157443774]
-theme_override_font_sizes/font_size = 23
-
-[node name="Label2" parent="LivroTeste/book/Page1" parent_id_path=PackedInt32Array(861035652, 802240877) index="3" unique_id=1134453874]
-theme_override_font_sizes/font_size = 17
-
-[node name="Label" parent="LivroTeste/book/Page2/Container2" parent_id_path=PackedInt32Array(861035652, 458578672) index="0" unique_id=87511126]
-theme_override_font_sizes/font_size = 16
-
-[node name="Label3" parent="LivroTeste/book/Page2" parent_id_path=PackedInt32Array(861035652, 2048991446) index="1" unique_id=14417565]
-theme_override_font_sizes/font_size = 14
-
-[node name="Label3" parent="LivroTeste/book/Page2/Container3" parent_id_path=PackedInt32Array(861035652, 883889318) index="0" unique_id=326567234]
-theme_override_font_sizes/font_size = 18
-
-[node name="Label3" parent="LivroTeste/book/Page2/Container4" parent_id_path=PackedInt32Array(861035652, 79406362) index="0" unique_id=228870468]
-theme_override_font_sizes/font_size = 14
-
-[node name="Label2" parent="LivroTeste/book/Page2" parent_id_path=PackedInt32Array(861035652, 2048991446) index="4" unique_id=151876437]
-theme_override_font_sizes/font_size = 14
-
-[node name="Label" parent="LivroTeste/book/Page3/Container2" parent_id_path=PackedInt32Array(861035652, 1126719759) index="0" unique_id=1721355307]
-theme_override_font_sizes/font_size = 17
-
-[node name="Label" parent="LivroTeste/book/Page3/Container3" parent_id_path=PackedInt32Array(861035652, 1773659571) index="0" unique_id=2036828362]
-theme_override_font_sizes/font_size = 16
-
-[node name="Label3" parent="LivroTeste/book/Page3/Container4" parent_id_path=PackedInt32Array(861035652, 1900375313) index="0" unique_id=249880593]
-theme_override_font_sizes/font_size = 16
-
-[node name="Label2" parent="LivroTeste/book/Page3" parent_id_path=PackedInt32Array(861035652, 2135046908) index="3" unique_id=1624328315]
-theme_override_font_sizes/font_size = 14
-
-[node name="Label2" parent="LivroTeste/book/Page4" parent_id_path=PackedInt32Array(861035652, 339231374) index="0" unique_id=1226096138]
-theme_override_font_sizes/font_size = 22
 
 [node name="Button2" type="Button" parent="LivroTeste" unique_id=112505593]
 visible = false

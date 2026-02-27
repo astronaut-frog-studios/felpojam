@@ -3,6 +3,8 @@ class_name GameManager extends Node
 enum GameStep { BEGIN, LETTER, FREE_STAMP, POSTMARK, ENDED }  
 enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 
+signal on_letter_end
+
 @export var current_game_step: GameStep = GameStep.BEGIN
 @export var current_selo_step: SeloStep = SeloStep.MELTING_PAINT
 
@@ -12,6 +14,7 @@ enum SeloStep { MELTING_PAINT, DROP_PAINT, POSTMARK_PAINT, ENDED }
 @onready var carta_content: Label = $"../Carta/CartaTable/CartaTableLabel"
 @onready var carta_envelopada: Control = $"../CartaEnvelopada"
 @onready var selo_area: Control = $"../CartaEnvelopada/envelope/SeloArea"
+@onready var deliver_button: TextureButton = $"../DeliverLetter"
 
 var spoon: SpoonDrag
 var stamps: Array
@@ -51,16 +54,24 @@ func _process(_delta: float) -> void:
 		GameStep.POSTMARK:
 			_postmark_step()
 		GameStep.ENDED:
-			# carta.show()
-			# carta_content.text = ""
-			# carta_envelopada.hide()
-			# disable_stamps_run = false
-			# selo_area.texture = null
+			deliver_button.show()
+			deliver_button.button_down.connect(func() -> void:
+				var carimbadas := get_tree().get_nodes_in_group("stamp_draw") as Array
+				for carimbada: Node in carimbadas:
+					carimbada.queue_free()
+				carta.show()
+				carta_content.text = ""
+				carta_envelopada.hide()
+				disable_stamps_run = false
+				selo_area.texture = null
+				deliver_button.hide()
+				on_letter_end.emit()
+				)
+			current_game_step = GameStep.BEGIN
+				
 			# aparece o bottao de Entregar carta, nele desabilito e reseto tudo
 			# ao clicar escurece e carrega a próxima cena que estiver nele
 			# recebe o nome da cena como parametro
-			_disable_all_stamps()
-			pass
 
 func _free_stamp_step() -> void:
 	envelopes.mouse_filter = Control.MOUSE_FILTER_PASS

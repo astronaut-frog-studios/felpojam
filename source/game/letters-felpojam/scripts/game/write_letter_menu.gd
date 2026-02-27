@@ -33,10 +33,14 @@ var step3 := Choice_Resource.new(
 )
 
 func on_activate() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 	restart_letter(true)
 
 func _ready() -> void:
-	if steps.is_empty():
+	if steps.is_empty(): # FOR TEST ONLY
+		mouse_filter = Control.MOUSE_FILTER_PASS
+		mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 		steps = [step1, step2, step3]
 
 	queue = steps.duplicate()
@@ -149,4 +153,6 @@ func _on_reset_button_down() -> void:
 
 func _on_next_button_down() -> void:
 	table_letter.text = current_text
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
 	hide()

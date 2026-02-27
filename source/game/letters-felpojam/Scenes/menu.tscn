@@ -53,16 +53,16 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = -164.0
-offset_right = 289.0
-offset_bottom = -79.0
+offset_left = 46.0
+offset_top = -149.0
+offset_right = 359.0
+offset_bottom = -75.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.019607844, 0.32156864, 0.18039216, 1)
+theme_override_colors/font_color = Color(0.5019608, 0.29803923, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("5_jsrd8")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 44
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
-text = "Título"
+text = "Letter Atelier"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -85,7 +85,7 @@ alignment = 1
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2063512658]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.94887334, 0.9632917, 0.8407345, 1)
@@ -99,7 +99,7 @@ text = "Jogar"
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2106600690]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.94887334, 0.9632917, 0.8407345, 1)
@@ -113,7 +113,7 @@ text = "Créditos"
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=292230509]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.94887334, 0.9632917, 0.8407345, 1)
@@ -129,7 +129,7 @@ text = "Ajustes"
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1793206362]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.94887334, 0.9632917, 0.8407345, 1)
@@ -139,24 +139,6 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vjb58")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yqeox")
 text = "Sair"
-
-[node name="Label2" type="Label" parent="." unique_id=1100924801]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 112.0
-offset_top = 115.0
-offset_right = 336.0
-offset_bottom = 179.0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.019607844, 0.32156864, 0.18039216, 1)
-theme_override_fonts/font = ExtResource("5_jsrd8")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
-text = "AstroFrog"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="." unique_id=2111698910]
 layout_mode = 1
@@ -168,11 +150,29 @@ offset_top = 91.0
 offset_right = 301.0
 offset_bottom = 155.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
 theme_override_fonts/font = ExtResource("6_wbdvm")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
 text = "Feito por:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1100924801]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = 115.0
+offset_right = 336.0
+offset_bottom = 179.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.40784314, 0.58431375, 0.58431375, 1)
+theme_override_fonts/font = ExtResource("5_jsrd8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
+text = "AstroFrog"
 horizontal_alignment = 1
 vertical_alignment = 1
 

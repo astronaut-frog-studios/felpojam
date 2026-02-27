@@ -34,6 +34,8 @@
 [ext_resource type="Script" uid="uid://cglmdv0j17dwt" path="res://resources/tintas/tinta_resource.gd" id="27_qj43v"]
 [ext_resource type="Texture2D" uid="uid://clpj33bw8n6k2" path="res://assets/sprites/interativos/selo.png" id="28_ho3qs"]
 [ext_resource type="PackedScene" uid="uid://om0qa1vc3w3p" path="res://nodes/livro.tscn" id="30_md6ll"]
+[ext_resource type="Texture2D" uid="uid://drkukqbmigyjj" path="res://assets/sprites/sproutLands/Sprite sheet for Basic Pack.png" id="31_n5sxq"]
+[ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="32_11ip6"]
 [ext_resource type="Script" uid="uid://bbbdcb4kq1eqe" path="res://scripts/book_button.gd" id="33_328cw"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="33_q5rh8"]
 [ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="34_dax43"]
@@ -148,6 +150,14 @@ melted_texture = SubResource("AtlasTexture_qt0jq")
 selo_texture = ExtResource("28_ho3qs")
 color = Color(0.5058824, 0.4627451, 0.40392157, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad66y"]
+atlas = ExtResource("31_n5sxq")
+region = Rect2(163, 178, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u7uf"]
+atlas = ExtResource("31_n5sxq")
+region = Rect2(259, 180, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c7ct"]
 atlas = ExtResource("6_e6dgn")
@@ -510,53 +520,17 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Panel" type="Panel" parent="CartaEnvelopada/envelope/SeloArea" unique_id=2106306376]
-modulate = Color(1, 0.13674557, 0.26036727, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -20.5
-offset_right = 23.0
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Envelopes" type="TextureButton" parent="." unique_id=695428414]
-modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+modulate = Color(0.8352941, 0.36078432, 0.3529412, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.623
-anchor_right = 0.094000004
-anchor_bottom = 0.623
-offset_left = -99.32001
-offset_top = -115.56003
-offset_right = 125.67999
-offset_bottom = 101.43997
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("13_1qjtw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Envelopes" unique_id=425854800]
-visible = false
-modulate = Color(1, 1, 1, 0.16862746)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchor_left = 0.57900006
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.57900006
 anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -92.5
-offset_right = 117.5
-offset_bottom = 88.5
+offset_left = -20.002003
+offset_top = -20.5
+offset_right = 19.997997
+offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -573,8 +547,6 @@ offset_top = -100.119995
 offset_right = 124.64
 offset_bottom = -0.11999512
 grow_vertical = 0
-
-[node name="---------------------" type="Node" parent="." unique_id=1146592228]
 
 [node name="CaixaSinete" type="TextureRect" parent="." unique_id=1717848655]
 unique_name_in_owner = true
@@ -824,6 +796,81 @@ script = ExtResource("26_7tlso")
 tinta = SubResource("Resource_q5rh8")
 preview_size = Vector2(62, 62)
 
+[node name="Envelopes" type="TextureButton" parent="." unique_id=695428414]
+modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.623
+anchor_right = 0.094000004
+anchor_bottom = 0.623
+offset_left = -99.32001
+offset_top = -115.56003
+offset_right = 125.67999
+offset_bottom = 101.43997
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_1qjtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="Envelopes" unique_id=425854800]
+visible = false
+modulate = Color(1, 1, 1, 0.16862746)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -92.5
+offset_right = 117.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DeliverLetter" type="TextureButton" parent="." unique_id=1154157177]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90400004
+anchor_right = 0.5
+anchor_bottom = 0.90400004
+offset_left = -150.0
+offset_top = -46.880005
+offset_right = 147.0
+offset_bottom = 47.119995
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_ad66y")
+texture_pressed = SubResource("AtlasTexture_6u7uf")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DeliverLetter" unique_id=1606071271]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4862745, 0.20784314, 0.31764707, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("32_11ip6")
+theme_override_font_sizes/font_size = 24
+text = "Entregar
+Carta"
+horizontal_alignment = 1
+
 [node name="------------------------" type="Node" parent="." unique_id=21334249]
 
 [node name="MenuButton" type="TextureButton" parent="." unique_id=184922837]
@@ -875,11 +922,10 @@ texture_normal = SubResource("AtlasTexture_raskq")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="------------------------_" type="Node" parent="." unique_id=96153440]
+[node name="---------------------" type="Node" parent="." unique_id=1146592228]
 
 [node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 mouse_filter = 2
 mouse_behavior_recursive = 1
@@ -929,9 +975,12 @@ offset_left = 62.0
 offset_right = 1.0
 
 [node name="Panel" parent="PauseMenu" index="1" unique_id=2128962313]
+visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -142.0
 
 [node name="Moldura" parent="PauseMenu" index="2" unique_id=1872986391]
+modulate = Color(1, 1, 1, 0)
 offset_left = -259.5
 offset_top = -247.0
 offset_right = 206.5
@@ -939,8 +988,8 @@ offset_bottom = 248.0
 
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
-[connection signal="button_down" from="Envelopes" to="GameManager" method="_on_envelopes_button_down"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
+[connection signal="button_down" from="Envelopes" to="GameManager" method="_on_envelopes_button_down"]
 [connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
 [connection signal="button_down" from="BookButton" to="BookButton" method="_on_button_down"]
 [connection signal="button_down" from="Books/LivroTeste/CloseMenu" to="Books/LivroTeste/CloseMenu" method="_on_close_button_down"]

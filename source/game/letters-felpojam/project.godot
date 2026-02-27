@@ -43,6 +43,7 @@ enabled=PackedStringArray("res://addons/animatedtexturerect/plugin.cfg")
 [global_group]
 
 spoon=""
+stamp_draw=""
 
 [input]
 

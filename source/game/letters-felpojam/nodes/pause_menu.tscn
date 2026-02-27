@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6wb8"]
 shader = ExtResource("1_dk148")
-shader_parameter/lod = 0.0
+shader_parameter/lod = 0.0800000038
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_luhed"]
 atlas = ExtResource("1_jprnk")
@@ -32,7 +32,7 @@ length = 0.001
 
 [sub_resource type="Animation" id="Animation_luhed"]
 resource_name = "blur"
-length = 0.05
+length = 0.8
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -112,8 +112,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=2128962313]
-visible = false
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.60784316)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,7 +122,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Moldura" type="TextureRect" parent="." unique_id=1872986391]
-modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0.9529412, 0.9254902, 0.7921569, 0.9764706)
 layout_mode = 1
 anchors_preset = 8
@@ -169,7 +167,7 @@ offset_right = 89.5
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+theme_override_colors/font_color = Color(0.39215687, 0.34117648, 0.39215687, 1)
 theme_override_fonts/font = ExtResource("3_q6wb8")
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
@@ -211,7 +209,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+theme_override_colors/font_color = Color(0.39215687, 0.34117648, 0.39215687, 1)
 theme_override_fonts/font = ExtResource("3_q6wb8")
 text = "Sair 
 do jogo"
