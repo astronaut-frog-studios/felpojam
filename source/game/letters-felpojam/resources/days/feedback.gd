@@ -5,12 +5,12 @@ enum Flag {
 	BAD
 }
 
-@export var content: DayLetter
+@export var content: FeedbackLetter
 @export var flag: Flag
 @export var mimo: String
 
 func _init(
-	_content: DayLetter = null,
+	_content: FeedbackLetter = null,
 	_flag: Flag = Flag.GOOD,
 	_mimo: String = ""
 ) -> void:

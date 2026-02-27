@@ -110,3 +110,5 @@ theme_override_font_sizes/font_size = 11
 text = "Continuar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_down" from="Panel/next" to="." method="_on_next_button_down"]

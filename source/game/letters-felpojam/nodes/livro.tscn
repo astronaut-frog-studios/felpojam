@@ -790,7 +790,7 @@ theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 22
-text = "Ao finalizar tudo, você aperta em “finalizar carta” e ela é automaticamente enviada! 
+text = "Ao finalizar tudo, você aperta em “entregar carta” e ela é automaticamente enviada! 
 
 Agora é só apertar novamente no ícone da caixa de correio até que não tenha mais nenhuma aguardando, quando acabar o dia vai ser finalizado.
 

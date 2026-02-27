@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://det7jci58frkl"
-path="res://.godot/imported/Sprite_-_Ambiente_Tecido1.png-02782ca902d05133fcd4c1f37b65daf2.ctex"
+uid="uid://c6ybn358uao5i"
+path="res://.godot/imported/exemplo.png-821afde1e9b183d17fcfc8a4b2016162.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cenario/Sprite_-_Ambiente_Tecido1.png"
-dest_files=["res://.godot/imported/Sprite_-_Ambiente_Tecido1.png-02782ca902d05133fcd4c1f37b65daf2.ctex"]
+source_file="res://assets/sprites/exemplo.png"
+dest_files=["res://.godot/imported/exemplo.png-821afde1e9b183d17fcfc8a4b2016162.ctex"]
 
 [params]
 

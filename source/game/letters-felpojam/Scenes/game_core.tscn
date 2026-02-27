@@ -203,6 +203,10 @@ current_game_step = 2
 [node name="DaysManager" type="Node" parent="." unique_id=649500740 node_paths=PackedStringArray("mimos")]
 process_mode = 3
 script = ExtResource("2_ocv1q")
+total_days = null
+current_day = null
+current_points = null
+days = null
 mimos = [NodePath("../Mimos/Mimo1"), NodePath("../Mimos/Mimo2"), NodePath("../Mimos/Mimo3"), NodePath("../Mimos/Mimo4")]
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]

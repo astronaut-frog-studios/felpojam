@@ -1,5 +1,7 @@
 class_name ShowLetter extends Control
 
+signal on_next_letter_click
+
 @onready var label: Label = $Panel/CartaMenu/label
 @onready var next_button: TextureButton = $Panel/next
 
@@ -10,3 +12,7 @@ func disable_interaction() -> void:
 func enable_interaction() -> void:
 	next_button.disabled = false
 	next_button.modulate = Color.WHITE
+
+func _on_next_button_down() -> void:
+	on_next_letter_click.emit()
+	#queue_free()
