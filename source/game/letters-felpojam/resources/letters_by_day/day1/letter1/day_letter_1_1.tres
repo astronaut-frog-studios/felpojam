@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DayLetter" format=3 uid="uid://cav0hjsts2rir"]
+
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="1_xwms5"]
+[ext_resource type="Resource" uid="uid://qkfhybtmaj06" path="res://resources/letters_by_day/day1/letter1/salutions_1_1.tres" id="2_hnd5j"]
+[ext_resource type="Script" uid="uid://dntnonu8usqw3" path="res://resources/days/day_letter.gd" id="3_vgp7s"]
+
+[resource]
+script = ExtResource("3_vgp7s")
+author = "Izabela Morais"
+choice_steps = Array[ExtResource("1_xwms5")]([ExtResource("2_hnd5j")])
+metadata/_custom_type_script = "uid://dntnonu8usqw3"

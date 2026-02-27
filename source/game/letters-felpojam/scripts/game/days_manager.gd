@@ -3,6 +3,7 @@ class_name DaysManager extends Node
 enum State {BEGIN, EXTRA_LETTER, FEEDBACK_LETTER, CUSTOMER_LETTER, ENDED}
 
 @onready var show_letter: ShowLetter = %ShowLetter
+@onready var write_letter: Write_Letter = %Write_Letter
 
 @export var total_days: int = 5
 @export var current_day: int = 0
@@ -67,9 +68,10 @@ func add_points(value: int) -> void:
 
 func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
 	show_letter.label.text = letter
+	show_letter.show()
 	await get_tree().create_timer(3.0).timeout
 	show_letter.enable_interaction()
-	show_letter.on_next_letter_click.connect(on_next_letter_click.bind(show_letter))
+	show_letter.on_next_letter_click.connect(on_next_letter_click)
 
 func _next_day() -> void:
 	if current_day > total_days - 1:
@@ -90,17 +92,18 @@ func _show_mimo() -> void:
 
 func _on_next_extra_letter_click() -> void:
 	extra_letter = ""
-	show_letter.hide()
+	#show_letter.hide()
 	show_feedback_letter()
 
 func _on_next_feedback_letter_click() -> void:
 	feedback = null
-	show_letter.hide()
+	#show_letter.hide()
 	show_customer_letter()
 
 func _on_next_customer_letter_click() -> void:
 	show_letter.hide()
-	# TODO: add WriteLetter logic
+	write_letter.steps = current_letter.choice_steps.duplicate()
+	write_letter.on_activate()
 	return
 
 func _on_letter_delivery_end() -> void:

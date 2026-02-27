@@ -23,27 +23,27 @@ var is_typing: bool = false
 var step1 := ChoiceResource.new(
 	"my approved name is ___. And blablabla",
 	[
-		Choice_Option_Resource.new({"option": "Joao", "point": 0}),
-		Choice_Option_Resource.new({"option": "Murilo", "point": 0}),
-		Choice_Option_Resource.new({"option": "Jorge", "point": 0})
+		Choice_Option_Resource.new("Joao", 0),
+		Choice_Option_Resource.new("Murilo", 5),
+		Choice_Option_Resource.new("Jorge", 10)
 	]
 )
 
 var step2 := ChoiceResource.new(
 	"and I like ___",
 	[
-	Choice_Option_Resource.new({"option": "coffee", "point": 10}),
-	Choice_Option_Resource.new({"option": "cookie", "point": 30}),
-	Choice_Option_Resource.new({"option": "chocolate", "point": 5})
+	Choice_Option_Resource.new("coffee", 10),
+	Choice_Option_Resource.new("cookie", 30),
+	Choice_Option_Resource.new("chocolate", 5)
 	]
 )
 
 var step3 := ChoiceResource.new(
 	" with fanta of ___ flavor",
 	[
-		Choice_Option_Resource.new({"option": "uva", "point": 15}),
-		Choice_Option_Resource.new({"option": "laranja", "point": 25}),
-		Choice_Option_Resource.new({"option": "maracuja", "point": 10})
+		Choice_Option_Resource.new("uva", 15),
+		Choice_Option_Resource.new("laranja", 25),
+		Choice_Option_Resource.new("maracuja", 10)
 	]
 )
 
@@ -51,6 +51,7 @@ func on_activate() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 	restart_letter(true)
+	show()
 
 func _ready() -> void:
 	# FOR TEST ONLY
@@ -122,9 +123,9 @@ func _instantiate_choices(options: Array[Choice_Option_Resource]) -> void:
 		choice_container.add_child(choice)
 
 		var btn: Button = choice.get_node("Button")
-		var option_text: String = option.choice["option"]
+		var option_text: String = option.choice
 		btn.text = option_text
-		letter_points += option.choice["point"]
+		letter_points += option.point
 		btn.button_down.connect(func() -> void:
 			choose_option(option_text)
 		)

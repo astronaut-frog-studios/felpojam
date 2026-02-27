@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://uwhhvm5ghhav" path="res://scripts/game/game_manager.gd" id="1_oln2x"]
 [ext_resource type="Script" uid="uid://bag8f2d843hq5" path="res://scripts/game/drop_area.gd" id="1_uty5c"]
 [ext_resource type="PackedScene" uid="uid://b34eclyq5x4u7" path="res://nodes/pause_menu.tscn" id="2_0a7kk"]
-[ext_resource type="Script" uid="uid://ltpek5nvajq6" path="res://scripts/game/days_manager.gd" id="2_ocv1q"]
+[ext_resource type="PackedScene" uid="uid://bldmpnh73y7mc" path="res://nodes/letter/days_manager.tscn" id="2_mpdgn"]
 [ext_resource type="Texture2D" uid="uid://u83eau0ceifx" path="res://assets/sprites/cenario/parede.png" id="3_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
 [ext_resource type="Texture2D" uid="uid://b8w4u0g7g070v" path="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png" id="4_1qjtw"]
@@ -94,7 +94,7 @@ script = ExtResource("27_qj43v")
 default_texture = SubResource("AtlasTexture_dd5f8")
 melted_texture = SubResource("AtlasTexture_qt0jq")
 selo_texture = ExtResource("28_ho3qs")
-color = Color(0.88235295, 0.003921569, 0, 1)
+color = Color(0.5411765, 0.003921569, 0.8980392, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"
 
 [sub_resource type="Resource" id="Resource_7tlso"]
@@ -201,10 +201,7 @@ process_mode = 3
 script = ExtResource("1_oln2x")
 current_game_step = 2
 
-[node name="DaysManager" type="Node" parent="." unique_id=649500740 node_paths=PackedStringArray("mimos")]
-process_mode = 3
-script = ExtResource("2_ocv1q")
-mimos = [NodePath("../Mimos/Mimo1"), NodePath("../Mimos/Mimo2"), NodePath("../Mimos/Mimo3"), NodePath("../Mimos/Mimo4")]
+[node name="DaysManager" parent="." unique_id=879327459 instance=ExtResource("2_mpdgn")]
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -742,6 +739,7 @@ stretch_mode = 4
 script = ExtResource("26_7tlso")
 tinta = SubResource("Resource_7822h")
 preview_size = Vector2(62, 62)
+metadata/_edit_pinned_properties_ = [&"tinta"]
 
 [node name="TintaVermelha11" type="TextureRect" parent="CaixaSinete/Tintas" unique_id=337818039 groups=["paint"]]
 modulate = Color(0.92941177, 0.09803922, 0.5882353, 1)
@@ -822,6 +820,78 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Panel" type="Panel" parent="Envelopes" unique_id=425854800]
+visible = false
+modulate = Color(1, 1, 1, 0.16862746)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -92.5
+offset_right = 117.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Envelopes" type="TextureButton" parent="Envelopes" unique_id=1808971102]
+modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.623
+anchor_right = 0.094000004
+anchor_bottom = 0.623
+offset_left = -99.32001
+offset_top = -115.56003
+offset_right = 125.67999
+offset_bottom = 101.43997
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_1qjtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="Envelopes/Envelopes" unique_id=11517988]
+visible = false
+modulate = Color(1, 1, 1, 0.16862746)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -92.5
+offset_right = 117.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Envelopes" type="TextureButton" parent="Envelopes/Envelopes" unique_id=226171897]
+modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.623
+anchor_right = 0.094000004
+anchor_bottom = 0.623
+offset_left = -99.32001
+offset_top = -115.56003
+offset_right = 125.67999
+offset_bottom = 101.43997
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_1qjtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="Envelopes/Envelopes/Envelopes" unique_id=1254740713]
 visible = false
 modulate = Color(1, 1, 1, 0.16862746)
 show_behind_parent = true
@@ -933,6 +1003,7 @@ stretch_mode = 4
 
 [node name="ShowLetter" parent="." unique_id=2041088936 instance=ExtResource("38_mpdgn")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 
 [node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
@@ -1004,7 +1075,78 @@ offset_top = -247.0
 offset_right = 206.5
 offset_bottom = 248.0
 
-[connection signal="on_letter_delivery_end" from="GameManager" to="DaysManager" method="_on_letter_delivery_end"]
+[node name="Envelopes2" type="TextureButton" parent="." unique_id=250110379]
+modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.623
+anchor_right = 0.094000004
+anchor_bottom = 0.623
+offset_left = -99.32001
+offset_top = -115.56003
+offset_right = 125.67999
+offset_bottom = 101.43997
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_1qjtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="Envelopes2" unique_id=704446818]
+visible = false
+modulate = Color(1, 1, 1, 0.16862746)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -92.5
+offset_right = 117.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Envelopes" type="TextureButton" parent="Envelopes2" unique_id=1317810806]
+modulate = Color(0.8039216, 0.8039216, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.623
+anchor_right = 0.094000004
+anchor_bottom = 0.623
+offset_left = -99.32001
+offset_top = -115.56003
+offset_right = 125.67999
+offset_bottom = 101.43997
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_1qjtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="Envelopes2/Envelopes" unique_id=110338824]
+visible = false
+modulate = Color(1, 1, 1, 0.16862746)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -92.5
+offset_right = 117.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="ChoiceResource" format=3 uid="uid://b6cdwfi1lmdnc"]
+
+[ext_resource type="Script" uid="uid://ddgpnkx2mft5u" path="res://resources/write_letter/choice_resource_option.gd" id="1_g15ws"]
+[ext_resource type="Script" uid="uid://cfjj4k0ortpg1" path="res://resources/write_letter/choice_resource.gd" id="2_f67i8"]
+
+[sub_resource type="Resource" id="Resource_un4e1"]
+script = ExtResource("1_g15ws")
+choice = "Caro"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_6pf6d"]
+script = ExtResource("1_g15ws")
+choice = "Saudações"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_f2pw0"]
+script = ExtResource("1_g15ws")
+choice = "Prezado"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_qh8nh"]
+script = ExtResource("1_g15ws")
+choice = "Bom dia"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_qk552"]
+script = ExtResource("1_g15ws")
+choice = "Olá"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_u6no2"]
+script = ExtResource("1_g15ws")
+choice = "Querido"
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[sub_resource type="Resource" id="Resource_yn88y"]
+script = ExtResource("1_g15ws")
+choice = "A quem possa interessar,"
+point = 0
+metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
+
+[resource]
+script = ExtResource("2_f67i8")
+text = "___"
+options = Array[ExtResource("1_g15ws")]([SubResource("Resource_un4e1"), SubResource("Resource_6pf6d"), SubResource("Resource_f2pw0"), SubResource("Resource_qh8nh"), SubResource("Resource_qk552"), SubResource("Resource_u6no2"), SubResource("Resource_yn88y")])
+metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

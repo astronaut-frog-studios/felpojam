@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ds65w")
 choice = {
-"option": "",
+"option": "dadadas",
 "point": 5
 }
 metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
