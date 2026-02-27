@@ -65,7 +65,6 @@ func _next_step() -> void:
 	if queue.is_empty():
 		text_label.text = current_text
 		is_typing = false
-		print("Texto final: ", current_text)
 		next_button.disabled = false
 		next_button.modulate = Color.WHITE
 		return
@@ -80,8 +79,6 @@ func _next_step() -> void:
 	
 	await type_text(old_text, current_text)
 	#text_label.text = current_text
-	print("\nCURRENT_TEXT:\n", current_text)
-	print("\nOPTIONS:", current_step.options)
 	_instantiate_choices(current_step.options)
 
 func choose_option(option_text: String) -> void:
