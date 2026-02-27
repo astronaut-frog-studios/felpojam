@@ -1,50 +1,59 @@
 class_name DaysManager extends Node
 
-enum State { BEGIN,EXTRA_LETTER, FEEDBACK_LETTER, CUSTOMER_LETTER, ENDED }
+enum State {BEGIN, EXTRA_LETTER, FEEDBACK_LETTER, CUSTOMER_LETTER, ENDED}
 
-const show_letter_prefab = preload("res://nodes/letter/show_letter.tscn")
+@onready var show_letter: ShowLetter = %ShowLetter
 
 @export var total_days: int = 5
 @export var current_day: int = 0
+@export var min_points: int = 40
 @export var current_points: int = 0
 @export var days: Array[DayResource] = []
-@export var feedback: FeedbackLetter = null
 @export var mimos: Array[Control] = []
 
-var state: State = State.BEGIN
+@export var feedback: FeedbackLetter = null
+@export var state: State = State.BEGIN
+
+
 var extra_letter: String
+var letters_queue: Array[DayLetter]
+var current_letter: DayLetter
 
 func start_day() -> void:
 	var day := _get_current_day()
 	if day == null:
 		return
 	
+	letters_queue = day.letters.duplicate()
 	extra_letter = day.extra_letter
-	if extra_letter.is_empty():
-		state = State.FEEDBACK_LETTER
-	else:
-		state = State.EXTRA_LETTER
-		var show_letter: ShowLetter = show_letter_prefab.instantiate()
-		show_letter.label.text = extra_letter
-		await get_tree().create_timer(3.0).timeout
-		show_letter.enable_interaction()
-		show_letter.on_next_letter_click.connect(_on_next_extra_letter_click.bind(show_letter))
-		return
-	
-	if state == State.FEEDBACK_LETTER:
-		state = State.CUSTOMER_LETTER
-		return
+	feedback = day.feedback_to_show
 
-	if state == State.CUSTOMER_LETTER:
-		state = State.ENDED
+	if extra_letter.is_empty():
+		if day.feedback_to_show == null:
+			show_customer_letter()
+			return
+		show_feedback_letter()
 		return
+	state = State.EXTRA_LETTER
+	_show_letter(extra_letter, _on_next_extra_letter_click)
+	
+func show_feedback_letter() -> void:
+	state = State.FEEDBACK_LETTER
+	_show_letter(feedback.content, _on_next_feedback_letter_click)
+	return
+
+func show_customer_letter() -> void:
+	state = State.CUSTOMER_LETTER
+	current_letter = letters_queue.pop_front()
+	_show_letter(current_letter.content, _on_next_customer_letter_click)
+	return
 
 func finalize_day() -> void:
 	var day := _get_current_day()
 	if day == null:
 		return
 
-	if current_points >= 40:
+	if current_points >= min_points:
 		var good_feedback: Feedback = day.feedbacks[0]
 		feedback = good_feedback.content
 		_show_mimo()
@@ -53,10 +62,21 @@ func finalize_day() -> void:
 		feedback = bad_feedback.content
 	_next_day()
 
+func add_points(value: int) -> void:
+	current_points += value
+
+func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
+	show_letter.label.text = letter
+	await get_tree().create_timer(3.0).timeout
+	show_letter.enable_interaction()
+	show_letter.on_next_letter_click.connect(on_next_letter_click.bind(show_letter))
+
 func _next_day() -> void:
-	if current_day < total_days - 1:
-		current_day += 1
-		current_points = 0
+	if current_day > total_days - 1:
+		return
+	current_points = 0
+	current_day += 1
+	start_day()
 
 # get day object
 func _get_current_day() -> DayResource:
@@ -64,18 +84,32 @@ func _get_current_day() -> DayResource:
 		return days[current_day]
 	return null
 
-func add_points(value: int) -> void:
-	current_points += value
-
 func _show_mimo() -> void:
 	if current_day < mimos.size():
 		mimos[current_day].show()
 
-func add_day(day: DayResource) -> void:
+func _on_next_extra_letter_click() -> void:
+	extra_letter = ""
+	show_letter.hide()
+	show_feedback_letter()
+
+func _on_next_feedback_letter_click() -> void:
+	feedback = null
+	show_letter.hide()
+	show_customer_letter()
+
+func _on_next_customer_letter_click() -> void:
+	show_letter.hide()
+	# TODO: add WriteLetter logic
+	return
+
+func _on_letter_delivery_end() -> void:
+	if letters_queue.is_empty():
+		print("letters_queue is empty")
+		finalize_day()
+		return
+	show_customer_letter()
+
+func _add_day(day: DayResource) -> void:
 	days.append(day)
 	total_days = days.size()
-
-func _on_next_extra_letter_click(show_letter: ShowLetter) -> void:
-	extra_letter = ""
-	show_letter.queue_free()
-	_next_day()

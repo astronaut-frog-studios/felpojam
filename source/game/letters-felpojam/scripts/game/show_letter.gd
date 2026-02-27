@@ -14,5 +14,6 @@ func enable_interaction() -> void:
 	next_button.modulate = Color.WHITE
 
 func _on_next_button_down() -> void:
+	label.text = ""
+	disable_interaction()
 	on_next_letter_click.emit()
-	#queue_free()

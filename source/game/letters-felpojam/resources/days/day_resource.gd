@@ -1,13 +1,13 @@
 class_name DayResource extends Resource
 
 @export var extra_letter: String = "" # check for is_empty
-@export var feedback_to_show: DayLetter = null
+@export var feedback_to_show: FeedbackLetter = null
 @export var feedbacks: Array[Feedback] = []
 @export var letters: Array[DayLetter] = []
 
 func _init(
 	_extra_letter: String = "",
-	_feedback_to_show: DayLetter = null,
+	_feedback_to_show: FeedbackLetter = null,
 	_feedbacks: Array[Feedback] = [],
 	_letters: Array[DayLetter] = []
 ) -> void:
