@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://uwhhvm5ghhav" path="res://scripts/game/game_manager.gd" id="1_oln2x"]
 [ext_resource type="Script" uid="uid://bag8f2d843hq5" path="res://scripts/game/drop_area.gd" id="1_uty5c"]
 [ext_resource type="PackedScene" uid="uid://b34eclyq5x4u7" path="res://nodes/pause_menu.tscn" id="2_0a7kk"]
+[ext_resource type="Script" uid="uid://ltpek5nvajq6" path="res://scripts/game/days_manager.gd" id="2_ocv1q"]
 [ext_resource type="Texture2D" uid="uid://u83eau0ceifx" path="res://assets/sprites/cenario/parede.png" id="3_1qjtw"]
 [ext_resource type="Texture2D" uid="uid://ulxnkmyy8moo" path="res://assets/sprites/UiCozyFree.png" id="3_rgfeb"]
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
@@ -198,6 +199,10 @@ metadata/_edit_use_anchors_ = true
 process_mode = 3
 script = ExtResource("1_oln2x")
 current_game_step = 2
+
+[node name="DaysManager" type="Node" parent="." unique_id=649500740]
+process_mode = 3
+script = ExtResource("2_ocv1q")
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 

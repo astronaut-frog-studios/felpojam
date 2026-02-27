@@ -53,7 +53,8 @@ func on_activate() -> void:
 	restart_letter(true)
 
 func _ready() -> void:
-	if steps.is_empty(): # FOR TEST ONLY
+	# FOR TEST ONLY
+	if steps.is_empty():
 		mouse_filter = Control.MOUSE_FILTER_PASS
 		mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 		steps = [step1, step2, step3]
