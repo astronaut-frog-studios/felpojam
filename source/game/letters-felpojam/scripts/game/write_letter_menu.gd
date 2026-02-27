@@ -13,7 +13,7 @@ signal on_letter_finished(point: int)
 
 var queue: Array[ChoiceResource] = []
 var current_step: ChoiceResource
-var current_text: String = ""  # texto acumulado
+var current_text: String = "" # texto acumulado
 var letter_points: int = 0
 
 var typing_id: int = 0
@@ -33,7 +33,7 @@ var step2 := ChoiceResource.new(
 	"and I like ___",
 	[
 	Choice_Option_Resource.new({"option": "coffee", "point": 10}),
-	Choice_Option_Resource.new(	{"option": "cookie", "point": 30}),
+	Choice_Option_Resource.new({"option": "cookie", "point": 30}),
 	Choice_Option_Resource.new({"option": "chocolate", "point": 5})
 	]
 )
@@ -94,7 +94,7 @@ func choose_option(option_text: String) -> void:
 
 	_next_step()
 
-func type_text(old_text: String, text: String)-> void:
+func type_text(old_text: String, text: String) -> void:
 	typing_id += 1
 	var my_id := typing_id
 	is_typing = true
