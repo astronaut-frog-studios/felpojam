@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://cex0paf7xckbs" path="res://scripts/menu.gd" id="1_wwsa2"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://dnt3sey15v1dy" path="res://assets/sprites/banner-vf.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://dp87fj34fq2k2" path="res://assets/sprites/banner-pt-br.png" id="3_13sgg"]
 [ext_resource type="Texture2D" uid="uid://h25k1gtnmhu4" path="res://assets/sprites/Carta_em_branco.png" id="3_wwsa2"]
+[ext_resource type="FontFile" uid="uid://kao61s3dg627" path="res://assets/fonts/Born2bSportyFS.otf" id="4_v86rl"]
 [ext_resource type="FontFile" uid="uid://p2qqeasb8iia" path="res://assets/fonts/dpcomic/dpcomic.ttf" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="6_wbdvm"]
 
@@ -48,7 +50,7 @@ offset_right = 117.333374
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_g3eks")
+texture = ExtResource("3_13sgg")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1500338333]
 layout_mode = 1
@@ -68,16 +70,16 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -113.0
-offset_right = 314.0
-offset_bottom = -39.0
+offset_left = 26.0
+offset_top = -114.0
+offset_right = 280.0
+offset_bottom = -40.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.5019608, 0.29803923, 0.31764707, 1)
-theme_override_fonts/font = ExtResource("5_jsrd8")
-theme_override_font_sizes/font_size = 44
+theme_override_fonts/font = ExtResource("4_v86rl")
+theme_override_font_sizes/font_size = 38
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
-text = "Mail Atelier"
+text = "Ateliê de cartas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
