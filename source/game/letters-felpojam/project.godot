@@ -14,7 +14,7 @@ config/name="Letter Atelier"
 config/version="0.1"
 run/main_scene="uid://dw1svydgpqq1h"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b53jlne8rhx5j"
 
 [autoload]
 
