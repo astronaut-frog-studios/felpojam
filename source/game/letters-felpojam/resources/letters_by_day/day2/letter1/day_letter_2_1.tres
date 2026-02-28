@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://bo47osdas63yi" path="res://resources/letters_by_day/day2/letter1/choice_1.tres" id="4_6us2q"]
 [ext_resource type="Resource" uid="uid://b5uuahqbjrdtx" path="res://resources/letters_by_day/day2/letter1/choice_2.tres" id="5_kvtn6"]
 [ext_resource type="Resource" uid="uid://c82dla06362rb" path="res://resources/letters_by_day/day2/letter1/choice_3.tres" id="6_eebqw"]
-[ext_resource type="Resource" uid="uid://dtrktlimv7kg3" path="res://resources/letters_by_day/day2/letter1/choice_4.tres" id="7_en6pp"]
 [ext_resource type="Resource" uid="uid://dcihbgb42uky5" path="res://resources/letters_by_day/day2/letter1/goodbye.tres" id="8_v8grq"]
 
 [resource]
@@ -20,5 +19,5 @@ Perdi meus pais em um acidente e preciso informar a família sobre o funeral, ma
 Com pesar,
 Maria Clara Fonseca."
 author = "Maria Clara Fonseca."
-choice_steps = Array[ExtResource("1_h4sms")]([ExtResource("2_kmtsg"), ExtResource("3_x3hpv"), ExtResource("4_6us2q"), ExtResource("5_kvtn6"), ExtResource("6_eebqw"), ExtResource("7_en6pp"), ExtResource("8_v8grq")])
+choice_steps = Array[ExtResource("1_h4sms")]([ExtResource("2_kmtsg"), ExtResource("3_x3hpv"), ExtResource("4_6us2q"), ExtResource("5_kvtn6"), ExtResource("6_eebqw"), ExtResource("8_v8grq")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"
