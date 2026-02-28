@@ -951,6 +951,7 @@ layout_mode = 1
 
 [node name="WriteLetterMenu" parent="." unique_id=923397039 node_paths=PackedStringArray("table_letter") instance=ExtResource("35_dax43")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 mouse_filter = 2
 mouse_behavior_recursive = 1
@@ -997,7 +998,6 @@ script = ExtResource("33_328cw")
 
 [node name="PauseMenu" parent="." unique_id=1831438844 instance=ExtResource("2_0a7kk")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 offset_left = 62.0
 offset_right = 1.0
