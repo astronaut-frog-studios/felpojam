@@ -30,4 +30,5 @@ Carimbada e enviada, escolha a próxima carta! Mas cuidado, escolher opções n�
 
 Bom jogo! Espero que se divirta! - AstroFrog
 
-<https://github.com/astronaut-frog-studios/felpojam>
+[Projeto](https://github.com/astronaut-frog-studios/felpojam)
+[Builds](https://drive.google.com/drive/folders/1xZIqx3XR9HDAdx4-NidWFWhfjiMssqxv?usp=sharing)
