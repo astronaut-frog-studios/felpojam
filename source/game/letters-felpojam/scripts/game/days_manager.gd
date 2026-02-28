@@ -86,7 +86,7 @@ func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
 
 func _next_day() -> void:
 	if current_day > total_days - 1:
-		get_tree().change_scene_to_file("res://Scenes/final.tscn")
+		get_tree().change_scene_to_file("res://scenes/final.tscn")
 		return
 	current_day += 1
 	feedback = null

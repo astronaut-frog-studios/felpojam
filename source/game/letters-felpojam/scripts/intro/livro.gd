@@ -7,4 +7,4 @@ func _on_animated_texture_rect_enable_continue() -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game_core.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_core.tscn")

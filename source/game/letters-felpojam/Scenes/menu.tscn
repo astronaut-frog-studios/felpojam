@@ -30,9 +30,24 @@ script = ExtResource("1_wwsa2")
 metadata/_edit_horizontal_guides_ = [0.0, 399.0]
 
 [node name="FundoJogo" type="Sprite2D" parent="." unique_id=747941955]
+visible = false
 modulate = Color(0.89275575, 0.89275575, 0.8927557, 1)
 position = Vector2(685, 353)
 scale = Vector2(1.0874995, 1.0875)
+texture = ExtResource("2_g3eks")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1175690794]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.888794
+offset_top = -743.0
+offset_right = 117.333374
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_g3eks")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1500338333]

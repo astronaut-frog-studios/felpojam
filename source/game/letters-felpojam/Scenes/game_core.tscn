@@ -992,7 +992,6 @@ script = ExtResource("33_328cw")
 
 [node name="PauseMenu" parent="." unique_id=1831438844 instance=ExtResource("2_0a7kk")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 offset_left = 62.0
 offset_right = 1.0
