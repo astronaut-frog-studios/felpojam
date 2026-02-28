@@ -39,6 +39,7 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_r8v4r")
-text = "___"
+text = "
+___"
 options = Array[ExtResource("1_8tkel")]([SubResource("Resource_x8vv4"), SubResource("Resource_d6st4"), SubResource("Resource_o7gx4"), SubResource("Resource_d5pa1"), SubResource("Resource_tnace"), SubResource("Resource_5tp2y")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

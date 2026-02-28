@@ -18,7 +18,7 @@ var current_text: String = "" # texto acumulado
 var letter_points: int = 0
 
 var typing_id: int = 0
-var typing_speed: float = 0.01
+var typing_speed: float = 0.02
 var is_typing: bool = false
 
 var step1 := ChoiceResource.new(

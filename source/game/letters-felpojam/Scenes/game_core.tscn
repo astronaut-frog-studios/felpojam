@@ -208,7 +208,7 @@ script = ExtResource("1_oln2x")
 
 [node name="DaysManager" parent="." unique_id=879327459 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
 unique_name_in_owner = true
-min_points = 35
+min_points = 20
 days = Array[ExtResource("3_uomju")]([ExtResource("4_6w6dy"), ExtResource("5_tgjf3"), ExtResource("6_nyujs"), ExtResource("7_hd0dv"), ExtResource("8_qj7gg")])
 mimos = [NodePath("../Mimos/Mimo1"), NodePath("../Mimos/Mimo2"), NodePath("../Mimos/Mimo3"), NodePath("../Mimos/Mimo4")]
 

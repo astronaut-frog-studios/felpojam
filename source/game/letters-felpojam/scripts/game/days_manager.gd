@@ -16,10 +16,10 @@ enum State {BEGIN, EXTRA_LETTER, FEEDBACK_LETTER, CUSTOMER_LETTER, ENDED}
 @export var feedback: FeedbackLetter = null
 @export var state: State = State.BEGIN
 
-
 var extra_letter: String
-@export var letters_queue: Array[DayLetter]
-@export var current_letter: DayLetter
+var letters_queue: Array[DayLetter]
+var current_letter: DayLetter
+var show_next_letter: bool = false
 
 func start_day() -> void:
 	var day := _get_current_day()
@@ -66,7 +66,10 @@ func finalize_day() -> void:
 		var bad_feedback: Feedback = day.feedbacks[1]
 		feedback = bad_feedback.content
 		print("bad feedback")
-	start_day()
+
+	show_next_letter = false
+	inbox_button.modulate = Color.WHITE
+	inbox_button.mouse_filter = Control.MOUSE_FILTER_PASS
 
 func add_points(value: int) -> void:
 	current_points += value
@@ -77,7 +80,7 @@ func _show_letter(letter: String, on_next_letter_click: Callable) -> void:
 	var new_letter := letter.replace("PLAYER", GlobalName.player_name)
 	show_letter.label.text = new_letter.format({"n": "\\n"})
 	show_letter.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	show_letter.enable_interaction()
 	show_letter.on_next_letter_click.connect(on_next_letter_click)
 
@@ -124,7 +127,9 @@ func _on_letter_delivery_end() -> void:
 		print("letters_queue is empty on delivery end")
 		finalize_day()
 		return
-	show_customer_letter()
+	show_next_letter = true
+	inbox_button.modulate = Color.WHITE
+	inbox_button.mouse_filter = Control.MOUSE_FILTER_PASS
 
 func _add_day(day: DayResource) -> void:
 	days.append(day)
@@ -132,6 +137,10 @@ func _add_day(day: DayResource) -> void:
 
 
 func _on_inbox_button_button_down() -> void:
+	if show_next_letter:
+		show_customer_letter()
+		show_next_letter = false
+	else:
+		start_day()
 	inbox_button.modulate = Color(0.569, 0.569, 0.569, 1.0)
 	inbox_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	start_day()

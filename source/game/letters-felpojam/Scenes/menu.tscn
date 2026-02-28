@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cex0paf7xckbs" path="res://scripts/menu.gd" id="1_wwsa2"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_con2f"]
-[ext_resource type="Texture2D" uid="uid://csgti643aiha5" path="res://assets/sprites/fundo_jogo.png" id="2_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://dnt3sey15v1dy" path="res://assets/sprites/banner-vf.png" id="2_g3eks"]
 [ext_resource type="Texture2D" uid="uid://h25k1gtnmhu4" path="res://assets/sprites/Carta_em_branco.png" id="3_wwsa2"]
 [ext_resource type="FontFile" uid="uid://p2qqeasb8iia" path="res://assets/fonts/dpcomic/dpcomic.ttf" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://d3onq8cfx2g3j" path="res://assets/fonts/PixelOperator8.ttf" id="6_wbdvm"]
@@ -31,18 +31,18 @@ metadata/_edit_horizontal_guides_ = [0.0, 399.0]
 
 [node name="FundoJogo" type="Sprite2D" parent="." unique_id=747941955]
 modulate = Color(0.89275575, 0.89275575, 0.8927557, 1)
-position = Vector2(778.6775, 453.01566)
-scale = Vector2(0.5330568, 0.5330569)
-texture = ExtResource("2_jsrd8")
+position = Vector2(685, 353)
+scale = Vector2(1.0874995, 1.0875)
+texture = ExtResource("2_g3eks")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1500338333]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 29.0
+offset_left = 3.0
 offset_top = -125.0
-offset_right = 321.0
+offset_right = 295.0
 offset_bottom = 228.0
 grow_vertical = 2
 texture = SubResource("AtlasTexture_jsrd8")
@@ -53,16 +53,16 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 27.0
+offset_left = 1.0
 offset_top = -113.0
-offset_right = 340.0
+offset_right = 314.0
 offset_bottom = -39.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.5019608, 0.29803923, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("5_jsrd8")
 theme_override_font_sizes/font_size = 44
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
-text = "Letter Atelier"
+text = "Mail Atelier"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -71,9 +71,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 77.0
+offset_left = 51.0
 offset_top = -49.0
-offset_right = 270.0
+offset_right = 244.0
 offset_bottom = 129.0
 grow_vertical = 2
 
@@ -145,9 +145,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 58.0
+offset_left = 32.0
 offset_top = 127.0
-offset_right = 282.0
+offset_right = 256.0
 offset_bottom = 191.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.023529412, 1)
@@ -163,9 +163,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 93.0
+offset_left = 67.0
 offset_top = 151.0
-offset_right = 317.0
+offset_right = 291.0
 offset_bottom = 215.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.40784314, 0.58431375, 0.58431375, 1)

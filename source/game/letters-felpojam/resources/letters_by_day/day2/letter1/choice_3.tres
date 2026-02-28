@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_l5df4")
-text = "temo não conseguir comparecer os próximos dias em confraternizações pois ___. \\nAgradeço a compreensão de todos. "
+text = "temo não conseguir comparecer os próximos dias em confraternizações pois ___. Agradeço a compreensão de todos. "
 options = Array[ExtResource("1_u4pds")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87"), SubResource("Resource_u4pds")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

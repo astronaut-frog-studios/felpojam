@@ -47,11 +47,10 @@ script = ExtResource("3_wrs1p")
 extra_letter = "PLAYER,
 Espero que esta carta lhe encontre bem.
 
-Os primeiros dias após eu ter comprado a loja foram fascinantes, tantas pessoas foram ao meu encontro de diferentes horizontes, tenho apreço por cada cliente, independentemente de ter aparecido uma ou mais vezes. Mas há aqueles clientes que nos marcam mais, ano passado atendi um cliente encantador.
+Os primeiros dias após eu ter comprado a loja foram fascinantes, tantas pessoas foram ao meu encontro de diferentes horizontes, tenho apreço por cada cliente, independentemente de ter aparecido uma ou mais vezes. Mas há aqueles que nos marcam mais.
 
-Eram 8 da manhã quando a carta chegou, um envelope azul, mas sem gravuras, sem um único amassado, era um senhor de idade mais avançada querendo fazer uma surpresa de casamento para a esposa, eram casados a 50 anos! Imagina minha surpresa, precisava fazer algo especial naquele dia, eu comprei um carimbo somente para eles, um carimbo de peônias.
+Espero que espero que encontre um cliente tão incrível que irá te marcar para sempre.
 
-E se eu não me engano foi nessa época que recebi a carta dele, mas nunca mais recebi nada, quem sabe você não tem a sorte?
 De sua querida, tia Ana."
 feedbacks = Array[ExtResource("1_cr4bx")]([SubResource("Resource_3lu4c"), SubResource("Resource_dpxhk")])
 letters = Array[ExtResource("2_cr4bx")]([ExtResource("4_sxdgv"), ExtResource("5_3lu4c")])
