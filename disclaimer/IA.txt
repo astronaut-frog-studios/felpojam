@@ -1,0 +1,5 @@
+A IA foi utilizada em dois momentos: 
+
+O primeiro foi para tirar dúvidas da documentação e funções do godot pois nosso desenvolvedor nunca tinha utilizado essa engine, então para facilitar e agilizar o processo e a familiaridade com a ferramenta, a IA foi utilizada para esse pretexto. 
+
+O segundo momento, foi para um auxílio na criação do efeito de escrever a carta. Foi feito a função inicial com o básico para que estivesse minimamente funcional e depois foi modificado para a forma que gostaríamos que ficasse. Lembrando que demais funções foram feitas manualmente, somente o efeito que foi necessário ajuda para o início do código.
