@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bif2i1fbpnlph"
+path="res://.godot/imported/FOGOLOOP.ogg-f469435692480d8a2d4102467c6c601d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/teste fogo/FOGOLOOP.ogg"
+dest_files=["res://.godot/imported/FOGOLOOP.ogg-f469435692480d8a2d4102467c6c601d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

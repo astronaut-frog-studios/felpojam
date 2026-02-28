@@ -3,9 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://dq1m8d07a03g4" path="res://assets/sprites/Livro.png" id="1_j4c84"]
 [ext_resource type="SpriteFrames" uid="uid://tynal8qr6c1r" path="res://animations/book_animated.tres" id="1_vf2et"]
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8jr26"]
-[ext_resource type="Texture2D" uid="uid://c1x7ukxo1do67" path="res://icon.svg" id="3_j4c84"]
 [ext_resource type="Script" uid="uid://13utp4c7h776" path="res://animations/book_animation_UI.gd" id="4_vf2et"]
+[ext_resource type="Texture2D" uid="uid://dljl7ng1mi084" path="res://livroPrints/menus.png" id="6_mffpl"]
 [ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="7_0oniu"]
+[ext_resource type="Texture2D" uid="uid://bl8dxmjm8y4a5" path="res://livroPrints/menus copy.png" id="7_wfwo6"]
+[ext_resource type="Texture2D" uid="uid://n723fqjdgi8u" path="res://livroPrints/menus copy 2.png" id="8_37krb"]
+[ext_resource type="Texture2D" uid="uid://bsg7i4k8qcq71" path="res://livroPrints/preencher carta MEIO.png" id="9_nl5fb"]
+[ext_resource type="Texture2D" uid="uid://c5f7txoc6qwqh" path="res://livroPrints/carta limpa.png" id="10_f7mjm"]
+[ext_resource type="Texture2D" uid="uid://c7x66cwpgfdhf" path="res://livroPrints/limpar carta.png" id="11_0igfu"]
+[ext_resource type="Texture2D" uid="uid://d4nhgea1bkhqk" path="res://livroPrints/carimbando carta.png" id="12_0igfu"]
+[ext_resource type="Texture2D" uid="uid://brx8ci507em16" path="res://livroPrints/carimbos.png" id="13_5sdnx"]
+[ext_resource type="Texture2D" uid="uid://c6t5u3y0cte5s" path="res://livroPrints/envelope.png" id="14_jbwsb"]
+[ext_resource type="Texture2D" uid="uid://ie1jcx04t4ce" path="res://livroPrints/sinetes e cores.png" id="15_o4hq5"]
+[ext_resource type="Texture2D" uid="uid://drmn2w77x0wm0" path="res://livroPrints/carimbando envelope.png" id="16_5kc6v"]
+[ext_resource type="Texture2D" uid="uid://ccyu4igi87hrd" path="res://livroPrints/sinete carimbando.png" id="17_3jlyo"]
+[ext_resource type="Texture2D" uid="uid://djn3t3c3yddbd" path="res://livroPrints/cores.png" id="18_pp567"]
+[ext_resource type="Texture2D" uid="uid://b85pf6ubmx2r7" path="res://livroPrints/final.png" id="19_o4hq5"]
 
 [sub_resource type="GDScript" id="GDScript_a8ppt"]
 script/source = "extends AnimatedSprite2D
@@ -195,11 +208,11 @@ anchor_right = 0.95100003
 anchor_bottom = 0.90400004
 offset_left = 49.049988
 offset_top = 29.5
-offset_right = 0.049987793
-offset_bottom = 0.12799072
+offset_right = -32.02249
+offset_bottom = -11.267822
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("6_mffpl")
 expand_mode = 1
 
 [node name="Container" type="Control" parent="book/Page1" unique_id=1550404961]
@@ -243,11 +256,11 @@ anchor_right = 0.943
 anchor_bottom = 0.9760001
 offset_left = 100.152
 offset_top = 60.85
-offset_right = 5.649994
-offset_bottom = 0.031982422
+offset_right = -18.669312
+offset_bottom = -23.187408
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("7_wfwo6")
 expand_mode = 1
 
 [node name="Container3" type="Control" parent="book/Page1" unique_id=469865491]
@@ -296,7 +309,7 @@ offset_right = -32.23706
 offset_bottom = 0.08798218
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("8_37krb")
 expand_mode = 1
 
 [node name="Label2" type="Label" parent="book/Page1" unique_id=1134453874]
@@ -374,13 +387,13 @@ anchor_left = 0.112
 anchor_top = 0.21700001
 anchor_right = 0.762
 anchor_bottom = 0.9760001
-offset_left = 26.599998
-offset_top = 131.16199
-offset_right = -33.900024
+offset_left = -11.166973
+offset_top = 133.12396
+offset_right = 16.881775
 offset_bottom = -0.06402588
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("9_nl5fb")
 expand_mode = 1
 
 [node name="Label3" type="Label" parent="book/Page2" unique_id=14417565]
@@ -400,7 +413,7 @@ theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 14
-text = "É possível apagar o que escreveu se achar que as frases não se completam. E quando tudo estiver de seu agrado confirme clicando em “ok”. "
+text = "É possível apagar o que escreveu se achar que as frases não se completam. E quando tudo estiver de seu agrado confirme clicando em “continuar”. "
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3
@@ -434,7 +447,7 @@ theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 18
-text = "Exemplo de apagar e confirmar"
+text = "Exemplo de apagar"
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3
@@ -448,12 +461,12 @@ anchor_top = 0.113000005
 anchor_right = 0.94500005
 anchor_bottom = 0.837
 offset_left = 30.051956
-offset_top = 38.755997
-offset_right = -66.361084
+offset_top = 25.28456
+offset_right = -8.364258
 offset_bottom = -2.3560028
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("10_f7mjm")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="book/Page2/Container3" unique_id=801642133]
@@ -463,13 +476,13 @@ anchor_left = 0.036000002
 anchor_top = 0.09900001
 anchor_right = 0.45600003
 anchor_bottom = 0.837
-offset_left = -0.16403198
-offset_top = 41.388
-offset_right = -63.80008
+offset_left = -13.173004
+offset_top = 25.20888
+offset_right = -8.644241
 offset_bottom = -2.3560028
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("11_0igfu")
 expand_mode = 1
 
 [node name="Container4" type="Control" parent="book/Page2" unique_id=79406362]
@@ -513,30 +526,30 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.453
 anchor_top = 0.223
-anchor_right = 0.94500005
-anchor_bottom = 0.924
-offset_left = 17.602966
-offset_top = 119.734
-offset_right = -66.361084
-offset_bottom = -0.10998535
+anchor_right = 0.95400006
+anchor_bottom = 0.94000006
+offset_left = -2.3707886
+offset_top = 100.462585
+offset_right = 6.6702576
+offset_bottom = 0.051971436
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("12_0igfu")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="book/Page2/Container4" unique_id=348575184]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.289
-anchor_right = 0.47200003
-anchor_bottom = 0.91800004
+anchor_right = 0.42000002
+anchor_bottom = 0.85200006
 offset_left = 13.9999695
-offset_top = 95.161995
-offset_right = -60.98407
-offset_bottom = -0.058013916
+offset_top = 95.162
+offset_right = -30.906448
+offset_bottom = -0.10961914
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("13_5sdnx")
 expand_mode = 1
 
 [node name="Label2" type="Label" parent="book/Page2" unique_id=151876437]
@@ -614,13 +627,13 @@ anchor_left = 0.112
 anchor_top = 0.36200002
 anchor_right = 0.689
 anchor_bottom = 0.91200006
-offset_left = 68.6
+offset_left = 68.59999
 offset_top = 3.8299942
-offset_right = -37.420105
-offset_bottom = -43.920013
+offset_right = -26.848297
+offset_bottom = -23.576172
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("14_jbwsb")
 expand_mode = 1
 
 [node name="Container3" type="Control" parent="book/Page3" unique_id=1773659571]
@@ -661,16 +674,32 @@ min_font_size = 12
 [node name="TextureRect" type="TextureRect" parent="book/Page3/Container3" unique_id=212065502]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19000001
-anchor_top = 0.24424565
-anchor_right = 0.71431154
-anchor_bottom = 0.8561404
+anchor_left = 0.014809999
+anchor_top = 0.31490266
+anchor_right = 0.517473
+anchor_bottom = 0.8477635
 offset_left = 33.499992
 offset_top = 54.38999
 offset_right = -43.44017
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("15_o4hq5")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="book/Page3/Container3" unique_id=184401995]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47938183
+anchor_top = 0.32438672
+anchor_right = 1.0258157
+anchor_bottom = 0.8446021
+offset_left = 33.499992
+offset_top = 54.38999
+offset_right = -43.44017
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_5kc6v")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -703,7 +732,7 @@ theme_override_colors/font_color = Color(0.15487596, 0.154876, 0.15487596, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_8jr26")
 theme_override_font_sizes/font_size = 16
-text = "Quando clicar na caixa dos carimbos de sinete, você também precisará escolher uma cor de cera (foto mostrando as cores) e para conseguir selar você vai precisar arrastar a cera para o canto inferior esquerdo da tela onde está o forninho e a colher de fusão, vai ligar ele e após estar esquentado vai levar a colher para o envelope e soltar nele, após isso você escolhe o carimbo de sinete e solta em cima da cera formando o selo."
+text = "Quando for na caixa dos carimbos de sinete, você também precisará escolher uma cor de cera (foto mostrando as cores) e para conseguir selar você vai precisar arrastar a cera para o canto inferior esquerdo da tela onde está o forninho e a colher de fusão, vai ligar ele e após estar esquentado vai levar a colher para o envelope e soltar nele, após isso você escolhe o carimbo de sinete e solta em cima da cera formando o selo."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3
@@ -712,16 +741,16 @@ script = ExtResource("7_0oniu")
 [node name="TextureRect" type="TextureRect" parent="book/Page3/Container4" unique_id=612147348]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.46300003
-anchor_top = 0.54614604
-anchor_right = 1.0000001
+anchor_left = 0.31260902
+anchor_top = 0.6104178
+anchor_right = 1.0274643
 anchor_bottom = 0.9649926
 offset_left = 40.113007
 offset_top = 47.358032
 offset_right = -32.00003
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("17_3jlyo")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -732,11 +761,11 @@ anchor_left = 0.02672599
 anchor_top = 0.6385768
 anchor_right = 0.40757227
 anchor_bottom = 0.97032595
-offset_top = -7.0
-offset_right = 6.0000153
+offset_top = 49.650513
+offset_right = -33.36116
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_j4c84")
+texture = ExtResource("18_pp567")
 expand_mode = 1
 
 [node name="Label2" type="Label" parent="book/Page3" unique_id=1624328315]
@@ -800,6 +829,22 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("7_0oniu")
 max_font_size = 28
+
+[node name="TextureRect" type="TextureRect" parent="book/Page4" unique_id=1183586227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5092867
+anchor_top = 0.24811384
+anchor_right = 0.8724815
+anchor_bottom = 0.68611115
+offset_left = 40.113007
+offset_top = 47.358032
+offset_right = -32.00003
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_o4hq5")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="NextPageButton" type="TextureButton" parent="book" unique_id=2099955244]
 visible = false

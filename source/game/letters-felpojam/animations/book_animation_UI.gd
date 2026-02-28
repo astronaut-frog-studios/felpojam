@@ -81,12 +81,15 @@ func go_to_page(page : int) -> void:
 
 func _on_next_page_button_button_down() -> void:
 	go_to_page(clamp_current_page(current_page + 1))
+	AudioManager.papel_sfx_play.emit(0)
 
 func _on_previous_page_button_button_down() -> void:
 	go_to_page(clamp_current_page(current_page - 1))
+	AudioManager.papel_sfx_play.emit(0)
 
 func _on_close_button_button_down() -> void:
 	go_to_page(clamp_current_page(0))
+	AudioManager.papel_sfx_play.emit(0)
 
 func _on_animation_finished() -> void:
 	next_button.show()

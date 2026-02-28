@@ -15,6 +15,7 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 
 func _paint_letter(data: Stamp_Drag) -> void:
 		var desenho : TextureRect = _set_drawing(data)
+		AudioManager.sfx_carimbo_play.emit(0)
 		
 		add_child(desenho)
 		

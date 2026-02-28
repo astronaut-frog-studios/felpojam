@@ -17,7 +17,8 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		spoon_drop.texture = data.default_texture
 		spoon_drop.modulate = data.color
 		fire.visible = true
-
+		AudioManager.fogo_sfx_play.emit(0)
+		
 		change_to_drop_step.emit()
 		await get_tree().create_timer(5.0).timeout
 

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Letter Atelier"
+config/name="Atelie de Cartas"
 config/version="0.1"
 run/main_scene="uid://dw1svydgpqq1h"
 config/features=PackedStringArray("4.6", "Forward Plus")
@@ -19,6 +19,7 @@ config/icon="uid://b53jlne8rhx5j"
 [autoload]
 
 GlobalName="*uid://nvtj5kodu02l"
+AudioManager="*uid://woc377btyt2c"
 
 [debug]
 

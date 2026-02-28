@@ -19,65 +19,65 @@ var Fplayback: AudioStreamPlaybackInteractive
 var Aplayback: AudioStreamPlaybackPlaylist
 var Oplayback: AudioStreamPlaybackPlaylist
 
-func _ready() -> void :
-
+func _ready() -> void:
+	# CONEXÕES (Certifique-se que o nome após a vírgula é igual à função lá embaixo)
 	trocar_musica_solicitado.connect(_ao_receber_pedido_de_troca)
 	fogo_sfx_play.connect(_fogo_sfx_play)
 	papel_sfx_play.connect(_ao_receber_papel_sfx)
 	sfx_ambience_play.connect(_ao_receber_ambience)
 	ost_ambience_play.connect(_ao_receber_ost)
 	sfx_carimbo_play.connect(_ao_receber_sfx_carimbo)
-
-
+	
+	# Configuração da Música
 	if menu_music and menu_music.stream is AudioStreamInteractive:
 		menu_music.play()
 		Mplayback = menu_music.get_stream_playback() as AudioStreamPlaybackInteractive
-
-
+	
+	# Configuração do Fogo
 	if fogo_sfx and fogo_sfx.stream is AudioStreamInteractive:
 		fogo_sfx.play()
 		Fplayback = fogo_sfx.get_stream_playback() as AudioStreamPlaybackInteractive
 		fogo_sfx.stop()
-
-
+	
+	# Configuração do Ambience
 	if sfx_ambience and sfx_ambience.stream is AudioStreamPlaylist:
 		sfx_ambience.play()
 		Aplayback = sfx_ambience.get_stream_playback() as AudioStreamPlaybackPlaylist
 		sfx_ambience.stop()
+		
 
+# --- FUNÇÕES QUE RECEBEM OS SINAIS ---
 
-
-
-func _ao_receber_pedido_de_troca(id: int) -> void :
+func _ao_receber_pedido_de_troca(id: int) -> void:
 	if Mplayback:
 		Mplayback.switch_to_clip(id)
 		print("Música trocada para o índice: ", id)
 
-func _fogo_sfx_play(id: int) -> void :
+func _fogo_sfx_play(id: int) -> void:
 	if Fplayback:
 		fogo_sfx.play()
 		Fplayback.switch_to_clip(id)
 		print("Fogo trocado para o índice: ", id)
 
-func _ao_receber_papel_sfx(_id: int) -> void :
+func _ao_receber_papel_sfx(_id: int) -> void:
 	if papel_sfx:
 		papel_sfx.play()
 		print("Papel tocado via sinal!")
 
-func _ao_receber_ost(_id: int) -> void :
+func _ao_receber_ost(_id: int) -> void:
 	if ost_ingame:
 		ost_ingame.stop()
 		await get_tree().process_frame
 		ost_ingame.play()
 		print("Playlist OST: Reiniciada com sucesso (Próxima Faixa).")
 
-func _ao_receber_ambience(_id: int) -> void :
+func _ao_receber_ambience(_id: int) -> void:
 	if sfx_ambience:
 		if not sfx_ambience.playing:
 			sfx_ambience.play()
 			print("Playlist Ambiência: Iniciada")
 
-func _ao_receber_sfx_carimbo(_id: int) -> void :
+func _ao_receber_sfx_carimbo(_id: int) -> void:
 	if sfx_carimbo:
 		sfx_carimbo.play()
 		print("SFX Carimbo: Tocado (Randomizer)")

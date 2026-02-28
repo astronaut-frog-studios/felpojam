@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvlbdcmq1bany"
+path="res://.godot/imported/menu middle.ogg-08de1f725a7b2a42f16e9a164a6fbe2b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/OST/menu/menu middle.ogg"
+dest_files=["res://.godot/imported/menu middle.ogg-08de1f725a7b2a42f16e9a164a6fbe2b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

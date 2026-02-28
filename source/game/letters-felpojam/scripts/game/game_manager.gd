@@ -24,6 +24,21 @@ var enable_stamps_run: bool = false
 var disable_stamps_run: bool = false
 
 func _ready() -> void:
+
+	#region sound
+	AudioManager.sfx_ambience_play.emit(0)
+	var playlist_timer := Timer.new()
+	playlist_timer.name = "PlaylistTimer"
+	add_child(playlist_timer)
+	
+	playlist_timer.wait_time = 5.0
+	playlist_timer.one_shot = false 
+	playlist_timer.autostart = true
+	
+	playlist_timer.timeout.connect(_on_playlist_timer_timeout)
+	playlist_timer.start()
+	#endregion
+
 	spoon = get_tree().get_first_node_in_group("spoon") as SpoonDrag
 	stamps = get_tree().get_nodes_in_group("stamp") as Array[Stamp_Drag]
 	current_game_step = GameStep.BEGIN
@@ -110,6 +125,16 @@ func _enable_all_stamps() -> void:
 			stamp.enable_interaction()
 		enable_stamps_run = true
 
+func _on_playlist_timer_timeout() -> void:
+	var timer := $PlaylistTimer as Timer
+	if timer:
+		timer.stop()
+		
+		AudioManager.ost_ambience_play.emit(0)
+		
+		timer.wait_time = randf_range(110.0, 150.0)
+		timer.start()
+
 func _on_forninho_change_to_drop_step() -> void:
 	current_selo_step = SeloStep.DROP_PAINT
 
@@ -117,6 +142,7 @@ func _on_selo_area_change_to_postmark_step() -> void:
 	current_selo_step = SeloStep.POSTMARK_PAINT
 
 func _on_selo_area_change_to_ended_step() -> void:
+	AudioManager.sfx_carimbo_play.emit(0)
 	current_selo_step = SeloStep.ENDED
 
 func _on_envelopes_button_down() -> void:

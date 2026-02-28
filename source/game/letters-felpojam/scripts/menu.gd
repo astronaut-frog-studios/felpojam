@@ -1,5 +1,10 @@
 extends Control
 
+signal game_started
+
+func _ready() -> void:
+	game_started.emit()
+
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/intro.tscn")
 
