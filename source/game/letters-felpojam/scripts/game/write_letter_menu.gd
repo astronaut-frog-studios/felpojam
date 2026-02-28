@@ -18,7 +18,7 @@ var current_text: String = "" # texto acumulado
 var letter_points: int = 0
 
 var typing_id: int = 0
-var typing_speed: float = 0.04
+var typing_speed: float = 0.01
 var is_typing: bool = false
 
 var step1 := ChoiceResource.new(
@@ -84,12 +84,12 @@ func _next_step() -> void:
 	#text_label.text = current_text
 	_instantiate_choices(current_step.options)
 
-func choose_option(option_text: String) -> void:
+func choose_option(option_text: String, option_point: int) -> void:
 	if is_typing:
 		return
 	
 	_disable_choices()
-	
+	letter_points += option_point
 	var old_text := text_label.text
 	current_text = _replace_with_choice(current_text, current_step.placeholder, option_text)
 	#text_label.text = current_text
@@ -126,9 +126,8 @@ func _instantiate_choices(options: Array[Choice_Option_Resource]) -> void:
 		var btn: Button = choice.get_node("Button")
 		var option_text: String = option.choice
 		btn.text = option_text
-		letter_points += option.point
 		btn.button_down.connect(func() -> void:
-			choose_option(option_text)
+			choose_option(option_text, option.point)
 		)
 
 func _clear_choices() -> void:

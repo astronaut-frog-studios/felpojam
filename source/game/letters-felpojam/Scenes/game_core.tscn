@@ -8,12 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://33wevs8qdogj" path="res://assets/sprites/cenario/ambiente_v2.png" id="3_ts78b"]
 [ext_resource type="Script" uid="uid://bk0nsegj63cvd" path="res://resources/days/day_resource.gd" id="3_uomju"]
 [ext_resource type="Texture2D" uid="uid://b8w4u0g7g070v" path="res://assets/sprites/cenario/Sprite_-_Ambiente_new.png" id="4_1qjtw"]
+[ext_resource type="Resource" uid="uid://ckil43750bbum" path="res://resources/letters_by_day/day1/day_1.tres" id="4_6w6dy"]
 [ext_resource type="Texture2D" uid="uid://boiaot2ilw7bj" path="res://assets/sprites/cenario/Sprite_-_Tecido_v2.png" id="5_1qjtw"]
+[ext_resource type="Resource" uid="uid://douwgjv44qsbu" path="res://resources/letters_by_day/day2/day_2.tres" id="5_tgjf3"]
 [ext_resource type="Texture2D" uid="uid://c10a1ynqfpmqt" path="res://assets/sprites/menus/menus.png" id="6_e6dgn"]
+[ext_resource type="Resource" uid="uid://b0syvxdj8ljsw" path="res://resources/letters_by_day/day3/day_3.tres" id="6_nyujs"]
 [ext_resource type="Script" uid="uid://dfgor2ntbul2f" path="res://scripts/game/selo_drop_area.gd" id="6_rgfeb"]
 [ext_resource type="Texture2D" uid="uid://bavn436pcjt2k" path="res://assets/sprites/menus/inbox_icon.png" id="7_0a7kk"]
 [ext_resource type="Script" uid="uid://cs28ffrwjf1i4" path="res://scripts/menu_button.gd" id="7_2c7ct"]
+[ext_resource type="Resource" uid="uid://cqhek2aa63ws2" path="res://resources/letters_by_day/day4/day_4.tres" id="7_hd0dv"]
 [ext_resource type="Texture2D" uid="uid://pe06ee1hg42t" path="res://assets/sprites/interativos/Sprite_-_Envelope.png" id="7_xi4rr"]
+[ext_resource type="Resource" uid="uid://jqcxgi0enqyy" path="res://resources/letters_by_day/day5/day_5.tres" id="8_qj7gg"]
 [ext_resource type="Texture2D" uid="uid://d20kejrue4lrq" path="res://assets/sprites/interativos/Sprite_-_Caixa_carimbo.png" id="8_rrnjn"]
 [ext_resource type="PackedScene" uid="uid://b3v6xcdhhgpob" path="res://nodes/forninho.tscn" id="9_048qn"]
 [ext_resource type="PackedScene" uid="uid://c8dkirao6w4yh" path="res://nodes/tinta.tscn" id="12_5wb4p"]
@@ -200,19 +205,12 @@ metadata/_edit_use_anchors_ = true
 [node name="GameManager" type="Node" parent="." unique_id=1408177371]
 process_mode = 3
 script = ExtResource("1_oln2x")
-current_game_step = 2
 
 [node name="DaysManager" parent="." unique_id=879327459 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
-days = Array[ExtResource("3_uomju")]([])
-mimos = Array[ExtResource("3_uomju")]([])
-
-[node name="DaysManager" parent="DaysManager" unique_id=1337174719 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
-days = Array[ExtResource("3_uomju")]([])
-mimos = Array[ExtResource("3_uomju")]([])
-
-[node name="DaysManager2" parent="DaysManager" unique_id=973546350 node_paths=PackedStringArray("mimos") instance=ExtResource("2_mpdgn")]
-days = Array[ExtResource("3_uomju")]([])
-mimos = Array[ExtResource("3_uomju")]([])
+unique_name_in_owner = true
+min_points = 35
+days = Array[ExtResource("3_uomju")]([ExtResource("4_6w6dy"), ExtResource("5_tgjf3"), ExtResource("6_nyujs"), ExtResource("7_hd0dv"), ExtResource("8_qj7gg")])
+mimos = [NodePath("../Mimos/Mimo1"), NodePath("../Mimos/Mimo2"), NodePath("../Mimos/Mimo3"), NodePath("../Mimos/Mimo4")]
 
 [node name="--------------------" type="Node" parent="." unique_id=1731279526]
 
@@ -1006,20 +1004,25 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Panel" parent="PauseMenu" index="1" unique_id=2128962313]
+visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -142.0
 
 [node name="Moldura" parent="PauseMenu" index="2" unique_id=1872986391]
+modulate = Color(1, 1, 1, 0)
 offset_left = -259.5
 offset_top = -247.0
 offset_right = 206.5
 offset_bottom = 248.0
 
+[connection signal="on_letter_delivery_end" from="GameManager" to="DaysManager" method="_on_letter_delivery_end"]
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]
 [connection signal="change_to_postmark_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_postmark_step"]
 [connection signal="change_to_drop_step" from="Forninho" to="GameManager" method="_on_forninho_change_to_drop_step"]
 [connection signal="button_down" from="Envelopes" to="GameManager" method="_on_envelopes_button_down"]
 [connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
 [connection signal="button_down" from="BookButton" to="BookButton" method="_on_button_down"]
+[connection signal="button_down" from="InboxButton" to="DaysManager" method="_on_inbox_button_button_down"]
 [connection signal="on_letter_finished" from="WriteLetterMenu" to="GameManager" method="_on_write_letter_menu_on_letter_finished"]
 [connection signal="button_down" from="Books/LivroTeste/CloseMenu" to="Books/LivroTeste/CloseMenu" method="_on_close_button_down"]
 

@@ -10,6 +10,15 @@
 
 [resource]
 script = ExtResource("3_bhkd4")
+extra_letter = "PLAYER,
+Espero que esta carta lhe encontre bem.
+
+Os primeiros dias após eu ter comprado a loja foram fascinantes, tantas pessoas foram ao meu encontro de diferentes horizontes, tenho apreço por cada cliente, independentemente de ter aparecido uma ou mais vezes. Mas há aqueles clientes que nos marcam mais, ano passado atendi um cliente encantador.
+
+Eram 8 da manhã quando a carta chegou, um envelope azul, mas sem gravuras, sem um único amassado, era um senhor de idade mais avançada querendo fazer uma surpresa de casamento para a esposa, eram casados a 50 anos! Imagina minha surpresa, precisava fazer algo especial naquele dia, eu comprei um carimbo somente para eles, um carimbo de peônias.
+
+E se eu não me engano foi nessa época que recebi a carta dele, mas nunca mais recebi nada, quem sabe você não tem a sorte?
+De sua querida, tia Ana."
 feedbacks = Array[ExtResource("1_ebbff")]([ExtResource("2_txnil"), ExtResource("3_7v7he")])
 letters = Array[ExtResource("2_f38y0")]([ExtResource("3_5pxuu"), ExtResource("4_txnil")])
 metadata/_custom_type_script = "uid://bk0nsegj63cvd"

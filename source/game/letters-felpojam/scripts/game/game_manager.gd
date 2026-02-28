@@ -8,6 +8,7 @@ signal on_letter_delivery_end
 @export var current_game_step: GameStep = GameStep.BEGIN
 @export var current_selo_step: SeloStep = SeloStep.MELTING_PAINT
 
+@onready var days_manager: DaysManager = %DaysManager
 @onready var caixa_sinetes: SineteStorage = %CaixaSinete
 @onready var envelopes: TextureButton = $"../Envelopes"
 @onready var carta: Control = $"../Carta"
@@ -31,6 +32,21 @@ func _ready() -> void:
 			print("begin")
 		GameStep.POSTMARK:
 			print("postmark")
+	deliver_button.button_down.connect(func() -> void:
+		var carimbadas := get_tree().get_nodes_in_group("stamp_draw") as Array
+		for carimbada: Node in carimbadas:
+			carimbada.queue_free()
+		carta.show()
+		carta_content.text = ""
+		carta_envelopada.hide()
+		disable_stamps_run = false
+		selo_area.get_child(0).texture = null
+		selo_area.get_child(1).show()
+		selo_area.texture = null
+		deliver_button.hide()
+		on_letter_delivery_end.emit()
+		current_selo_step = SeloStep.MELTING_PAINT
+		)
 
 func _process(_delta: float) -> void:
 	if get_tree().paused:
@@ -55,19 +71,8 @@ func _process(_delta: float) -> void:
 			_postmark_step()
 		GameStep.ENDED:
 			deliver_button.show()
-			deliver_button.button_down.connect(func() -> void:
-				var carimbadas := get_tree().get_nodes_in_group("stamp_draw") as Array
-				for carimbada: Node in carimbadas:
-					carimbada.queue_free()
-				carta.show()
-				carta_content.text = ""
-				carta_envelopada.hide()
-				disable_stamps_run = false
-				selo_area.texture = null
-				deliver_button.hide()
-				on_letter_delivery_end.emit()
-				)
 			current_game_step = GameStep.BEGIN
+			
 
 func _free_stamp_step() -> void:
 	envelopes.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -124,5 +129,6 @@ func _on_envelopes_button_down() -> void:
 	carta_envelopada.show()
 	current_game_step = GameStep.POSTMARK
 
-func _on_write_letter_menu_on_letter_finished(_point: int) -> void:
+func _on_write_letter_menu_on_letter_finished(point: int) -> void:
 	current_game_step = GameStep.FREE_STAMP
+	days_manager.add_points(point)

@@ -2,6 +2,9 @@ extends Control
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
+func _ready() -> void:
+	resume()
+
 func resume() -> void:
 	get_tree().paused = false
 	$Moldura/resume.button_pressed = false

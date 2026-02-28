@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjl8pcoh4e2m7"]
 
-[node name="Desenho" type="TextureRect" unique_id=134822399 groups=["stamp_draw"]]
+[node name="Desenho" type="TextureRect" unique_id=134822399]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

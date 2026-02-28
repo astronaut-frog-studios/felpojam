@@ -22,3 +22,5 @@ theme_override_font_sizes/font_size = 18
 action_mode = 0
 text = "Texto da escolha"
 alignment = 0
+text_overrun_behavior = 4
+autowrap_mode = 3

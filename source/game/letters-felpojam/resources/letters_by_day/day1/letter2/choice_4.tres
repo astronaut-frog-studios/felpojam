@@ -21,6 +21,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_xmbyp")
-text = "precisava partir sem falar com vocês pois ___. Fiquem bem. "
+text = "precisava partir sem falar com vocês pois ___. Fiquem bem. \\\\n"
 options = Array[ExtResource("1_1efk6")]([SubResource("Resource_3cjsq"), SubResource("Resource_7r0ld"), SubResource("Resource_bkh87")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

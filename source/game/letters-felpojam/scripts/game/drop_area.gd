@@ -27,5 +27,7 @@ func _return_carimbo(data: Stamp_Drag) -> void:
 	
 func _set_drawing(data: Variant) -> TextureRect:
 	var node : TextureRect = DRAWING.instantiate()
+	node.add_to_group("stamp_draw")
 	node.texture = data.get_child(0).texture
+	node.get_groups()
 	return node
