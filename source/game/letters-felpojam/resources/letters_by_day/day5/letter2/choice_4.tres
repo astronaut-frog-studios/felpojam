@@ -31,6 +31,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_aitwb")
-text = "Lembro de nossos momentos juntos e sinto que 4_____.  \\nSinto que essas palavras não são suficientes para expressar todos meus sentimentos. "
+text = "Lembro de nossos momentos juntos e sinto que 4_____.  Sinto que essas palavras não são suficientes para expressar todos meus sentimentos. "
 options = Array[ExtResource("1_vmet3")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35"), SubResource("Resource_vmet3")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

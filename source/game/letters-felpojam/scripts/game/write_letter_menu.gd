@@ -66,7 +66,8 @@ func _ready() -> void:
 
 func _next_step() -> void:
 	if queue.is_empty():
-		text_label.text = current_text + "\n" + author
+		current_text =  current_text + "\n" + author
+		text_label.text = current_text
 		is_typing = false
 		next_button.disabled = false
 		next_button.modulate = Color.WHITE
@@ -78,7 +79,7 @@ func _next_step() -> void:
 	if current_text.is_empty():
 		current_text = current_step.text
 	else:
-		current_text += " " + current_step.text # trocar por " "
+		current_text += " " + current_step.text
 	
 	await type_text(old_text, current_text)
 	#text_label.text = current_text

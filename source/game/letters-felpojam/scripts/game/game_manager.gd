@@ -27,11 +27,6 @@ func _ready() -> void:
 	spoon = get_tree().get_first_node_in_group("spoon") as SpoonDrag
 	stamps = get_tree().get_nodes_in_group("stamp") as Array[Stamp_Drag]
 	current_game_step = GameStep.BEGIN
-	match current_game_step:
-		GameStep.BEGIN:
-			print("begin")
-		GameStep.POSTMARK:
-			print("postmark")
 	deliver_button.button_down.connect(func() -> void:
 		var carimbadas := get_tree().get_nodes_in_group("stamp_draw") as Array
 		for carimbada: Node in carimbadas:

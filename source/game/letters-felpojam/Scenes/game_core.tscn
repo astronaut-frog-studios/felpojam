@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://cir8t1b3v2lp8" path="res://nodes/letter/write_letter_menu.tscn" id="35_dax43"]
 [ext_resource type="PackedScene" uid="uid://fsxlbmldqagy" path="res://nodes/letter/show_letter.tscn" id="38_mpdgn"]
 [ext_resource type="Texture2D" uid="uid://ykdxdcxmktc0" path="res://assets/sprites/cancel_confirm.png" id="40_ocv1q"]
+[ext_resource type="FontFile" uid="uid://y7ygfgkw7v2t" path="res://assets/fonts/yoster-island/yoster.ttf" id="49_tgjf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi4rr"]
 atlas = ExtResource("13_5wb4p")
@@ -148,7 +149,7 @@ script = ExtResource("27_qj43v")
 default_texture = SubResource("AtlasTexture_dd5f8")
 melted_texture = SubResource("AtlasTexture_qt0jq")
 selo_texture = ExtResource("28_ho3qs")
-color = Color(0.88235295, 0.003921569, 0, 1)
+color = Color(0.36862746, 0.16470589, 0.06666667, 1)
 metadata/_custom_type_script = "uid://cglmdv0j17dwt"
 
 [sub_resource type="Resource" id="Resource_q5rh8"]
@@ -181,6 +182,10 @@ region = Rect2(64, 0, 65, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_raskq"]
 atlas = ExtResource("7_0a7kk")
 region = Rect2(64, 55, 63, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w6dy"]
+atlas = ExtResource("7_0a7kk")
+region = Rect2(0, 56, 64.5, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8f0x7"]
 atlas = ExtResource("40_ocv1q")
@@ -432,10 +437,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -166.5
-offset_right = 171.0
-offset_bottom = 165.5
+offset_left = -173.0
+offset_top = -179.53928
+offset_right = 181.0
+offset_bottom = 175.53021
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_raskq")
@@ -458,8 +463,8 @@ autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("33_q5rh8")
-min_font_size = 14
-max_font_size = 17
+min_font_size = 12
+max_font_size = 16
 metadata/_custom_type_script = "uid://d11kfgsd6jgt"
 metadata/_edit_use_anchors_ = true
 
@@ -933,6 +938,7 @@ offset_right = 12.760002
 offset_bottom = 102.92
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_raskq")
+texture_disabled = SubResource("AtlasTexture_6w6dy")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -992,6 +998,7 @@ script = ExtResource("33_328cw")
 
 [node name="PauseMenu" parent="." unique_id=1831438844 instance=ExtResource("2_0a7kk")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 offset_left = 62.0
 offset_right = 1.0
@@ -1013,6 +1020,42 @@ offset_left = -259.5
 offset_top = -247.0
 offset_right = 206.5
 offset_bottom = 248.0
+
+[node name="Dia" type="Panel" parent="." unique_id=2019901135]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="AutoSizeLabel" type="Label" parent="Dia" unique_id=2029578600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -170.5
+offset_right = 295.5
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("49_tgjf3")
+theme_override_font_sizes/font_size = 54
+text = "Dia "
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("33_q5rh8")
+min_font_size = 26
+max_font_size = 54
+metadata/_custom_type_script = "uid://d11kfgsd6jgt"
 
 [connection signal="on_letter_delivery_end" from="GameManager" to="DaysManager" method="_on_letter_delivery_end"]
 [connection signal="change_to_ended_step" from="CartaEnvelopada/envelope/SeloArea" to="GameManager" method="_on_selo_area_change_to_ended_step"]

@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_rejdx")
-text = "\\na quanto tempo não te vejo, gostaria de saber se ___ "
+text = "a quanto tempo não te vejo, gostaria de saber se ___ "
 options = Array[ExtResource("1_0npst")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_0npst"), SubResource("Resource_rejdx")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"

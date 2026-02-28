@@ -16,7 +16,8 @@ content = "Olá, PLAYER
 Não sei como começar esta carta, mas espero que entenda a mensagem. Faz cinco anos que não falo com meu pai, desde que sai de casa, e acho que está na hora de nos reconciliarmos.
 
 Se ele aceitar meus sentimentos, sei que vamos poder nos falar de novo, eu o amo e espero que ele ainda me ame, dizem que o amor dos pais nunca morre. Espero que seja verdade.
-De um esperançoso filho,"
+De um esperançoso filho,
+Nicolas"
 author = "Nicolas"
 choice_steps = Array[ExtResource("1_4rcxe")]([ExtResource("2_l7ky5"), ExtResource("3_hqkik"), ExtResource("4_mgv6u"), ExtResource("5_gvb2y"), ExtResource("6_88081"), ExtResource("7_ny8br"), ExtResource("8_23gnf")])
 metadata/_custom_type_script = "uid://dntnonu8usqw3"

@@ -27,6 +27,6 @@ metadata/_custom_type_script = "uid://ddgpnkx2mft5u"
 
 [resource]
 script = ExtResource("2_7qv72")
-text = "\\nEspero que encontre essa carta ___"
+text = "Espero que encontre essa carta ___"
 options = Array[ExtResource("1_6sprh")]([SubResource("Resource_4dewj"), SubResource("Resource_fkosg"), SubResource("Resource_yiaum"), SubResource("Resource_h1f35")])
 metadata/_custom_type_script = "uid://cfjj4k0ortpg1"
