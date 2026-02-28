@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://d36dnb3n3urpy"]
 
 [ext_resource type="FontFile" uid="uid://bu5qd03fmychg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://dwmo3wolub5gy" path="res://assets/sprites/UI_Button.png" id="2_2ckv8"]
+[ext_resource type="Script" uid="uid://cleijqplvscqe" path="res://scripts/back_menu.gd" id="3_0ctdu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ctdu"]
+atlas = ExtResource("2_2ckv8")
+region = Rect2(3, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fbfq"]
+atlas = ExtResource("2_2ckv8")
+region = Rect2(99, 4, 90, 25)
 
 [node name="Credits" type="Control" unique_id=1476093156]
 layout_mode = 3
@@ -9,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=754775102]
 layout_mode = 1
@@ -17,6 +28,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="next" type="TextureButton" parent="." unique_id=1160713098]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919
+anchor_top = 0.897
+anchor_right = 0.919
+anchor_bottom = 0.897
+offset_left = -72.32007
+offset_top = -31.840027
+offset_right = 72.67993
+offset_bottom = 32.159973
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_0ctdu")
+texture_pressed = SubResource("AtlasTexture_2fbfq")
+stretch_mode = 0
+script = ExtResource("3_0ctdu")
+
+[node name="Label" type="Label" parent="next" unique_id=1001430157]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -26.0
+offset_right = 51.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+theme_override_colors/font_color = Color(0.39215687, 0.34117648, 0.39215687, 1)
+theme_override_fonts/font = ExtResource("1_0bpdh")
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=1474047238]
 layout_mode = 1
@@ -42,3 +93,5 @@ Sam Camargo
 Yago Arruda"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_down" from="next" to="next" method="_on_button_down"]
